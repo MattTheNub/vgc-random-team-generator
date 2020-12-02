@@ -121,7 +121,7 @@
   item: [Aguav Berry, Sitrus Berry]
   ability: Intimidate
   spread: |
-    EVs: 244 HP / 20 Atk / 94 Def / 148 SpD / 12 Spe
+    EVs: 244 HP / 20 Atk / 84 Def / 148 SpD / 12 Spe
     Careful Nature
   moves:
     - Fake Out
