@@ -142,7 +142,7 @@
     - Trick Room
     - Will-O-Wisp
     - Night Shade
-    - [Pain Split, Ally Switch, Haze]
+    - [Pain Split, Ally Switch, Haze, Helping Hand]
   roles:
     - [support, status]
     - [speed, trickroom]
@@ -156,7 +156,7 @@
   moves:
     - Trick Room
     - Will-O-Wisp
-    - [Pain Split, Ally Switch, Haze, Night Shade]
+    - [Pain Split, Ally Switch, Haze, Night Shade, Helping Hand]
     - Bulldoze
   roles:
     - [support, policy, ground]
@@ -172,7 +172,7 @@
   moves:
     - Trick Room
     - Will-O-Wisp
-    - [Pain Split, Ally Switch, Haze, Night Shade]
+    - [Pain Split, Ally Switch, Haze, Night Shade, Helping Hand]
     - Brick Break
   roles:
     - [support, policy, fighting]
@@ -188,7 +188,7 @@
   moves:
     - Trick Room
     - Will-O-Wisp
-    - [Pain Split, Ally Switch, Haze, Night Shade]
+    - [Pain Split, Ally Switch, Haze, Night Shade, Helping Hand]
     - Shadow Sneak
   roles:
     - [support, policy, ghost]
@@ -268,8 +268,8 @@
   moves:
     - Wicked Blow
     - Close Combat
-    - [Ice Punch, Fire Punch, Thunder Punch, Poison Jab, Sucker Punch, Detect]
-    - [Ice Punch, Fire Punch, Thunder Punch, Poison Jab, Sucker Punch, Detect]
+    - [Ice Punch, Fire Punch, Thunder Punch, Poison Jab, Sucker Punch, Sucker Punch, Detect, Detect, Detect]
+    - [Ice Punch, Fire Punch, Thunder Punch, Poison Jab, Sucker Punch, Sucker Punch, Detect, Detect, Detect]
   roles:
     - [offense]
     - [dynamax]
@@ -283,8 +283,8 @@
   moves:
     - Wicked Blow
     - Close Combat
-    - [Ice Punch, Fire Punch, Thunder Punch, Poison Jab, Sucker Punch]
-    - [Ice Punch, Fire Punch, Thunder Punch, Poison Jab, Sucker Punch]
+    - [Ice Punch, Fire Punch, Thunder Punch, Poison Jab, Sucker Punch, Sucker Punch]
+    - [Ice Punch, Fire Punch, Thunder Punch, Poison Jab, Sucker Punch, Sucker Punch]
   roles:
     - [offense]
 - pokemon: Metagross
@@ -358,7 +358,6 @@
     - [Iron Head, Meteor Mash]
     - [Stomping Tantrum, Earthquake]
     - Zen Headbutt
-    - Protect
   roles:
     - [offense, trickroom]
     - [dynamax]
@@ -419,9 +418,11 @@
     Jolly Nature
   moves:
     - Leaf Blade
-    - [Sacred Sword, Smart Strike, Aerial Ace, Swords Dance, Detect]
-    - [Sacred Sword, Smart Strike, Aerial Ace, Swords Dance, Detect]
-    - [Sacred Sword, Smart Strike, Aerial Ace, Swords Dance, Detect]
+    - Sacred Sword
+    - Smart Strike
+    - Aerial Ace
+    - Swords Dance
+    - Detect
   roles:
     - [offense]
     - [dynamax]
@@ -795,21 +796,6 @@
   roles:
     - [offense]
     - [dynamax]
-- pokemon: Heatran
-  item: [Shuca Berry, Air Balloon, Life Orb, Weakness Policy]
-  spread: |
-    EVs: 252 HP / 252 Spa / 4 Def
-    Modest Nature
-    IVs: 0 Atk
-  moves:
-    - Protect
-    - Heat Wave
-    - Flash Cannon
-    - Earth Power
-  roles:
-    - [offense]
-    - [dynamax]
-
 - pokemon: Clefairy
   item: Eviolite
   ability: Friend Guard
