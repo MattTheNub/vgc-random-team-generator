@@ -405,11 +405,9 @@
     Jolly Nature
   moves:
     - Leaf Blade
-    - Sacred Sword
-    - Smart Strike
-    - Aerial Ace
-    - Swords Dance
-    - Detect
+    - [Sacred Sword, Smart Strike, Aerial Ace, Swords Dance, Detect]
+    - [Sacred Sword, Smart Strike, Aerial Ace, Swords Dance, Detect]
+    - [Sacred Sword, Smart Strike, Aerial Ace, Swords Dance, Detect]
   roles:
     - [offense]
     - [dynamax]
@@ -783,6 +781,21 @@
   roles:
     - [offense]
     - [dynamax]
+- pokemon: Heatran
+  item: [Shuca Berry, Air Balloon, Life Orb, Weakness Policy]
+  spread: |
+    EVs: 252 HP / 252 Spa / 4 Def
+    Modest Nature
+    IVs: 0 Atk
+  moves:
+    - Protect
+    - Heat Wave
+    - Flash Cannon
+    - Earth Power
+  roles:
+    - [offense]
+    - [dynamax]
+
 - pokemon: Clefairy
   item: Eviolite
   ability: Friend Guard
