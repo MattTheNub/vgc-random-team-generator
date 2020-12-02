@@ -2,14 +2,14 @@
   "name": "vgc-random-team-generator",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "parcel src/index.html"
+    "build": "parcel build src/index.html"
+    "dev": "parcel serve src/index.html"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Matt (MattTheNub) <git@mattthenub.dev>",
+  "license": "MIT",
   "dependencies": {
     "@types/common-tags": "^1.8.0",
     "axios": "^0.21.0",
