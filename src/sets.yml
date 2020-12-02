@@ -14,6 +14,20 @@
   roles:
     - [offense]
 - pokemon: Tapu Fini
+  ability: Misty Surge
+  item: [Wiki Berry, Aguav Berry, Iapapa Berry, Sitrus Berry, Leftovers]
+  spread: |
+    EVs: 236 HP / 4 Def / 204 SpA / 12 SpD / 52 Spe
+    Modest Nature
+    IVs: 0 Atk
+  moves:
+    - [Moonblast, Dazzling Gleam]
+    - [Muddy Water, Scald]
+    - Calm Mind
+    - Protect
+  roles:
+    - [offense]
+    - [dynamax]
 - pokemon: Regieleki
   item: Light Clay
   ability: Transistor
