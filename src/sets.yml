@@ -498,9 +498,9 @@
     IVs: 0 Atk
   moves:
     - Icy Wind
-    - [Helping Hand, Ally Switch, Psychic, Ice Beam]
-    - [Helping Hand, Ally Switch, Psychic, Ice Beam]
-    - [Helping Hand, Ally Switch, Psychic, Ice Beam]
+    - [Helping Hand, Ally Switch, Psychic, Ice Beam, Trick Room]
+    - [Helping Hand, Ally Switch, Psychic, Ice Beam, Trick Room]
+    - [Helping Hand, Ally Switch, Psychic, Ice Beam, Trick Room]
   roles:
     - [speed, statdrop]
     - [support, atkup]
@@ -753,6 +753,36 @@
     - [Earthquake, Acrobatics, Fly, Substitute]
   roles:
     [offense]
+- pokemon: Nihilego
+  item: Power Herb
+  ability: Beast Boost
+  spread: |
+    EVs: 4 HP / 252 SpA / 252 Spe
+    Timid Nature
+    IVs: 0 Atk
+  moves:
+    - Meteor Beam
+    - Sludge Bomb
+    - Protect
+    - [Trick Room, Dazzling Gleam]
+  roles:
+    - [offense]
+    - [dynamax]
+- pokemon: Nihilego
+  item: [Life Orb, Focus Sash]
+  ability: Beast Boost
+  spread: |
+    EVs: 4 HP / 252 SpA / 252 Spe
+    Timid Nature
+    IVs: 0 Atk
+  moves:
+    - Power Gem
+    - Sludge Bomb
+    - Protect
+    - [Trick Room, Dazzling Gleam]
+  roles:
+    - [offense]
+    - [dynamax]
 - pokemon: Clefairy
   item: Eviolite
   ability: Friend Guard
@@ -770,3 +800,4 @@
     - [support, atkup]
     - [speed, statdrop]
     - [support, status]
+
