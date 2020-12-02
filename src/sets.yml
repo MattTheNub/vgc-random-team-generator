@@ -14,35 +14,6 @@
   roles:
     - [offense]
 - pokemon: Tapu Fini
-  ability: Misty Surge
-  item: [Wiki Berry, Aguav Berry, Iapapa Berry, Sitrus Berry, Leftovers]
-  spread: |
-    EVs: 236 HP / 4 Def / 204 SpA / 12 SpD / 52 Spe
-    Modest Nature
-    IVs: 0 Atk
-  moves:
-    - [Moonblast, Dazzling Gleam]
-    - [Muddy Water, Scald]
-    - Calm Mind
-    - Protect
-  roles:
-    - [offense]
-    - [dynamax]
-# - pokemon: Tapu Fini
-#   item: Light Clay
-#   ability: Misty Surge
-#   spread: |
-#     EVs: 252 HP / 4 SpA / 252 SpD
-#     Calm Nature
-#     IVs: 0 Atk
-#   moves:
-#     - Light Screen
-#     - Reflect
-#     - Haze
-#     - Muddy Water
-#   roles:
-#     - [support, statdrop]
-#     - [support, screens]
 - pokemon: Regieleki
   item: Light Clay
   ability: Transistor
@@ -461,6 +432,7 @@
   item: Miracle Seed
   ability: Grassy Surge
   spread: |
+    Gigantamax: Yes
     EVs: 180 HP / 252 Atk / 4 Def / 4 SpD / 68 Spe
     Adamant Nature
   moves:
@@ -475,6 +447,7 @@
   item: Assault Vest
   ability: Grassy Surge
   spread: |
+    Gigantamax: Yes
     EVs: 180 HP / 252 Atk / 4 Def / 4 SpD / 68 Spe
     Adamant Nature
   moves:
@@ -489,6 +462,7 @@
   item: Choice Band
   ability: Grassy Surge
   spread: |
+    Gigantamax: Yes
     EVs: 180 HP / 252 Atk / 4 Def / 4 SpD / 68 Spe
     Adamant Nature
   moves:
