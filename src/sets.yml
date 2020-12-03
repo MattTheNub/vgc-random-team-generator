@@ -1050,6 +1050,64 @@
   roles:
     - [offense]
     - [dynamax]
+- pokemon: Entei
+  item: [Assault Vest]
+  ability: Inner Focus
+  spread: |
+    EVs: 4 HP / 244 Atk / 4 Def / 4 SpD / 252 Spe
+    Jolly Nature
+  moves:
+    - Sacred Fire
+    - Extreme Speed
+    - Snarl
+    - [Stomping Tantrum, Stone Edge]
+  roles:
+    - [offense]
+    - [support, status]
+- pokemon: Entei
+  item: [Shuca Berry, Figy Berry, Charcoal]
+  ability: Inner Focus
+  spread: |
+    EVs: 4 HP / 244 Atk / 4 Def / 4 SpD / 252 Spe
+    Jolly Nature
+  moves:
+    - Sacred Fire
+    - Extreme Speed
+    - Snarl
+    - [Protect, Protect, Protect, Stomping Tantrum, Stone Edge]
+  roles:
+    - [offense]
+    - [support, status]
+- pokemon: Entei
+  item: [Assault Vest]
+  ability: Inner Focus
+  spread: |
+    EVs: 4 HP / 244 Atk / 4 Def / 4 SpD / 252 Spe
+    Jolly Nature
+  moves:
+    - Sacred Fire
+    - Extreme Speed
+    - Snarl
+    - Bulldoze
+  roles:
+    - [offense]
+    - [support, status]
+    - [support, policy, ground]
+- pokemon: Entei
+  item: [Shuca Berry, Figy Berry, Charcoal]
+  ability: Inner Focus
+  spread: |
+    EVs: 4 HP / 244 Atk / 4 Def / 4 SpD / 252 Spe
+    Jolly Nature
+  moves:
+    - Sacred Fire
+    - Extreme Speed
+    - [Snarl, Protect]
+    - Bulldoze
+  roles:
+    - [offense]
+    - [support, status]
+    - [support, policy, ground]
 - pokemon: Porygon2
   item: Eviolite
   ability: Download
