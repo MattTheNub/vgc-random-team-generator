@@ -1002,7 +1002,7 @@
     - Volt Switch
     - [Thunderbolt, Electroweb, Detect]
     - Brick Break
- roles:
+  roles:
     - [speed, statdrop]
     - [support, policy, fighting]
 - pokemon: Raichu
@@ -1017,6 +1017,6 @@
     - Volt Switch
     - [Thunderbolt, Electroweb, Detect]
     - Brutal Swing
- roles:
+  roles:
     - [speed, statdrop]
     - [support, policy, dark]
