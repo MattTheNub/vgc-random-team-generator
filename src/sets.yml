@@ -561,8 +561,24 @@
     - Protect
     - Superpower
   roles:
-    - [offense]
-    - [dynamax]
+    - [support, status]
+    - [speed, statdrop]
+- pokemon: Thundurus
+  item: [Focus Sash, Mental Herb]
+  ability: Prankster
+  spread: |
+    EVs: 4 HP / 252 SpA / 252 Spe
+    Timid Nature
+  moves:
+    - Thunder Wave
+    - Eerie Impulse
+    - [Protect, Taunt, Electroweb, Leer]
+    - [Thunderbolt, Electroweb]
+  roles:
+    - [support, status]
+    - [speed, statdrop]
+    - [support, atkdrop]
+    - [support, defdrop]
 - pokemon: Dragapult
   item: [Focus Sash, Life Orb, Colbur Berry]
   ability: Clear Body
