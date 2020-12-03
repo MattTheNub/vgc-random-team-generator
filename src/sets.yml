@@ -856,4 +856,153 @@
   roles:
     - [speed, weather, sun]
     - [offense]
-
+- pokemon: Raichu
+  item: [Focus Sash, Air Balloon]
+  ability: Lighting Rod
+  spread: |
+    EVs: 4 HP / 252 SpA / 252 Spe
+    Timid Nature
+    IVs: 0 Atk
+  moves:
+    - Fake Out
+    - Volt Switch
+    - [Nuzzle, Nuzzle, Eerie Impulse, Eerie Impulse, Charm]
+    - [Electroweb, Thunderbolt, Detect]
+  roles:
+    - [support, status]
+    - [speed, statdrop]
+    - [support, atkdrop]
+- pokemon: Raichu
+  item: [Focus Sash, Air Balloon]
+  ability: Lighting Rod
+  spread: |
+    EVs: 4 HP / 252 Atk / 252 Spe
+    Jolly Nature
+  moves:
+    - Fake Out
+    - [Volt Switch, Detect]
+    - [Nuzzle, Nuzzle, Eerie Impulse, Eerie Impulse, Volt Switch, Charm]
+    - Volt Tackle
+  roles:
+    - [support, status]
+    - [speed, statdrop]
+    - [support, atkdrop]
+- pokemon: Raichu
+  item: [Assault Vest]
+  ability: Lighting Rod
+  spread: |
+    EVs: 252 HP / 4 SpA / 252 Spe
+    Timid Nature
+    IVs: 0 Atk
+  moves:
+    - Fake Out
+    - Volt Switch
+    - Thunderbolt
+    - [Electroweb, Electro Ball]
+  roles:
+    - [speed, statdrop]
+    - [support, status]
+- pokemon: Raichu
+  item: [Assault Vest]
+  ability: Lighting Rod
+  spread: |
+    EVs: 252 HP / 4 Atk / 252 Spe
+    Jolly Nature
+  moves:
+    - Fake Out
+    - Volt Tackle
+    - Extreme Speed
+    - [Knock Off, Volt Switch, Play Rough, Nuzzle, Nuzzle]
+  roles:
+    - [support, status]
+    - [speed, statdrop]
+- pokemon: Raichu
+  item: [Assault Vest]
+  ability: Lighting Rod
+  spread: |
+    EVs: 252 HP / 4 Atk / 252 Spe
+    Jolly Nature
+  moves:
+    - Fake Out
+    - Volt Tackle
+    - [Extreme Speed, Nuzzle]
+    - Brick Break
+  roles:
+    - [support, status]
+    - [speed, statdrop]
+    - [support, policy, fighting]
+- pokemon: Raichu
+  item: [Assault Vest]
+  ability: Lighting Rod
+  spread: |
+    EVs: 252 HP / 4 Atk / 252 Spe
+    Jolly Nature
+  moves:
+    - Fake Out
+    - Volt Tackle
+    - [Extreme Speed, Nuzzle]
+    - Brutal Swing
+  roles:
+    - [support, status]
+    - [speed, statdrop]
+    - [support, policy, dark]
+- pokemon: Raichu
+  item: [Assault Vest]
+  ability: Lighting Rod
+  spread: |
+    EVs: 252 HP / 4 SpA / 252 Spe
+    Timid Nature
+    IVs: 0 Atk
+  moves:
+    - Fake Out
+    - Volt Switch
+    - [Thunderbolt, Electroweb]
+    - Brick Break
+  roles:
+    - [speed, statdrop]
+    - [support, policy, fighting]
+- pokemon: Raichu
+  item: [Assault Vest]
+  ability: Lighting Rod
+  spread: |
+    EVs: 252 HP / 4 SpA / 252 Spe
+    Timid Nature
+    IVs: 0 Atk
+  moves:
+    - Fake Out
+    - Volt Switch
+    - [Thunderbolt, Electroweb]
+    - Brutal Swing
+  roles:
+    - [speed, statdrop]
+    - [support, policy, dark]
+- pokemon: Raichu
+  item: [Focus Sash]
+  ability: Lighting Rod
+  spread: |
+    EVs: 252 HP / 4 SpA / 252 Spe
+    Timid Nature
+    IVs: 0 Atk
+  moves:
+    - Fake Out
+    - Volt Switch
+    - [Thunderbolt, Electroweb, Detect]
+    - Brick Break
+ roles:
+    - [speed, statdrop]
+    - [support, policy, fighting]
+- pokemon: Raichu
+  item: [Focus Sash]
+  ability: Lighting Rod
+  spread: |
+    EVs: 252 HP / 4 SpA / 252 Spe
+    Timid Nature
+    IVs: 0 Atk
+  moves:
+    - Fake Out
+    - Volt Switch
+    - [Thunderbolt, Electroweb, Detect]
+    - Brutal Swing
+ roles:
+    - [speed, statdrop]
+    - [support, policy, dark]
