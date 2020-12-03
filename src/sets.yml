@@ -798,6 +798,7 @@
     - [dynamax]
 - pokemon: Heatran
   item: [Shuca Berry, Air Balloon, Life Orb, Weakness Policy]
+  ability: Flash Fire
   spread: |
     EVs: 252 HP / 252 Spa / 4 Def
     Modest Nature
