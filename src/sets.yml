@@ -825,23 +825,6 @@
   roles:
     - [speed, trickroom]
     - [support, redirection]
-- pokemon: Clefairy
-  item: Eviolite
-  ability: Friend Guard
-  spread: |
-    EVs: 252 HP / 252 Def / 4 SpD
-    Bold Nature
-    IVs: 0 Atk
-  moves:
-    - Follow Me
-    - Helping Hand
-    - Protect
-    - [Heal Pulse, Icy Wind, Moonblast, Sing, Life Dew]
-  roles:
-    - [support, redirection]
-    - [support, atkup]
-    - [speed, statdrop]
-    - [support, status]
 - pokemon: Torkoal
   item: [Charcoal, Sitrus Berry]
   ability: Drought
@@ -873,7 +856,7 @@
     - [offense]
 - pokemon: Raichu
   item: [Focus Sash, Air Balloon]
-  ability: Lighting Rod
+  ability: Lightning Rod
   spread: |
     EVs: 4 HP / 252 SpA / 252 Spe
     Timid Nature
@@ -889,7 +872,7 @@
     - [support, atkdrop]
 - pokemon: Raichu
   item: [Focus Sash, Air Balloon]
-  ability: Lighting Rod
+  ability: Lightning Rod
   spread: |
     EVs: 4 HP / 252 Atk / 252 Spe
     Jolly Nature
@@ -904,7 +887,7 @@
     - [support, atkdrop]
 - pokemon: Raichu
   item: [Assault Vest]
-  ability: Lighting Rod
+  ability: Lightning Rod
   spread: |
     EVs: 252 HP / 4 SpA / 252 Spe
     Timid Nature
@@ -919,28 +902,28 @@
     - [support, status]
 - pokemon: Raichu
   item: [Assault Vest]
-  ability: Lighting Rod
+  ability: Lightning Rod
   spread: |
     EVs: 252 HP / 4 Atk / 252 Spe
     Jolly Nature
   moves:
     - Fake Out
     - Volt Tackle
-    - Extreme Speed
-    - [Knock Off, Volt Switch, Play Rough, Nuzzle, Nuzzle]
+    - Nuzzle
+    - [Volt Switch, Play Rough]
   roles:
     - [support, status]
     - [speed, statdrop]
 - pokemon: Raichu
   item: [Assault Vest]
-  ability: Lighting Rod
+  ability: Lightning Rod
   spread: |
     EVs: 252 HP / 4 Atk / 252 Spe
     Jolly Nature
   moves:
     - Fake Out
     - Volt Tackle
-    - [Extreme Speed, Nuzzle]
+    - Nuzzle
     - Brick Break
   roles:
     - [support, status]
@@ -948,14 +931,14 @@
     - [support, policy, fighting]
 - pokemon: Raichu
   item: [Assault Vest]
-  ability: Lighting Rod
+  ability: Lightning Rod
   spread: |
     EVs: 252 HP / 4 Atk / 252 Spe
     Jolly Nature
   moves:
     - Fake Out
     - Volt Tackle
-    - [Extreme Speed, Nuzzle]
+    - Nuzzle
     - Brutal Swing
   roles:
     - [support, status]
@@ -963,7 +946,7 @@
     - [support, policy, dark]
 - pokemon: Raichu
   item: [Assault Vest]
-  ability: Lighting Rod
+  ability: Lightning Rod
   spread: |
     EVs: 252 HP / 4 SpA / 252 Spe
     Timid Nature
@@ -978,7 +961,7 @@
     - [support, policy, fighting]
 - pokemon: Raichu
   item: [Assault Vest]
-  ability: Lighting Rod
+  ability: Lightning Rod
   spread: |
     EVs: 252 HP / 4 SpA / 252 Spe
     Timid Nature
@@ -993,7 +976,7 @@
     - [support, policy, dark]
 - pokemon: Raichu
   item: [Focus Sash]
-  ability: Lighting Rod
+  ability: Lightning Rod
   spread: |
     EVs: 252 HP / 4 SpA / 252 Spe
     Timid Nature
@@ -1008,7 +991,7 @@
     - [support, policy, fighting]
 - pokemon: Raichu
   item: [Focus Sash]
-  ability: Lighting Rod
+  ability: Lightning Rod
   spread: |
     EVs: 252 HP / 4 SpA / 252 Spe
     Timid Nature
@@ -1021,3 +1004,34 @@
   roles:
     - [speed, statdrop]
     - [support, policy, dark]
+- pokemon: Porygon2
+  item: Eviolite
+  ability: Download
+  spread: |
+    EVs: 244 HP / 44 Def / 148 SpA / 72 SpD
+    Quiet Nature
+  moves:
+    - Trick Room
+    - Recover
+    - [Ice Beam, Thunderbolt, Tri Attack, Ally Switch]
+    - [Ice Beam, Thunderbolt, Tri Attack, Ally Switch]
+  roles:
+    - [speed, trickroom]
+    - [support, redirection]
+- pokemon: Clefairy
+  item: Eviolite
+  ability: Friend Guard
+  spread: |
+    EVs: 252 HP / 252 Def / 4 SpD
+    Bold Nature
+    IVs: 0 Atk
+  moves:
+    - Follow Me
+    - Helping Hand
+    - Protect
+    - [Heal Pulse, Icy Wind, Moonblast, Sing, Life Dew]
+  roles:
+    - [support, redirection]
+    - [support, atkup]
+    - [speed, statdrop]
+    - [support, status]
