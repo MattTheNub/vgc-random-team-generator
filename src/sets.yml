@@ -813,4 +813,33 @@
     - [support, atkup]
     - [speed, statdrop]
     - [support, status]
+- pokemon: Torkoal
+  item: [Charcoal, Sitrus Berry]
+  ability: Drought
+  spread: |
+    EVs: 252 HP / 252 SpA / 4 SpD
+    Quiet Nature
+    IVs: 0 Atk / 0 Spe
+  moves:
+    - Eruption
+    - [Heat Wave, Heat Wave, Burning Jealousy]
+    - [Protect, Protect, Yawn]
+    - [Earth Power, Body Press, Solar Beam, Yawn]
+  roles:
+    - [speed, weather, sun]
+- pokemon: Torkoal
+  item: [Choice Specs]
+  ability: Drought
+  spread: |
+    EVs: 252 HP / 252 SpA / 4 SpD
+    Quiet Nature
+    IVs: 0 Atk / 0 Spe
+  moves:
+    - Eruption
+    - Heat Wave
+    - [Earth Power, Burning Jealousy, Solar Beam]
+    - [Solar Beam, Burning Jealousy, Earth Power]
+  roles:
+    - [speed, weather, sun]
+    - [offense]
 
