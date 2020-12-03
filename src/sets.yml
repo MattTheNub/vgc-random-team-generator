@@ -810,6 +810,20 @@
   roles:
     - [offense]
     - [dynamax]
+- pokemon: Porygon2
+  item: Eviolite
+  ability: Download
+  spread: |
+    EVs: 244 HP / 44 Def / 148 SpA / 72 SpD
+    Quiet Nature
+  moves:
+    - Trick Room
+    - Recover
+    - [Ice Beam, Thunderbolt, Tri Attack, Ally Switch]
+    - [Ice Beam, Thunderbolt, Tri Attack, Ally Switch]
+  roles:
+    - [speed, trickroom]
+    - [support, redirection]
 - pokemon: Clefairy
   item: Eviolite
   ability: Friend Guard
