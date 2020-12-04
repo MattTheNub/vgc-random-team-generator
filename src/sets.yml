@@ -1168,6 +1168,23 @@
     - [Dragon Rush, Ice Fang, Rock Slide, Crunch]
   roles:
     - [offense]
+- pokemon: Dracovish
+  item: Mystic Water
+  ability: Sand Rush
+  spread:
+    - |
+      EVs: 4 HP / 252 Atk / 252 Spe
+      Adamant Nature
+    - |
+      EVs: 4 HP / 252 Atk / 252 Spe
+      Jolly Nature
+  moves:
+    - Fishious Rend
+    - Psychic Fangs
+    - Protect
+    - [Dragon Rush, Ice Fang, Rock Slide, Crunch, Earthquake, Iron Head]
+  roles:
+    - [offense, weather, sand]
 - pokemon: Porygon2
   item: Eviolite
   ability: Download
