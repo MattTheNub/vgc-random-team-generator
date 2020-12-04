@@ -1126,7 +1126,7 @@
   roles:
     - [offense]
 - pokemon: Dracovish
-  item: [Choice Scarf, Choice Band]
+  item: Choice Band
   ability: Sand Rush
   spread:
     - |
