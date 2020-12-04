@@ -1164,8 +1164,10 @@
   moves:
     - Fishious Rend
     - Psychic Fangs
-    - Crunch
-    - [Dragon Rush, Ice Fang, Rock Slide]
+    - Protect
+    - [Dragon Rush, Ice Fang, Rock Slide, Crunch]
+  roles:
+    - [offense]
 - pokemon: Porygon2
   item: Eviolite
   ability: Download
