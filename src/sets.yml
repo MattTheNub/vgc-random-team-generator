@@ -1,136 +1,201 @@
-- pokemon: Tapu Fini
-  item: Choice Specs
-  ability: Misty Surge
+- pokemon: Amoonguss
+  item: Coba Berry
+  ability: Regenerator
   spread: |
-    EVs: 236 HP / 4 Def / 204 SpA / 12 SpD / 52 Spe
-    Modest Nature
-    IVs: 0 Atk
+    EVs: 252 HP / 156 Def / 100 SpD
+    Relaxed Nature
+    IVs: 0 Spe
   moves:
-    - Moonblast
-    - Dazzling Gleam
-    - Muddy Water
-    - Scald
-    - Ice Beam
+    - Spore
+    - Rage Powder
+    - [Protect, Sludge Bomb, Clear Smog]
+    - [Protect, Sludge Bomb, Clear Smog]
   roles:
-    - [offense]
-- pokemon: Tapu Fini
-  ability: Misty Surge
-  item: [Wiki Berry, Aguav Berry, Iapapa Berry, Sitrus Berry, Leftovers]
-  spread: |
-    EVs: 236 HP / 4 Def / 204 SpA / 12 SpD / 52 Spe
-    Modest Nature
-    IVs: 0 Atk
-  moves:
-    - [Moonblast, Dazzling Gleam]
-    - [Muddy Water, Scald]
-    - Calm Mind
-    - Protect
-  roles:
-    - [offense]
-    - [dynamax]
-- pokemon: Regieleki
-  item: Light Clay
-  ability: Transistor
-  spread: |
-    EVs: 236 HP / 50 Def / 124 SpA / 12 SpD / 76 Spe
-    Timid Nature
-    IVs: 0 Atk
-  moves:
-    - Electroweb
-    - Volt Switch
-    - Light Screen
-    - Reflect
-  roles:
-    - [support, screens]
-    - [speed, statdrop]
-- pokemon: Regieleki
-  item: [Choice Specs, Magnet, Life Orb]
-  ability: Transistor
-  spread: |
-    EVs: 252 SpA / 4 SpD / 252 Spe
-    Modest Nature
-    IVs: 0 Atk
-  moves:
-    - Thunderbolt
-    - Volt Switch
-    - Electroweb
-    - [Rising Voltage, Thunder, Thunder Cage, Electro Ball]
-  roles:
-    - [offense]
-    - [speed, statdrop]
-- pokemon: Landorus-Therian
-  item: [Choice Scarf, Choice Scarf, Choice Band]
-  ability: Intimidate
-  spread: |
-    EVs: 252 Atk / 4 SpD / 252 Spe
-    Jolly Nature
-  moves:
-    - [Rock Slide, Stone Edge]
-    - Earthquake
-    - Superpower
-    - U-turn
-    - Fly
-  roles:
-    - [offense]
-- pokemon: Landorus-Therian
-  item: Assault Vest
-  ability: Intimidate
-  spread: |
-    EVs: 252 Atk / 4 SpD / 252 Spe
-    Jolly Nature
-  moves:
-    - [Rock Slide, Stone Edge]
-    - Earthquake
-    - Superpower
-    - U-turn
-    - Fly
-  roles:
-    - [offense]
-    - [dynamax]
-- pokemon: Landorus-Therian
-  item: Life Orb
-  ability: Intimidate
-  spread: |
-    EVs: 252 Atk / 4 SpD / 252 Spe
-    Jolly Nature
-  moves:
-    - [Rock Slide, Stone Edge]
-    - Earthquake
-    - Superpower
-    - Fly
-    - Protect
-  roles:
-    - [offense]
-    - [dynamax]
-- pokemon: Incineroar
-  item: [Aguav Berry, Sitrus Berry]
-  ability: Intimidate
-  spread: |
-    EVs: 244 HP / 20 Atk / 84 Def / 148 SpD / 12 Spe
-    Careful Nature
-  moves:
-    - Fake Out
-    - Flare Blitz
-    - [Burning Jealousy, Will-O-Wisp]
-    - [Parting Shot, Snarl]
-  roles:
+    - [support, redirection]
     - [support, status]
-    - [support, atkdrop]
-    - [support, flinch]
-- pokemon: Incineroar
-  item: Assault Vest
-  ability: Intimidate
-  spread: |
-    EVs: 252 HP / 252 Atk / 4 SpD
-    Adamant Nature
+- pokemon: Dracovish
+  item: [Choice Scarf]
+  ability: Strong Jaw
+  spread:
+    - |
+      EVs: 4 HP / 252 Atk / 252 Spe
+      Adamant Nature
+    - |
+      EVs: 4 HP / 252 Atk / 252 Spe
+      Jolly Nature
   moves:
-    - Fake Out
-    - Flare Blitz
-    - Darkest Lariat
-    - [Close Combat, U-turn]
+    - Fishious Rend
+    - Psychic Fangs
+    - Crunch
+    - [Dragon Rush, Ice Fang, Rock Slide]
   roles:
-    - [support, flinch]
     - [offense]
+- pokemon: Dracovish
+  item: [Choice Band]
+  ability: Strong Jaw
+  spread: |
+    EVs: 4 HP / 252 Atk / 252 Spe
+    Jolly Nature
+  moves:
+    - Fishious Rend
+    - Psychic Fangs
+    - Crunch
+    - [Dragon Rush, Ice Fang, Rock Slide]
+  roles:
+    - [offense]
+- pokemon: Dracovish
+  item: Choice Band
+  ability: Sand Rush
+  spread:
+    - |
+      EVs: 4 HP / 252 Atk / 252 Spe
+      Adamant Nature
+    - |
+      EVs: 4 HP / 252 Atk / 252 Spe
+      Jolly Nature
+  moves:
+    - Fishious Rend
+    - Psychic Fangs
+    - [Dragon Rush, Iron Head, Rock Slide, Earthquake, Crunch, Ice Fang]
+    - [Dragon Rush, Iron Head, Rock Slide, Earthquake, Crunch, Ice Fang]
+  roles:
+    - [offense, weather, sand]
+- pokemon: Dracovish
+  item: Mystic Water
+  ability: Strong Jaw
+  spread: |
+    EVs: 4 HP / 252 Atk / 252 Spe
+    Jolly Nature
+  moves:
+    - Fishious Rend
+    - Psychic Fangs
+    - Protect
+    - [Dragon Rush, Ice Fang, Rock Slide, Crunch]
+  roles:
+    - [offense]
+- pokemon: Celesteela
+  item: Leftovers
+  ability: Beast Boost
+  spread: |
+    EVs: 252 HP / 252 Def / 4 SpA
+    Bold Nature
+    IVs: 0 Atk
+  moves:
+    - Leech Seed
+    - Protect
+    - [Flash Cannon, Air Slash, Substitute]
+    - [Flash Cannon, Air Slash, Substitute]
+  roles:
+    - [offense]
+- pokemon: Celesteela
+  item: Life Orb # TODO: Add Weakness Policy Celesteela once a proccer gets added to the database
+  ability: Beast Boost
+  spread: |
+    EVs: 252 HP / 252 SpA / 4 SpD
+    Modest Nature
+    IVs: 0 Atk
+  moves:
+    - Protect
+    - Flash Cannon
+    - Flamethrower
+    - Air Slash
+  roles:
+    - [offense]
+    - [dynamax]
+- pokemon: Celesteela
+  item: Leftovers
+  ability: Beast Boost
+  spread: |
+    EVs: 252 HP / 180 Atk / 76 Def
+    Relaxed Nature
+  moves:
+    - Leech Seed
+    - [Protect, Substitute]
+    - Heavy Slam
+    - [Earthquake, Acrobatics, Fly, Substitute]
+  roles:
+    [offense]
+- pokemon: Clefairy
+  item: Eviolite
+  ability: Friend Guard
+  spread: |
+    EVs: 252 HP / 252 Def / 4 SpD
+    Bold Nature
+    IVs: 0 Atk
+  moves:
+    - Follow Me
+    - Helping Hand
+    - Protect
+    - [Heal Pulse, Icy Wind, Moonblast, Sing, Life Dew]
+  roles:
+    - [support, redirection]
+    - [support, atkup]
+    - [speed, statdrop]
+    - [support, status]
+- pokemon: Cresselia
+  item: [Colbur Berry, Sitrus Berry, Mental Herb]
+  ability: Levitate
+  spread: |
+    EVs: 252 HP / 252 Def / 4 SpD
+    Bold Nature
+    IVs: 0 Atk
+  moves:
+    - Icy Wind
+    - [Helping Hand, Ally Switch, Psychic, Ice Beam, Trick Room]
+    - [Helping Hand, Ally Switch, Psychic, Ice Beam, Trick Room]
+    - [Helping Hand, Ally Switch, Psychic, Ice Beam, Trick Room]
+  roles:
+    - [speed, statdrop]
+    - [support, atkup]
+    - [support, redirection]
+- pokemon: Cresselia
+  item: [Colbur Berry, Sitrus Berry, Mental Herb]
+  ability: Levitate
+  spread: |
+    EVs: 252 HP / 236 Def / 20 SpD
+    Relaxed Nature
+    IVs: 0 Atk, 0 Spe
+  moves:
+    - Trick Room
+    - [Helping Hand, Ally Switch, Psychic, Ice Beam]
+    - [Helping Hand, Ally Switch, Psychic, Ice Beam]
+    - [Helping Hand, Ally Switch, Psychic, Ice Beam]
+  roles:
+    - [speed, trickroom]
+    - [suport, atkup]
+    - [support, redirection]
+- pokemon: Dragapult
+  item: [Focus Sash, Life Orb, Colbur Berry]
+  ability: Clear Body
+  spread: |
+    EVs: 4 HP / 252 Atk / 252 Spe
+    Jolly Nature
+  moves:
+    - Phantom Force
+    - Dragon Darts
+    - [Dragon Dance, Fly]
+    - Protect
+  roles:
+    - [offense]
+    - [dynamax]
+- pokemon: Dragapult
+  item: Weakness Policy
+  ability: Clear Body
+  spread: |
+    EVs: 4 HP / 252 Atk / 252 Spe
+    Jolly Nature
+  moves:
+    - Phantom Force
+    - Dragon Darts
+    - [Dragon Dance, Fly]
+    - Protect
+  roles:
+    - [offense, policy, dark]
+    - [offense, policy, dragon]
+    - [offense, policy, fairy]
+    - [offense, policy, ghost]
+    - [offense, policy, ice]
+    - [dynamax]
 - pokemon: Dusclops
   item: Eviolite
   ability: Frisk
@@ -194,862 +259,6 @@
     - [support, policy, ghost]
     - [support, status]
     - [speed, trickroom]
-- pokemon: Indeedee-F
-  item: Psychic Seed
-  ability: Psychic Surge
-  spread: |
-    EVs: 252 HP / 252 Def / 4 SpA
-    Bold Nature
-    IVs: 0 Atk
-  moves:
-    - Follow Me
-    - Helping Hand
-    - Expanding Force
-    - Mystical Fire
-  roles:
-    - [support, redirection]
-    - [support, atkdrop]
-- pokemon: Glastrier
-  item: Weakness Policy
-  ability: Chilling Neigh
-  spread: |
-    EVs: 252 HP / 252 Atk / 4 SpD
-    Brave Nature
-    IVs: 0 Spe
-  moves:
-    - Icicle Crash
-    - [Close Combat, High Horsepower, Heavy Slam]
-    - [Close Combat, High Horsepower, Heavy Slam]
-    - Protect
-  roles:
-    - [offense, policy, fighting]
-    - [offense, policy, fire]
-    - [offense, policy, rock]
-    - [offense, policy, steel]
-    - [offense, trickroom]
-    - [dynamax]
-- pokemon: Glastrier
-  item: [Life Orb, Expert Belt, Lum Berry]
-  ability: Chilling Neigh
-  spread: |
-    EVs: 252 HP / 252 Atk / 4 SpD
-    Brave Nature
-    IVs: 0 Spe
-  moves:
-    - Icicle Crash
-    - [Close Combat, High Horsepower, Heavy Slam]
-    - [Close Combat, High Horsepower, Heavy Slam]
-    - Protect
-  roles:
-    - [offense, trickroom]
-    - [dynamax]
-- pokemon: Glastrier
-  item: Assault Vest
-  ability: Chilling Neigh
-  spread: |
-    EVs: 252 HP / 252 Atk / 4 SpD
-    Brave Nature
-    IVs: 0 Spe
-  moves:
-    - Icicle Crash
-    - Close Combat
-    - High Horsepower
-    - Heavy Slam
-  roles:
-    - [offense, trickroom]
-    - [dynamax]
-- pokemon: Urshifu
-  item: [Focus Sash, Black Glasses, Life Orb, Expert Belt]
-  ability: Unseen Fist
-  spread: |
-    Gigantamax: Yes
-    EVs: 252 Atk / 4 SpD / 252 Spe
-    Jolly Nature
-  moves:
-    - Wicked Blow
-    - Close Combat
-    - [Ice Punch, Fire Punch, Thunder Punch, Poison Jab, Sucker Punch, Sucker Punch, Detect, Detect, Detect]
-    - [Ice Punch, Fire Punch, Thunder Punch, Poison Jab, Sucker Punch, Sucker Punch, Detect, Detect, Detect]
-  roles:
-    - [offense]
-    - [dynamax]
-- pokemon: Urshifu
-  item: [Choice Band, Choice Band, Choice Scarf]
-  ability: Unseen Fist
-  spread: |
-    Gigantamax: Yes
-    EVs: 252 Atk / 4 SpD / 252 Spe
-    Jolly Nature
-  moves:
-    - Wicked Blow
-    - Close Combat
-    - [Ice Punch, Fire Punch, Thunder Punch, Poison Jab, Sucker Punch, Sucker Punch]
-    - [Ice Punch, Fire Punch, Thunder Punch, Poison Jab, Sucker Punch, Sucker Punch]
-  roles:
-    - [offense]
-- pokemon: Metagross
-  item: Weakness Policy
-  ability: Clear Body
-  spread:
-    - |
-      EVs: 252 HP / 252 Atk / 4 SpD
-      Adamant Nature
-    - |
-      EVs: 220 HP / 116 Atk / 172 Spe
-      Adamant Nature
-  moves:
-    - Ice Punch
-    - [Iron Head, Meteor Mash]
-    - [Stomping Tantrum, Earthquake]
-    - Zen Headbutt
-    - Protect
-  roles:
-    - [offense, policy, dark]
-    - [offense, policy, fire]
-    - [offense, policy, ghost]
-    - [offense, policy, ground]
-    - [dynamax]
-- pokemon: Metagross
-  item: Weakness Policy
-  ability: Clear Body
-  spread: |
-    EVs: 252 HP / 252 Atk / 4 SpD
-    Brave Nature
-    IVs: 0 Spe
-  moves:
-    - Ice Punch
-    - [Iron Head, Meteor Mash]
-    - [Stomping Tantrum, Earthquake]
-    - Zen Headbutt
-    - Protect
-  roles:
-    - [offense, policy, dark]
-    - [offense, policy, fire]
-    - [offense, policy, ghost]
-    - [offense, policy, ground]
-    - [offense, trickroom]
-    - [dynamax]
-- pokemon: Metagross
-  item: Assault Vest
-  ability: Clear Body
-  spread:
-    - |
-      EVs: 252 HP / 252 Atk / 4 SpD
-      Adamant Nature
-    - |
-      EVs: 220 HP / 116 Atk / 172 Spe
-      Adamant Nature
-  moves:
-    - Ice Punch
-    - [Iron Head, Meteor Mash]
-    - [Stomping Tantrum, Earthquake]
-    - Zen Headbutt
-  roles:
-    - [dynamax]
-- pokemon: Metagross
-  item: Assault Vest
-  ability: Clear Body
-  spread: |
-    EVs: 252 HP / 252 Atk / 4 SpD
-    Brave Nature
-    IVs: 0 Spe
-  moves:
-    - Ice Punch
-    - [Iron Head, Meteor Mash]
-    - [Stomping Tantrum, Earthquake]
-    - Zen Headbutt
-  roles:
-    - [offense, trickroom]
-    - [dynamax]
-- pokemon: Metagross
-  item: [Life Orb, Lum Berry]
-  ability: Clear Body
-  spread:
-    - |
-      EVs: 252 HP / 252 Atk / 4 SpD
-      Adamant Nature
-    - |
-      EVs: 220 HP / 116 Atk / 172 Spe
-      Adamant Nature
-  moves:
-    - Ice Punch
-    - [Iron Head, Meteor Mash]
-    - [Stomping Tantrum, Earthquake]
-    - Zen Headbutt
-    - Protect
-  roles:
-    - [offense]
-    - [dynamax]
-- pokemon: Metagross
-  item: [Life Orb, Lum Berry]
-  ability: Clear Body
-  spread: |
-    EVs: 252 HP / 252 Atk / 4 SpD
-    Brave Nature
-    IVs: 0 Spe
-  moves:
-    - Ice Punch
-    - [Iron Head, Meteor Mash]
-    - [Stomping Tantrum, Earthquake]
-    - Zen Headbutt
-    - Protect
-  roles:
-    - [offense, trickroom]
-    - [dynamax]
-- pokemon: Kartana
-  item: Assault Vest
-  ability: Beast Boost
-  spread: |
-    EVs: 252 Atk / 4 SpD / 252 Spe
-    Jolly Nature
-  moves:
-    - Leaf Blade
-    - Sacred Sword
-    - Smart Strike
-    - Aerial Ace
-  roles:
-    - [offense]
-    - [dynamax]
-- pokemon: Kartana
-  item: [Focus Sash, Life Orb, Expert Belt]
-  ability: Beast Boost
-  spread: |
-    EVs: 252 Atk / 4 SpD / 252 Spe
-    Jolly Nature
-  moves:
-    - Leaf Blade
-    - Sacred Sword
-    - Smart Strike
-    - Aerial Ace
-    - Swords Dance
-    - Detect
-  roles:
-    - [offense]
-    - [dynamax]
-- pokemon: Moltres-Galar
-  item: [Weakness Policy, Life Orb]
-  ability: Berserk
-  spread: |
-    EVs: 212 HP / 4 Def / 156 SpA / 4 SpD / 132 Spe
-    Modest Nature
-    IVs: 0 Atk
-  moves:
-    - Fiery Wrath
-    - [Hurricane, Air Slash]
-    - Nasty Plot
-    - Protect
-  roles:
-    - [offense]
-    - [dynamax]
-- pokemon: Rillaboom
-  item: Miracle Seed
-  ability: Grassy Surge
-  spread: |
-    Gigantamax: Yes
-    EVs: 180 HP / 252 Atk / 4 Def / 4 SpD / 68 Spe
-    Adamant Nature
-  moves:
-    - Grassy Glide
-    - [High Horsepower, Fake Out, Wood Hammer, U-Turn, Knock Off, Protect]
-    - [High Horsepower, Fake Out, Wood Hammer, U-Turn, Knock Off, Protect]
-    - [High Horsepower, Fake Out, Wood Hammer, U-Turn, Knock Off, Protect]
-  roles:
-    - [offense]
-    - [dynamax]
-- pokemon: Rillaboom
-  item: Assault Vest
-  ability: Grassy Surge
-  spread: |
-    Gigantamax: Yes
-    EVs: 180 HP / 252 Atk / 4 Def / 4 SpD / 68 Spe
-    Adamant Nature
-  moves:
-    - Grassy Glide
-    - [High Horsepower, Fake Out, Wood Hammer, U-Turn, Knock Off]
-    - [High Horsepower, Fake Out, Wood Hammer, U-Turn, Knock Off]
-    - [High Horsepower, Fake Out, Wood Hammer, U-Turn, Knock Off]
-  roles:
-    - [offense]
-    - [dynamax]
-- pokemon: Rillaboom
-  item: Choice Band
-  ability: Grassy Surge
-  spread: |
-    Gigantamax: Yes
-    EVs: 180 HP / 252 Atk / 4 Def / 4 SpD / 68 Spe
-    Adamant Nature
-  moves:
-    - Grassy Glide
-    - [High Horsepower, Wood Hammer, U-Turn, Knock Off]
-    - [High Horsepower, Wood Hammer, U-Turn, Knock Off]
-    - [High Horsepower, Wood Hammer, U-Turn, Knock Off]
-  roles:
-    - [offense]
-    - [dynamax]
-- pokemon: Whimsicott
-  item: [Focus Sash, Coba Berry]
-  ability: Prankster
-  spread: |
-    EVs: 4 HP / 252 SpA / 252 Spe
-    Timid Nature
-    IVs: 0 Atk
-  moves:
-    - Tailwind
-    - [Giga Drain, Moonblast]
-    - [Taunt, Protect, Helping Hand, Fake Tears, Tickle]
-    - [Taunt, Protect, Helping Hand, Fake Tears, Tickle]
-  roles:
-    - [speed, tailwind]
-    - [support, atkdrop]
-    - [support, defdrop]
-- pokemon: Cresselia
-  item: [Colbur Berry, Sitrus Berry, Mental Herb]
-  ability: Levitate
-  spread: |
-    EVs: 252 HP / 252 Def / 4 SpD
-    Bold Nature
-    IVs: 0 Atk
-  moves:
-    - Icy Wind
-    - [Helping Hand, Ally Switch, Psychic, Ice Beam, Trick Room]
-    - [Helping Hand, Ally Switch, Psychic, Ice Beam, Trick Room]
-    - [Helping Hand, Ally Switch, Psychic, Ice Beam, Trick Room]
-  roles:
-    - [speed, statdrop]
-    - [support, atkup]
-    - [support, redirection]
-- pokemon: Cresselia
-  item: [Colbur Berry, Sitrus Berry, Mental Herb]
-  ability: Levitate
-  spread: |
-    EVs: 252 HP / 236 Def / 20 SpD
-    Relaxed Nature
-    IVs: 0 Atk, 0 Spe
-  moves:
-    - Trick Room
-    - [Helping Hand, Ally Switch, Psychic, Ice Beam]
-    - [Helping Hand, Ally Switch, Psychic, Ice Beam]
-    - [Helping Hand, Ally Switch, Psychic, Ice Beam]
-  roles:
-    - [speed, trickroom]
-    - [suport, atkup]
-    - [support, redirection]
-- pokemon: Rotom-Heat
-  item: [Sitrus Berry, Safety Goggles]
-  ability: Levitate
-  spread: |
-    EVs: 244 HP / 12 Def / 116 SpA / 4 SpD / 132 Spe
-    Modest Nature
-    IVs: 0 Atk
-  moves:
-    - Overheat
-    - Thunderbolt
-    - [Nasty Plot, Will-O-Wisp, Ally Switch]
-    - Protect
-  roles:
-    - [offense]
-    - [dynamax]
-- pokemon: Thundurus
-  item: [Life Orb, Expert Belt]
-  ability: Defiant
-  spread: |
-    EVs: 4 HP / 252 Atk / 252 Spe
-    Jolly Nature
-  moves:
-    - Fly
-    - Wild Charge
-    - Protect
-    - Superpower
-  roles:
-    - [support, status]
-    - [speed, statdrop]
-- pokemon: Thundurus
-  item: [Focus Sash, Mental Herb]
-  ability: Prankster
-  spread: |
-    EVs: 4 HP / 252 SpA / 252 Spe
-    Timid Nature
-  moves:
-    - Thunder Wave
-    - Eerie Impulse
-    - [Protect, Taunt, Electroweb, Leer]
-    - [Thunderbolt, Electroweb]
-  roles:
-    - [support, status]
-    - [speed, statdrop]
-    - [support, atkdrop]
-    - [support, defdrop]
-- pokemon: Dragapult
-  item: [Focus Sash, Life Orb, Colbur Berry]
-  ability: Clear Body
-  spread: |
-    EVs: 4 HP / 252 Atk / 252 Spe
-    Jolly Nature
-  moves:
-    - Phantom Force
-    - Dragon Darts
-    - [Dragon Dance, Fly]
-    - Protect
-  roles:
-    - [offense]
-    - [dynamax]
-- pokemon: Dragapult
-  item: Weakness Policy
-  ability: Clear Body
-  spread: |
-    EVs: 4 HP / 252 Atk / 252 Spe
-    Jolly Nature
-  moves:
-    - Phantom Force
-    - Dragon Darts
-    - [Dragon Dance, Fly]
-    - Protect
-  roles:
-    - [offense, policy, dark]
-    - [offense, policy, dragon]
-    - [offense, policy, fairy]
-    - [offense, policy, ghost]
-    - [offense, policy, ice]
-    - [dynamax]
-- pokemon: Amoonguss
-  item: Coba Berry
-  ability: Regenerator
-  spread: |
-    EVs: 252 HP / 156 Def / 100 SpD
-    Relaxed Nature
-    IVs: 0 Spe
-  moves:
-    - Spore
-    - Rage Powder
-    - [Protect, Sludge Bomb, Clear Smog]
-    - [Protect, Sludge Bomb, Clear Smog]
-  roles:
-    - [support, redirection]
-    - [support, status]
-- pokemon: Tornadus
-  item: [Focus Sash, Wacan Berry, Mental Herb]
-  ability: Prankster
-  spread: |
-    EVs: 4 HP / 252 SpA / 252 Spe
-    Timid Nature
-    IVs: 0 Atk
-  moves:
-    - Tailwind
-    - Taunt
-    - [Air Slash, Hurricane]
-    - Protect
-  roles:
-    - [speed, tailwind]
-    - [support, taunt]
-- pokemon: Tornadus
-  item: [Focus Sash, Wacan Berry, Mental Herb]
-  ability: Prankster
-  spread: |
-    EVs: 4 HP / 252 SpA / 252 Spe
-    Timid Nature
-    IVs: 0 Atk
-  moves:
-    - Tailwind
-    - Taunt
-    - [Air Slash, Hurricane]
-    - Brutal Swing
-  roles:
-    - [speed, tailwind]
-    - [support, taunt]
-    - [support, policy, dark]
-- pokemon: Mamoswine
-  item: [Focus Sash, Life Orb]
-  ability: Oblivious
-  spread:
-    - |
-      EVs: 4 HP / 252 Atk / 252 Spe
-      Adamant Nature
-    - |
-      EVs: 4 HP / 252 Atk / 252 Spe
-      Jolly Nature
-  moves:
-    - Ice Shard
-    - Protect
-    - [Icicle Crash, Icicle Spear]
-    - High Horsepower
-  roles:
-    - [offense]
-    - [dynamax]
-- pokemon: Tyranitar
-  item: [Weakness Policy, Chople Berry, Focus Sash]
-  ability: Sand Stream
-  spread:
-    - |
-      EVs: 4 HP / 252 Atk / 252 Spe
-      Jolly Nature
-    - |
-      EVs: 252 HP / 252 Atk / 4 SpD
-      Adamant Nature
-  moves:
-    - Protect
-    - Rock Slide
-    - Lash Out
-    - Superpower
-    - High Horsepower
-  roles:
-    - [offense]
-    - [dynamax]
-    - [speed, weather, sand]
-- pokemon: Stakataka
-  item: [Shuca Berry, Life Orb]
-  ability: Beast Boost
-  spread:
-    - |
-      EVs: 252 HP / 252 Atk / 4 SpD
-      Lonely Nature
-      IVs: 17 Def / 0 Spe
-    - |
-      EVs: 252 HP / 252 Atk / 4 SpD
-      Brave Nature
-      IVs: 0 Spe
-  moves:
-    - Trick Room
-    - Gyro Ball
-    - [Body Press, High Horsepower, Rock Slide, Protect]
-    - [Body Press, High Horsepower, Rock Slide, Protect]
-  roles:
-    - [offense, trickroom]
-    - [support, trickroom]
-    - [dynamax]
-- pokemon: Stakataka
-  item: Weakness Policy
-  ability: Beast Boost
-  spread:
-    - |
-      EVs: 252 HP / 252 Atk / 4 SpD
-      Lonely Nature
-      IVs: 17 Def / 0 Spe
-    - |
-      EVs: 252 HP / 252 Atk / 4 SpD
-      Brave Nature
-      IVs: 0 Spe
-  moves:
-    - Trick Room
-    - Gyro Ball
-    - [Body Press, High Horsepower, Rock Slide, Protect]
-    - [Body Press, High Horsepower, Rock Slide, Protect]
-  roles:
-    - [offense, policy, fighting]
-    - [offense, policy, water]
-    - [offense, policy, ground]
-    - [offense, trickroom]
-    - [support, trickroom]
-    - [dynamax]
-- pokemon: Celesteela
-  item: Leftovers
-  ability: Beast Boost
-  spread: |
-    EVs: 252 HP / 252 Def / 4 SpA
-    Bold Nature
-    IVs: 0 Atk
-  moves:
-    - Leech Seed
-    - Protect
-    - [Flash Cannon, Air Slash, Substitute]
-    - [Flash Cannon, Air Slash, Substitute]
-  roles:
-    - [offense]
-- pokemon: Celesteela
-  item: Life Orb # TODO: Add Weakness Policy Celesteela once a proccer gets added to the database
-  ability: Beast Boost
-  spread: |
-    EVs: 252 HP / 252 SpA / 4 SpD
-    Modest Nature
-    IVs: 0 Atk
-  moves:
-    - Protect
-    - Flash Cannon
-    - Flamethrower
-    - Air Slash
-  roles:
-    - [offense]
-    - [dynamax]
-- pokemon: Celesteela
-  item: Leftovers
-  ability: Beast Boost
-  spread: |
-    EVs: 252 HP / 180 Atk / 76 Def
-    Relaxed Nature
-  moves:
-    - Leech Seed
-    - [Protect, Substitute]
-    - Heavy Slam
-    - [Earthquake, Acrobatics, Fly, Substitute]
-  roles:
-    [offense]
-- pokemon: Nihilego
-  item: Power Herb
-  ability: Beast Boost
-  spread: |
-    EVs: 4 HP / 252 SpA / 252 Spe
-    Timid Nature
-    IVs: 0 Atk
-  moves:
-    - Meteor Beam
-    - Sludge Bomb
-    - Protect
-    - [Trick Room, Dazzling Gleam]
-  roles:
-    - [offense]
-    - [dynamax]
-- pokemon: Nihilego
-  item: [Life Orb, Focus Sash]
-  ability: Beast Boost
-  spread: |
-    EVs: 4 HP / 252 SpA / 252 Spe
-    Timid Nature
-    IVs: 0 Atk
-  moves:
-    - Power Gem
-    - Sludge Bomb
-    - Protect
-    - [Trick Room, Dazzling Gleam]
-  roles:
-    - [offense]
-    - [dynamax]
-- pokemon: Heatran
-  item: [Shuca Berry, Air Balloon, Life Orb, Weakness Policy]
-  ability: Flash Fire
-  spread: |
-    EVs: 252 HP / 252 Spa / 4 Def
-    Modest Nature
-    IVs: 0 Atk
-  moves:
-    - Protect
-    - Heat Wave
-    - Flash Cannon
-    - Earth Power
-  roles:
-    - [offense]
-    - [dynamax]
-- pokemon: Porygon2
-  item: Eviolite
-  ability: Download
-  spread: |
-    EVs: 244 HP / 44 Def / 148 SpA / 72 SpD
-    Quiet Nature
-  moves:
-    - Trick Room
-    - Recover
-    - [Ice Beam, Thunderbolt, Tri Attack, Ally Switch]
-    - [Ice Beam, Thunderbolt, Tri Attack, Ally Switch]
-  roles:
-    - [speed, trickroom]
-    - [support, redirection]
-- pokemon: Torkoal
-  item: [Charcoal, Sitrus Berry]
-  ability: Drought
-  spread: |
-    EVs: 252 HP / 252 SpA / 4 SpD
-    Quiet Nature
-    IVs: 0 Atk / 0 Spe
-  moves:
-    - Eruption
-    - [Heat Wave, Heat Wave, Burning Jealousy]
-    - [Protect, Protect, Yawn]
-    - [Earth Power, Body Press, Solar Beam, Yawn]
-  roles:
-    - [speed, weather, sun]
-- pokemon: Torkoal
-  item: [Choice Specs]
-  ability: Drought
-  spread: |
-    EVs: 252 HP / 252 SpA / 4 SpD
-    Quiet Nature
-    IVs: 0 Atk / 0 Spe
-  moves:
-    - Eruption
-    - Heat Wave
-    - [Earth Power, Burning Jealousy, Solar Beam]
-    - [Solar Beam, Burning Jealousy, Earth Power]
-  roles:
-    - [speed, weather, sun]
-    - [offense]
-- pokemon: Raichu
-  item: [Focus Sash, Air Balloon]
-  ability: Lightning Rod
-  spread: |
-    EVs: 4 HP / 252 SpA / 252 Spe
-    Timid Nature
-    IVs: 0 Atk
-  moves:
-    - Fake Out
-    - Volt Switch
-    - [Nuzzle, Nuzzle, Eerie Impulse, Eerie Impulse, Charm]
-    - [Electroweb, Thunderbolt, Detect]
-  roles:
-    - [support, status]
-    - [speed, statdrop]
-    - [support, atkdrop]
-- pokemon: Raichu
-  item: [Focus Sash, Air Balloon]
-  ability: Lightning Rod
-  spread: |
-    EVs: 4 HP / 252 Atk / 252 Spe
-    Jolly Nature
-  moves:
-    - Fake Out
-    - [Volt Switch, Detect]
-    - [Nuzzle, Nuzzle, Eerie Impulse, Eerie Impulse, Volt Switch, Charm]
-    - Volt Tackle
-  roles:
-    - [support, status]
-    - [speed, statdrop]
-    - [support, atkdrop]
-- pokemon: Raichu
-  item: [Assault Vest]
-  ability: Lightning Rod
-  spread: |
-    EVs: 252 HP / 4 SpA / 252 Spe
-    Timid Nature
-    IVs: 0 Atk
-  moves:
-    - Fake Out
-    - Volt Switch
-    - Thunderbolt
-    - [Electroweb, Electro Ball]
-  roles:
-    - [speed, statdrop]
-    - [support, status]
-- pokemon: Raichu
-  item: [Assault Vest]
-  ability: Lightning Rod
-  spread: |
-    EVs: 252 HP / 4 Atk / 252 Spe
-    Jolly Nature
-  moves:
-    - Fake Out
-    - Volt Tackle
-    - Nuzzle
-    - [Volt Switch, Play Rough]
-  roles:
-    - [support, status]
-    - [speed, statdrop]
-- pokemon: Raichu
-  item: [Assault Vest]
-  ability: Lightning Rod
-  spread: |
-    EVs: 252 HP / 4 Atk / 252 Spe
-    Jolly Nature
-  moves:
-    - Fake Out
-    - Volt Tackle
-    - Nuzzle
-    - Brick Break
-  roles:
-    - [support, status]
-    - [speed, statdrop]
-    - [support, policy, fighting]
-- pokemon: Raichu
-  item: [Assault Vest]
-  ability: Lightning Rod
-  spread: |
-    EVs: 252 HP / 4 Atk / 252 Spe
-    Jolly Nature
-  moves:
-    - Fake Out
-    - Volt Tackle
-    - Nuzzle
-    - Brutal Swing
-  roles:
-    - [support, status]
-    - [speed, statdrop]
-    - [support, policy, dark]
-- pokemon: Raichu
-  item: [Assault Vest]
-  ability: Lightning Rod
-  spread: |
-    EVs: 252 HP / 4 SpA / 252 Spe
-    Timid Nature
-    IVs: 0 Atk
-  moves:
-    - Fake Out
-    - Volt Switch
-    - [Thunderbolt, Electroweb]
-    - Brick Break
-  roles:
-    - [speed, statdrop]
-    - [support, policy, fighting]
-- pokemon: Raichu
-  item: [Assault Vest]
-  ability: Lightning Rod
-  spread: |
-    EVs: 252 HP / 4 SpA / 252 Spe
-    Timid Nature
-    IVs: 0 Atk
-  moves:
-    - Fake Out
-    - Volt Switch
-    - [Thunderbolt, Electroweb]
-    - Brutal Swing
-  roles:
-    - [speed, statdrop]
-    - [support, policy, dark]
-- pokemon: Raichu
-  item: [Focus Sash]
-  ability: Lightning Rod
-  spread: |
-    EVs: 252 HP / 4 SpA / 252 Spe
-    Timid Nature
-    IVs: 0 Atk
-  moves:
-    - Fake Out
-    - Volt Switch
-    - [Thunderbolt, Electroweb, Detect]
-    - Brick Break
-  roles:
-    - [speed, statdrop]
-    - [support, policy, fighting]
-- pokemon: Raichu
-  item: [Focus Sash]
-  ability: Lightning Rod
-  spread: |
-    EVs: 252 HP / 4 SpA / 252 Spe
-    Timid Nature
-    IVs: 0 Atk
-  moves:
-    - Fake Out
-    - Volt Switch
-    - [Thunderbolt, Electroweb, Detect]
-    - Brutal Swing
-  roles:
-    - [speed, statdrop]
-    - [support, policy, dark]
-- pokemon: Zapdos
-  item: [Life Orb, Sitrus Berry, Weakness Policy]
-  ability: Static
-  spread: |
-    EVs: 4 HP / 252 SpA / 252 Spe
-    Timid Nature
-    IVs: 0 Atk
-  moves:
-    - Thunderbolt
-    - [Heat Wave, Detect, Roost]
-    - Hurricane
-    - [Heat Wave, Detect, Roost]
-  roles:
-    - [offense]
-    - [dynamax]
-- pokemon: Zapdos
-  item: [Life Orb, Sitrus Berry, Weakness Policy]
-  ability: Static
-  spread: |
-    EVs: 188 HP / 4 Def / 116 SpA / 12 SpD / 118 Spe
-    Modest Nature
-    IVs: 0 Atk
-  moves:
-    - Thunderbolt
-    - [Heat Wave, Detect, Roost]
-    - Hurricane
-    - [Heat Wave, Detect, Roost]
-  roles:
-    - [offense]
-    - [dynamax]
 - pokemon: Entei
   item: [Assault Vest]
   ability: Inner Focus
@@ -1108,69 +317,191 @@
     - [offense]
     - [support, status]
     - [support, policy, ground]
-- pokemon: Dracovish
-  item: [Choice Scarf]
-  ability: Strong Jaw
-  spread:
-    - |
-      EVs: 4 HP / 252 Atk / 252 Spe
-      Adamant Nature
-    - |
-      EVs: 4 HP / 252 Atk / 252 Spe
-      Jolly Nature
+- pokemon: Glastrier
+  item: Weakness Policy
+  ability: Chilling Neigh
+  spread: |
+    EVs: 252 HP / 252 Atk / 4 SpD
+    Brave Nature
+    IVs: 0 Spe
   moves:
-    - Fishious Rend
-    - Psychic Fangs
-    - Crunch
-    - [Dragon Rush, Ice Fang, Rock Slide]
+    - Icicle Crash
+    - [Close Combat, High Horsepower, Heavy Slam]
+    - [Close Combat, High Horsepower, Heavy Slam]
+    - Protect
+  roles:
+    - [offense, policy, fighting]
+    - [offense, policy, fire]
+    - [offense, policy, rock]
+    - [offense, policy, steel]
+    - [offense, trickroom]
+    - [dynamax]
+- pokemon: Glastrier
+  item: [Life Orb, Expert Belt, Lum Berry]
+  ability: Chilling Neigh
+  spread: |
+    EVs: 252 HP / 252 Atk / 4 SpD
+    Brave Nature
+    IVs: 0 Spe
+  moves:
+    - Icicle Crash
+    - [Close Combat, High Horsepower, Heavy Slam]
+    - [Close Combat, High Horsepower, Heavy Slam]
+    - Protect
+  roles:
+    - [offense, trickroom]
+    - [dynamax]
+- pokemon: Glastrier
+  item: Assault Vest
+  ability: Chilling Neigh
+  spread: |
+    EVs: 252 HP / 252 Atk / 4 SpD
+    Brave Nature
+    IVs: 0 Spe
+  moves:
+    - Icicle Crash
+    - Close Combat
+    - High Horsepower
+    - Heavy Slam
+  roles:
+    - [offense, trickroom]
+    - [dynamax]
+- pokemon: Heatran
+  item: [Shuca Berry, Air Balloon, Life Orb, Weakness Policy]
+  ability: Flash Fire
+  spread: |
+    EVs: 252 HP / 252 Spa / 4 Def
+    Modest Nature
+    IVs: 0 Atk
+  moves:
+    - Protect
+    - Heat Wave
+    - Flash Cannon
+    - Earth Power
   roles:
     - [offense]
-- pokemon: Dracovish
-  item: [Choice Band]
-  ability: Strong Jaw
+    - [dynamax]
+- pokemon: Incineroar
+  item: [Aguav Berry, Sitrus Berry]
+  ability: Intimidate
   spread: |
-    EVs: 4 HP / 252 Atk / 252 Spe
+    EVs: 244 HP / 20 Atk / 84 Def / 148 SpD / 12 Spe
+    Careful Nature
+  moves:
+    - Fake Out
+    - Flare Blitz
+    - [Burning Jealousy, Will-O-Wisp]
+    - [Parting Shot, Snarl]
+  roles:
+    - [support, status]
+    - [support, atkdrop]
+    - [support, flinch]
+- pokemon: Incineroar
+  item: Assault Vest
+  ability: Intimidate
+  spread: |
+    EVs: 252 HP / 252 Atk / 4 SpD
+    Adamant Nature
+  moves:
+    - Fake Out
+    - Flare Blitz
+    - Darkest Lariat
+    - [Close Combat, U-turn]
+  roles:
+    - [support, flinch]
+    - [offense]
+- pokemon: Indeedee-F
+  item: Psychic Seed
+  ability: Psychic Surge
+  spread: |
+    EVs: 252 HP / 252 Def / 4 SpA
+    Bold Nature
+    IVs: 0 Atk
+  moves:
+    - Follow Me
+    - Helping Hand
+    - Expanding Force
+    - Mystical Fire
+  roles:
+    - [support, redirection]
+    - [support, atkdrop]
+- pokemon: Kartana
+  item: Assault Vest
+  ability: Beast Boost
+  spread: |
+    EVs: 252 Atk / 4 SpD / 252 Spe
     Jolly Nature
   moves:
-    - Fishious Rend
-    - Psychic Fangs
-    - Crunch
-    - [Dragon Rush, Ice Fang, Rock Slide]
+    - Leaf Blade
+    - Sacred Sword
+    - Smart Strike
+    - Aerial Ace
   roles:
     - [offense]
-- pokemon: Dracovish
-  item: Choice Band
-  ability: Sand Rush
-  spread:
-    - |
-      EVs: 4 HP / 252 Atk / 252 Spe
-      Adamant Nature
-    - |
-      EVs: 4 HP / 252 Atk / 252 Spe
-      Jolly Nature
-  moves:
-    - Fishious Rend
-    - Psychic Fangs
-    - [Dragon Rush, Iron Head, Rock Slide, Earthquake, Crunch, Ice Fang]
-    - [Dragon Rush, Iron Head, Rock Slide, Earthquake, Crunch, Ice Fang]
-  roles:
-    - [offense, weather, sand]
-- pokemon: Dracovish
-  item: Mystic Water
-  ability: Strong Jaw
+    - [dynamax]
+- pokemon: Kartana
+  item: [Focus Sash, Life Orb, Expert Belt]
+  ability: Beast Boost
   spread: |
-    EVs: 4 HP / 252 Atk / 252 Spe
+    EVs: 252 Atk / 4 SpD / 252 Spe
     Jolly Nature
   moves:
-    - Fishious Rend
-    - Psychic Fangs
-    - Protect
-    - [Dragon Rush, Ice Fang, Rock Slide, Crunch]
+    - Leaf Blade
+    - Sacred Sword
+    - Smart Strike
+    - Aerial Ace
+    - Swords Dance
+    - Detect
   roles:
     - [offense]
-- pokemon: Dracovish
-  item: Mystic Water
-  ability: Sand Rush
+    - [dynamax]
+- pokemon: Landorus-Therian
+  item: [Choice Scarf, Choice Scarf, Choice Band]
+  ability: Intimidate
+  spread: |
+    EVs: 252 Atk / 4 SpD / 252 Spe
+    Jolly Nature
+  moves:
+    - [Rock Slide, Stone Edge]
+    - Earthquake
+    - Superpower
+    - U-turn
+    - Fly
+  roles:
+    - [offense]
+- pokemon: Landorus-Therian
+  item: Assault Vest
+  ability: Intimidate
+  spread: |
+    EVs: 252 Atk / 4 SpD / 252 Spe
+    Jolly Nature
+  moves:
+    - [Rock Slide, Stone Edge]
+    - Earthquake
+    - Superpower
+    - U-turn
+    - Fly
+  roles:
+    - [offense]
+    - [dynamax]
+- pokemon: Landorus-Therian
+  item: Life Orb
+  ability: Intimidate
+  spread: |
+    EVs: 252 Atk / 4 SpD / 252 Spe
+    Jolly Nature
+  moves:
+    - [Rock Slide, Stone Edge]
+    - Earthquake
+    - Superpower
+    - Fly
+    - Protect
+  roles:
+    - [offense]
+    - [dynamax]
+- pokemon: Mamoswine
+  item: [Focus Sash, Life Orb]
+  ability: Oblivious
   spread:
     - |
       EVs: 4 HP / 252 Atk / 252 Spe
@@ -1179,12 +510,167 @@
       EVs: 4 HP / 252 Atk / 252 Spe
       Jolly Nature
   moves:
-    - Fishious Rend
-    - Psychic Fangs
+    - Ice Shard
     - Protect
-    - [Dragon Rush, Ice Fang, Rock Slide, Crunch, Earthquake, Iron Head]
+    - [Icicle Crash, Icicle Spear]
+    - High Horsepower
   roles:
-    - [offense, weather, sand]
+    - [offense]
+    - [dynamax]
+- pokemon: Metagross
+  item: Weakness Policy
+  ability: Clear Body
+  spread:
+    - |
+      EVs: 252 HP / 252 Atk / 4 SpD
+      Adamant Nature
+    - |
+      EVs: 220 HP / 116 Atk / 172 Spe
+      Adamant Nature
+  moves:
+    - Ice Punch
+    - [Iron Head, Meteor Mash]
+    - [Stomping Tantrum, Earthquake]
+    - Zen Headbutt
+    - Protect
+  roles:
+    - [offense, policy, dark]
+    - [offense, policy, fire]
+    - [offense, policy, ghost]
+    - [offense, policy, ground]
+    - [dynamax]
+- pokemon: Metagross
+  item: Weakness Policy
+  ability: Clear Body
+  spread: |
+    EVs: 252 HP / 252 Atk / 4 SpD
+    Brave Nature
+    IVs: 0 Spe
+  moves:
+    - Ice Punch
+    - [Iron Head, Meteor Mash]
+    - [Stomping Tantrum, Earthquake]
+    - Zen Headbutt
+    - Protect
+  roles:
+    - [offense, policy, dark]
+    - [offense, policy, fire]
+    - [offense, policy, ghost]
+    - [offense, policy, ground]
+    - [offense, trickroom]
+    - [dynamax]
+- pokemon: Metagross
+  item: Assault Vest
+  ability: Clear Body
+  spread:
+    - |
+      EVs: 252 HP / 252 Atk / 4 SpD
+      Adamant Nature
+    - |
+      EVs: 220 HP / 116 Atk / 172 Spe
+      Adamant Nature
+  moves:
+    - Ice Punch
+    - [Iron Head, Meteor Mash]
+    - [Stomping Tantrum, Earthquake]
+    - Zen Headbutt
+  roles:
+    - [dynamax]
+- pokemon: Metagross
+  item: Assault Vest
+  ability: Clear Body
+  spread: |
+    EVs: 252 HP / 252 Atk / 4 SpD
+    Brave Nature
+    IVs: 0 Spe
+  moves:
+    - Ice Punch
+    - [Iron Head, Meteor Mash]
+    - [Stomping Tantrum, Earthquake]
+    - Zen Headbutt
+  roles:
+    - [offense, trickroom]
+    - [dynamax]
+- pokemon: Metagross
+  item: [Life Orb, Lum Berry]
+  ability: Clear Body
+  spread:
+    - |
+      EVs: 252 HP / 252 Atk / 4 SpD
+      Adamant Nature
+    - |
+      EVs: 220 HP / 116 Atk / 172 Spe
+      Adamant Nature
+  moves:
+    - Ice Punch
+    - [Iron Head, Meteor Mash]
+    - [Stomping Tantrum, Earthquake]
+    - Zen Headbutt
+    - Protect
+  roles:
+    - [offense]
+    - [dynamax]
+- pokemon: Metagross
+  item: [Life Orb, Lum Berry]
+  ability: Clear Body
+  spread: |
+    EVs: 252 HP / 252 Atk / 4 SpD
+    Brave Nature
+    IVs: 0 Spe
+  moves:
+    - Ice Punch
+    - [Iron Head, Meteor Mash]
+    - [Stomping Tantrum, Earthquake]
+    - Zen Headbutt
+    - Protect
+  roles:
+    - [offense, trickroom]
+    - [dynamax]
+- pokemon: Moltres-Galar
+  item: [Weakness Policy, Life Orb]
+  ability: Berserk
+  spread: |
+    EVs: 212 HP / 4 Def / 156 SpA / 4 SpD / 132 Spe
+    Modest Nature
+    IVs: 0 Atk
+  moves:
+    - Fiery Wrath
+    - [Hurricane, Air Slash]
+    - Nasty Plot
+    - Protect
+  roles:
+    - [offense]
+    - [dynamax]
+- pokemon: Nihilego
+  item: Power Herb
+  ability: Beast Boost
+  spread: |
+    EVs: 4 HP / 252 SpA / 252 Spe
+    Timid Nature
+    IVs: 0 Atk
+  moves:
+    - Meteor Beam
+    - Sludge Bomb
+    - Protect
+    - [Trick Room, Dazzling Gleam]
+  roles:
+    - [offense]
+    - [dynamax]
+- pokemon: Nihilego
+  item: [Life Orb, Focus Sash]
+  ability: Beast Boost
+  spread: |
+    EVs: 4 HP / 252 SpA / 252 Spe
+    Timid Nature
+    IVs: 0 Atk
+  moves:
+    - Power Gem
+    - Sludge Bomb
+    - Protect
+    - [Trick Room, Dazzling Gleam]
+  roles:
+    - [offense]
+    - [dynamax]
 - pokemon: Porygon2
   item: Eviolite
   ability: Download
@@ -1199,20 +685,503 @@
   roles:
     - [speed, trickroom]
     - [support, redirection]
-- pokemon: Clefairy
-  item: Eviolite
-  ability: Friend Guard
+- pokemon: Raichu
+  item: [Focus Sash, Air Balloon]
+  ability: Lightning Rod
   spread: |
-    EVs: 252 HP / 252 Def / 4 SpD
-    Bold Nature
+    EVs: 4 HP / 252 SpA / 252 Spe
+    Timid Nature
     IVs: 0 Atk
   moves:
-    - Follow Me
-    - Helping Hand
-    - Protect
-    - [Heal Pulse, Icy Wind, Moonblast, Sing, Life Dew]
+    - Fake Out
+    - Volt Switch
+    - [Nuzzle, Nuzzle, Eerie Impulse, Eerie Impulse, Charm]
+    - [Electroweb, Thunderbolt, Detect]
   roles:
-    - [support, redirection]
-    - [support, atkup]
+    - [support, status]
+    - [speed, statdrop]
+    - [support, atkdrop]
+- pokemon: Raichu
+  item: [Focus Sash, Air Balloon]
+  ability: Lightning Rod
+  spread: |
+    EVs: 4 HP / 252 Atk / 252 Spe
+    Jolly Nature
+  moves:
+    - Fake Out
+    - [Volt Switch, Detect]
+    - [Nuzzle, Nuzzle, Eerie Impulse, Eerie Impulse, Volt Switch, Charm]
+    - Volt Tackle
+  roles:
+    - [support, status]
+    - [speed, statdrop]
+    - [support, atkdrop]
+- pokemon: Raichu
+  item: Assault Vest
+  ability: Lightning Rod
+  spread: |
+    EVs: 252 HP / 4 SpA / 252 Spe
+    Timid Nature
+    IVs: 0 Atk
+  moves:
+    - Fake Out
+    - Volt Switch
+    - Thunderbolt
+    - [Electroweb, Electro Ball]
+  roles:
     - [speed, statdrop]
     - [support, status]
+- pokemon: Raichu
+  item: Assault Vest
+  ability: Lightning Rod
+  spread: |
+    EVs: 252 HP / 4 Atk / 252 Spe
+    Jolly Nature
+  moves:
+    - Fake Out
+    - Volt Tackle
+    - Nuzzle
+    - [Volt Switch, Play Rough]
+  roles:
+    - [support, status]
+    - [speed, statdrop]
+- pokemon: Raichu
+  item: Assault Vest
+  ability: Lightning Rod
+  spread: |
+    EVs: 252 HP / 4 Atk / 252 Spe
+    Jolly Nature
+  moves:
+    - Fake Out
+    - Volt Tackle
+    - Nuzzle
+    - Brick Break
+  roles:
+    - [support, status]
+    - [speed, statdrop]
+    - [support, policy, fighting]
+- pokemon: Raichu
+  item: Assault Vest
+  ability: Lightning Rod
+  spread: |
+    EVs: 252 HP / 4 Atk / 252 Spe
+    Jolly Nature
+  moves:
+    - Fake Out
+    - Volt Tackle
+    - Nuzzle
+    - Brutal Swing
+  roles:
+    - [support, status]
+    - [speed, statdrop]
+    - [support, policy, dark]
+- pokemon: Raichu
+  item: Assault Vest
+  ability: Lightning Rod
+  spread: |
+    EVs: 252 HP / 4 SpA / 252 Spe
+    Timid Nature
+    IVs: 0 Atk
+  moves:
+    - Fake Out
+    - Volt Switch
+    - [Thunderbolt, Electroweb]
+    - Brick Break
+  roles:
+    - [speed, statdrop]
+    - [support, policy, fighting]
+- pokemon: Raichu
+  item: Assault Vest
+  ability: Lightning Rod
+  spread: |
+    EVs: 252 HP / 4 SpA / 252 Spe
+    Timid Nature
+    IVs: 0 Atk
+  moves:
+    - Fake Out
+    - Volt Switch
+    - [Thunderbolt, Electroweb]
+    - Brutal Swing
+  roles:
+    - [speed, statdrop]
+    - [support, policy, dark]
+- pokemon: Raichu
+  item: Focus Sash
+  ability: Lightning Rod
+  spread: |
+    EVs: 252 HP / 4 SpA / 252 Spe
+    Timid Nature
+    IVs: 0 Atk
+  moves:
+    - Fake Out
+    - Volt Switch
+    - [Thunderbolt, Electroweb, Detect]
+    - Brick Break
+  roles:
+    - [speed, statdrop]
+    - [support, policy, fighting]
+- pokemon: Raichu
+  item: Focus Sash
+  ability: Lightning Rod
+  spread: |
+    EVs: 252 HP / 4 SpA / 252 Spe
+    Timid Nature
+    IVs: 0 Atk
+  moves:
+    - Fake Out
+    - Volt Switch
+    - [Thunderbolt, Electroweb, Detect]
+    - Brutal Swing
+  roles:
+    - [speed, statdrop]
+    - [support, policy, dark]
+- pokemon: Regieleki
+  item: Light Clay
+  ability: Transistor
+  spread: |
+    EVs: 236 HP / 50 Def / 124 SpA / 12 SpD / 76 Spe
+    Timid Nature
+    IVs: 0 Atk
+  moves:
+    - Electroweb
+    - Volt Switch
+    - Light Screen
+    - Reflect
+  roles:
+    - [support, screens]
+    - [speed, statdrop]
+- pokemon: Regieleki
+  item: [Choice Specs, Magnet, Life Orb]
+  ability: Transistor
+  spread: |
+    EVs: 252 SpA / 4 SpD / 252 Spe
+    Modest Nature
+    IVs: 0 Atk
+  moves:
+    - Thunderbolt
+    - Volt Switch
+    - Electroweb
+    - [Rising Voltage, Thunder, Thunder Cage, Electro Ball]
+  roles:
+    - [offense]
+    - [speed, statdrop]
+- pokemon: Rillaboom
+  item: Miracle Seed
+  ability: Grassy Surge
+  spread: |
+    Gigantamax: Yes
+    EVs: 180 HP / 252 Atk / 4 Def / 4 SpD / 68 Spe
+    Adamant Nature
+  moves:
+    - Grassy Glide
+    - [High Horsepower, Fake Out, Wood Hammer, U-Turn, Knock Off, Protect]
+    - [High Horsepower, Fake Out, Wood Hammer, U-Turn, Knock Off, Protect]
+    - [High Horsepower, Fake Out, Wood Hammer, U-Turn, Knock Off, Protect]
+  roles:
+    - [offense]
+    - [dynamax]
+- pokemon: Rillaboom
+  item: Assault Vest
+  ability: Grassy Surge
+  spread: |
+    Gigantamax: Yes
+    EVs: 180 HP / 252 Atk / 4 Def / 4 SpD / 68 Spe
+    Adamant Nature
+  moves:
+    - Grassy Glide
+    - [High Horsepower, Fake Out, Wood Hammer, U-Turn, Knock Off]
+    - [High Horsepower, Fake Out, Wood Hammer, U-Turn, Knock Off]
+    - [High Horsepower, Fake Out, Wood Hammer, U-Turn, Knock Off]
+  roles:
+    - [offense]
+    - [dynamax]
+- pokemon: Rillaboom
+  item: Choice Band
+  ability: Grassy Surge
+  spread: |
+    Gigantamax: Yes
+    EVs: 180 HP / 252 Atk / 4 Def / 4 SpD / 68 Spe
+    Adamant Nature
+  moves:
+    - Grassy Glide
+    - [High Horsepower, Wood Hammer, U-Turn, Knock Off]
+    - [High Horsepower, Wood Hammer, U-Turn, Knock Off]
+    - [High Horsepower, Wood Hammer, U-Turn, Knock Off]
+  roles:
+    - [offense]
+    - [dynamax]
+- pokemon: Rotom-Heat
+  item: [Sitrus Berry, Safety Goggles]
+  ability: Levitate
+  spread: |
+    EVs: 244 HP / 12 Def / 116 SpA / 4 SpD / 132 Spe
+    Modest Nature
+    IVs: 0 Atk
+  moves:
+    - Overheat
+    - Thunderbolt
+    - [Nasty Plot, Will-O-Wisp, Ally Switch]
+    - Protect
+  roles:
+    - [offense]
+    - [dynamax]
+- pokemon: Stakataka
+  item: [Shuca Berry, Life Orb]
+  ability: Beast Boost
+  spread:
+    - |
+      EVs: 252 HP / 252 Atk / 4 SpD
+      Lonely Nature
+      IVs: 17 Def / 0 Spe
+    - |
+      EVs: 252 HP / 252 Atk / 4 SpD
+      Brave Nature
+      IVs: 0 Spe
+  moves:
+    - Trick Room
+    - Gyro Ball
+    - [Body Press, High Horsepower, Rock Slide, Protect]
+    - [Body Press, High Horsepower, Rock Slide, Protect]
+  roles:
+    - [offense, trickroom]
+    - [support, trickroom]
+    - [dynamax]
+- pokemon: Stakataka
+  item: Weakness Policy
+  ability: Beast Boost
+  spread:
+    - |
+      EVs: 252 HP / 252 Atk / 4 SpD
+      Lonely Nature
+      IVs: 17 Def / 0 Spe
+    - |
+      EVs: 252 HP / 252 Atk / 4 SpD
+      Brave Nature
+      IVs: 0 Spe
+  moves:
+    - Trick Room
+    - Gyro Ball
+    - [Body Press, High Horsepower, Rock Slide, Protect]
+    - [Body Press, High Horsepower, Rock Slide, Protect]
+  roles:
+    - [offense, policy, fighting]
+    - [offense, policy, water]
+    - [offense, policy, ground]
+    - [offense, trickroom]
+    - [support, trickroom]
+    - [dynamax]
+- pokemon: Tapu Fini
+  item: Choice Specs
+  ability: Misty Surge
+  spread: |
+    EVs: 236 HP / 4 Def / 204 SpA / 12 SpD / 52 Spe
+    Modest Nature
+    IVs: 0 Atk
+  moves:
+    - Moonblast
+    - Dazzling Gleam
+    - Muddy Water
+    - Scald
+    - Ice Beam
+  roles:
+    - [offense]
+- pokemon: Tapu Fini
+  ability: Misty Surge
+  item: [Wiki Berry, Aguav Berry, Iapapa Berry, Sitrus Berry, Leftovers]
+  spread: |
+    EVs: 236 HP / 4 Def / 204 SpA / 12 SpD / 52 Spe
+    Modest Nature
+    IVs: 0 Atk
+  moves:
+    - [Moonblast, Dazzling Gleam]
+    - [Muddy Water, Scald]
+    - Calm Mind
+    - Protect
+  roles:
+    - [offense]
+    - [dynamax]
+- pokemon: Thundurus
+  item: [Life Orb, Expert Belt]
+  ability: Defiant
+  spread: |
+    EVs: 4 HP / 252 Atk / 252 Spe
+    Jolly Nature
+  moves:
+    - Fly
+    - Wild Charge
+    - Protect
+    - Superpower
+  roles:
+    - [support, status]
+    - [speed, statdrop]
+- pokemon: Thundurus
+  item: [Focus Sash, Mental Herb]
+  ability: Prankster
+  spread: |
+    EVs: 4 HP / 252 SpA / 252 Spe
+    Timid Nature
+  moves:
+    - Thunder Wave
+    - Eerie Impulse
+    - [Protect, Taunt, Electroweb, Leer]
+    - [Thunderbolt, Electroweb]
+  roles:
+    - [support, status]
+    - [speed, statdrop]
+    - [support, atkdrop]
+    - [support, defdrop]
+- pokemon: Torkoal
+  item: [Charcoal, Sitrus Berry]
+  ability: Drought
+  spread: |
+    EVs: 252 HP / 252 SpA / 4 SpD
+    Quiet Nature
+    IVs: 0 Atk / 0 Spe
+  moves:
+    - Eruption
+    - [Heat Wave, Heat Wave, Burning Jealousy]
+    - [Protect, Protect, Yawn]
+    - [Earth Power, Body Press, Solar Beam, Yawn]
+  roles:
+    - [speed, weather, sun]
+- pokemon: Torkoal
+  item: [Choice Specs]
+  ability: Drought
+  spread: |
+    EVs: 252 HP / 252 SpA / 4 SpD
+    Quiet Nature
+    IVs: 0 Atk / 0 Spe
+  moves:
+    - Eruption
+    - Heat Wave
+    - [Earth Power, Burning Jealousy, Solar Beam]
+    - [Solar Beam, Burning Jealousy, Earth Power]
+  roles:
+    - [speed, weather, sun]
+    - [offense]
+- pokemon: Tornadus
+  item: [Focus Sash, Wacan Berry, Mental Herb]
+  ability: Prankster
+  spread: |
+    EVs: 4 HP / 252 SpA / 252 Spe
+    Timid Nature
+    IVs: 0 Atk
+  moves:
+    - Tailwind
+    - Taunt
+    - [Air Slash, Hurricane]
+    - Protect
+  roles:
+    - [speed, tailwind]
+    - [support, taunt]
+- pokemon: Tornadus
+  item: [Focus Sash, Wacan Berry, Mental Herb]
+  ability: Prankster
+  spread: |
+    EVs: 4 HP / 252 SpA / 252 Spe
+    Timid Nature
+    IVs: 0 Atk
+  moves:
+    - Tailwind
+    - Taunt
+    - [Air Slash, Hurricane]
+    - Brutal Swing
+  roles:
+    - [speed, tailwind]
+    - [support, taunt]
+    - [support, policy, dark]
+- pokemon: Tyranitar
+  item: [Weakness Policy, Chople Berry, Focus Sash]
+  ability: Sand Stream
+  spread:
+    - |
+      EVs: 4 HP / 252 Atk / 252 Spe
+      Jolly Nature
+    - |
+      EVs: 252 HP / 252 Atk / 4 SpD
+      Adamant Nature
+  moves:
+    - Protect
+    - Rock Slide
+    - Lash Out
+    - Superpower
+    - High Horsepower
+  roles:
+    - [offense]
+    - [dynamax]
+    - [speed, weather, sand]
+- pokemon: Urshifu
+  item: [Focus Sash, Black Glasses, Life Orb, Expert Belt]
+  ability: Unseen Fist
+  spread: |
+    Gigantamax: Yes
+    EVs: 252 Atk / 4 SpD / 252 Spe
+    Jolly Nature
+  moves:
+    - Wicked Blow
+    - Close Combat
+    - [Ice Punch, Fire Punch, Thunder Punch, Poison Jab, Sucker Punch, Sucker Punch, Detect, Detect, Detect]
+    - [Ice Punch, Fire Punch, Thunder Punch, Poison Jab, Sucker Punch, Sucker Punch, Detect, Detect, Detect]
+  roles:
+    - [offense]
+    - [dynamax]
+- pokemon: Urshifu
+  item: [Choice Band, Choice Band, Choice Scarf]
+  ability: Unseen Fist
+  spread: |
+    Gigantamax: Yes
+    EVs: 252 Atk / 4 SpD / 252 Spe
+    Jolly Nature
+  moves:
+    - Wicked Blow
+    - Close Combat
+    - [Ice Punch, Fire Punch, Thunder Punch, Poison Jab, Sucker Punch, Sucker Punch]
+    - [Ice Punch, Fire Punch, Thunder Punch, Poison Jab, Sucker Punch, Sucker Punch]
+  roles:
+    - [offense]
+- pokemon: Whimsicott
+  item: [Focus Sash, Coba Berry]
+  ability: Prankster
+  spread: |
+    EVs: 4 HP / 252 SpA / 252 Spe
+    Timid Nature
+    IVs: 0 Atk
+  moves:
+    - Tailwind
+    - [Giga Drain, Moonblast]
+    - [Taunt, Protect, Helping Hand, Fake Tears, Tickle]
+    - [Taunt, Protect, Helping Hand, Fake Tears, Tickle]
+  roles:
+    - [speed, tailwind]
+    - [support, atkdrop]
+    - [support, defdrop]
+- pokemon: Zapdos
+  item: [Life Orb, Sitrus Berry, Weakness Policy]
+  ability: Static
+  spread: |
+    EVs: 4 HP / 252 SpA / 252 Spe
+    Timid Nature
+    IVs: 0 Atk
+  moves:
+    - Thunderbolt
+    - [Heat Wave, Detect, Roost]
+    - Hurricane
+    - [Heat Wave, Detect, Roost]
+  roles:
+    - [offense]
+    - [dynamax]
+- pokemon: Zapdos
+  item: [Life Orb, Sitrus Berry, Weakness Policy]
+  ability: Static
+  spread: |
+    EVs: 188 HP / 4 Def / 116 SpA / 12 SpD / 118 Spe
+    Modest Nature
+    IVs: 0 Atk
+  moves:
+    - Thunderbolt
+    - [Heat Wave, Detect, Roost]
+    - Hurricane
+    - [Heat Wave, Detect, Roost]
+  roles:
+    - [offense]
+    - [dynamax]
