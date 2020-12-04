@@ -1108,6 +1108,40 @@
     - [offense]
     - [support, status]
     - [support, policy, ground]
+- pokemon: Dracovish
+  item: [Choice Scarf, Choice Band]
+  ability: Strong Jaw
+  spread:
+    - |
+      EVs: 4 HP / 252 Atk / 252 Spe
+      Adamant Nature
+    - |
+      EVs: 4 HP / 252 Atk / 252 Spe
+      Jolly Nature
+  moves:
+    - Fishious Rend
+    - Psychic Fangs
+    - Crunch
+    - [Dragon Rush, Ice Fang, Rock Slide]
+  roles:
+    - [offense]
+- pokemon: Dracovish
+  item: [Choice Scarf, Choice Band]
+  ability: Sand Rush
+  spread:
+    - |
+      EVs: 4 HP / 252 Atk / 252 Spe
+      Adamant Nature
+    - |
+      EVs: 4 HP / 252 Atk / 252 Spe
+      Jolly Nature
+  moves:
+    - Fishious Rend
+    - Psychic Fangs
+    - [Dragon Rush, Iron Head, Rock Slide, Earthquake, Crunch, Ice Fang]
+    - [Dragon Rush, Iron Head, Rock Slide, Earthquake, Crunch, Ice Fang]
+  roles:
+    - [offense, weather, sand]
 - pokemon: Porygon2
   item: Eviolite
   ability: Download
