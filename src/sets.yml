@@ -1155,6 +1155,52 @@
     - [Ice Punch, Fire Punch, Thunder Punch, Poison Jab, Sucker Punch, Sucker Punch]
   roles:
     - [offense]
+- pokemon: Venusaur
+  item: [Life Orb, Coba Berry, Focus Sash, Expert Belt]
+  ability: Chlorophyll
+  spread: |
+    Gigantamax: Yes
+    EVs: 4 HP / 252 SpA / 252 Spe
+    Timid Nature
+    IVs: 0 Atk
+  moves:
+    - Sludge Bomb
+    - [Leaf Storm, Energy Ball]
+    - [Earth Power, Weather Ball]
+    - Protect
+  roles:
+    - [offense, weather, sun]
+- pokemon: Venusaur
+  item: Wide Lens
+  ability: Chlorophyll
+  spread: |
+    Gigantamax: Yes
+    EVs: 4 HP / 252 SpA / 252 Spe
+    Timid Nature
+    IVs: 0 Atk
+  moves:
+    - Sludge Bomb
+    - [Leaf Storm, Energy Ball]
+    - Sleep Powder
+    - Protect
+  roles:
+    - [offense, weather, sun]
+    - [support, status]
+- pokemon: Venusaur
+  item: Assault Vest
+  ability: Chlorophyll
+  spread: |
+    Gigantamax: Yes
+    EVs: 4 HP / 252 SpA / 252 Spe
+    Timid Nature
+    IVs: 0 Atk
+  moves:
+    - Sludge Bomb
+    - [Leaf Storm, Energy Ball]
+    - Earth Power
+    - Weather Ball
+  roles:
+    - [offense, weather, sun]
 - pokemon: Whimsicott
   item: [Focus Sash, Coba Berry]
   ability: Prankster
