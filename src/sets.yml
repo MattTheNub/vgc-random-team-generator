@@ -421,7 +421,7 @@
   moves:
     - Fake Out
     - Flare Blitz
-    - Darkest Lariat
+    - [Darkest Lariat, Assurance]
     - [Close Combat, U-turn]
   roles:
     - [support, flinch]
