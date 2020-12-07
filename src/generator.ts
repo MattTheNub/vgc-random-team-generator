@@ -51,7 +51,7 @@ function generateSet(set: SetData, usedItems: string[]) {
   randomSet.export = stripIndents`
   ${randomSet.pokemon} @ ${randomSet.item}
   Ability: ${randomSet.ability}
-  Level: 50
+  Level: 50${Math.random() < 1 / 4096 ? '\nShiny: Yes' : ''}
   ${randomSet.spread.trim()}
   - ${randomSet.moves[0]}
   - ${randomSet.moves[1]}
