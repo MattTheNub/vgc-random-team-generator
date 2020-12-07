@@ -99,6 +99,22 @@
     - Flash Cannon
     - Flamethrower
     - Air Slash
+    - Meteor Beam
+  roles:
+    - [offense]
+    - [dynamax]
+- pokemon: Celesteela
+  item: Assault Vest
+  ability: Beast Boost
+  spread: |
+    EVs: 252 HP / 252 SpA / 4 SpD
+    Modest Nature
+    IVs: 0 Atk
+  moves:
+    - Meteor Beam
+    - Flash Cannon
+    - Flamethrower
+    - Air Slash
   roles:
     - [offense]
     - [dynamax]
@@ -259,7 +275,7 @@
     - [support, policy, ghost]
     - [support, status]
     - [speed, trickroom]
-- pokemon: Entei
+- pokemon: Ente-i
   item: [Assault Vest]
   ability: Inner Focus
   spread: |
