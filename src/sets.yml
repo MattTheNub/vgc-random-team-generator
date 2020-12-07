@@ -1,5 +1,5 @@
 - pokemon: Amoonguss
-  item: Coba Berry
+  item: [Coba Berry, Yache Berry, Focus Sash]
   ability: Regenerator
   spread: |
     EVs: 252 HP / 156 Def / 100 SpD
