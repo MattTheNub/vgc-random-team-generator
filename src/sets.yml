@@ -121,7 +121,7 @@
     - [suport, atkup]
     - [support, redirection]
 - pokemon: Dracovish
-  item: [Choice Scarf]
+  item: Choice Scarf
   ability: Strong Jaw
   spread:
     - |
@@ -138,7 +138,7 @@
   roles:
     - [offense]
 - pokemon: Dracovish
-  item: [Choice Band]
+  item: Choice Band
   ability: Strong Jaw
   spread: |
     EVs: 4 HP / 252 Atk / 252 Spe
@@ -276,7 +276,7 @@
     - [support, status]
     - [speed, trickroom]
 - pokemon: Entei
-  item: [Assault Vest]
+  item: Assault Vest
   ability: Inner Focus
   spread: |
     EVs: 4 HP / 244 Atk / 4 Def / 4 SpD / 252 Spe
@@ -304,7 +304,7 @@
     - [offense]
     - [support, status]
 - pokemon: Entei
-  item: [Assault Vest]
+  item: Assault Vest
   ability: Inner Focus
   spread: |
     EVs: 4 HP / 244 Atk / 4 Def / 4 SpD / 252 Spe
@@ -1061,7 +1061,7 @@
   roles:
     - [speed, weather, sun]
 - pokemon: Torkoal
-  item: [Choice Specs]
+  item: Choice Specs
   ability: Drought
   spread: |
     EVs: 252 HP / 252 SpA / 4 SpD
