@@ -130,31 +130,6 @@ function generate() {
       pokemon.findIndex(
         ({ roles }) =>
           roles.findIndex(
-            role => role[0] === 'offense' && role[1] === 'weather'
-          ) !== -1
-      ) !== -1 &&
-      pokemon.findIndex(
-        ({ roles }) =>
-          roles.findIndex(
-            role => role[0] === 'speed' && role[1] === 'weather'
-          ) !== -1
-      ) === -1
-    ) {
-      console.log(`Picking weather setter: ${weather}`)
-      generatedPokemon = generatePokemon(
-        items,
-        ({ roles }) =>
-          roles.findIndex(
-            role =>
-              role[0] === 'speed' &&
-              role[1] === 'weather' &&
-              role[2] === weather
-          ) !== -1
-      )
-    } else if (
-      pokemon.findIndex(
-        ({ roles }) =>
-          roles.findIndex(
             role => role[0] === 'offense' && role[1] === 'trickroom'
           ) !== -1
       ) !== -1
@@ -242,6 +217,31 @@ function generate() {
 
   do {
     if (
+      pokemon.findIndex(
+        ({ roles }) =>
+          roles.findIndex(
+            role => role[0] === 'offense' && role[1] === 'weather'
+          ) !== -1
+      ) !== -1 &&
+      pokemon.findIndex(
+        ({ roles }) =>
+          roles.findIndex(
+            role => role[0] === 'speed' && role[1] === 'weather'
+          ) !== -1
+      ) === -1
+    ) {
+      console.log(`Picking weather setter: ${weather}`)
+      generatedPokemon = generatePokemon(
+        items,
+        ({ roles }) =>
+          roles.findIndex(
+            role =>
+              role[0] === 'speed' &&
+              role[1] === 'weather' &&
+              role[2] === weather
+          ) !== -1
+      )
+    } else if (
       pokemon.findIndex(
         ({ roles }) => roles.findIndex(role => role[0] === 'support') !== -1
       ) === -1
