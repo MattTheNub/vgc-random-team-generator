@@ -103,7 +103,6 @@
   roles:
     - [speed, statdrop]
     - [support, atkup]
-    - [support, redirection]
 - pokemon: Cresselia
   item: [Colbur Berry, Sitrus Berry, Mental Herb]
   ability: Levitate
@@ -119,7 +118,6 @@
   roles:
     - [speed, trickroom]
     - [suport, atkup]
-    - [support, redirection]
 - pokemon: Dracovish
   item: Choice Scarf
   ability: Strong Jaw
@@ -700,7 +698,6 @@
     - [Ice Beam, Thunderbolt, Tri Attack, Ally Switch]
   roles:
     - [speed, trickroom]
-    - [support, redirection]
 - pokemon: Raichu
   item: [Focus Sash, Air Balloon]
   ability: Lightning Rod
