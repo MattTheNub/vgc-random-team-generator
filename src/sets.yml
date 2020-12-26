@@ -848,6 +848,22 @@
   roles:
     - [speed, statdrop]
     - [support, policy, dark]
+- pokemon: Raichu
+  item: Focus Sash
+  ability: Lightning Rod
+  spread: |
+    EVs: 252 HP / 4 Atk / 252 Spe
+    Jolly Nature
+    IVs: 0 SpA
+  moves:
+    - Fake Out
+    - Volt Switch
+    - [Volt Tackle, Nuzzle, Protect]
+    - [Volt Tackle, Nuzzle, Protect]
+  roles:
+    - [support, flinch]
+    - [support, status]
+    - [support, policy, electric]
 - pokemon: Regieleki
   item: Light Clay
   ability: Transistor
