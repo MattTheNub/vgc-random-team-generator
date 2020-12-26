@@ -24,6 +24,10 @@ We use [Prettier](https://prettier.io/) (more specifically, `prettierx`) to form
 
 All movesets are stored using YAML in `src/sets.yml`. Here is a quick run-down of all the keys and what purpose they serve.
 
+### Ordering
+
+Please ensure that all Pokémon are listed in alphabetical order.
+
 ### Random Choices
 
 In a lot of places, the generator can randomly choose from a list of possibilities. The possibilities are equal by default, but weight can be added to them by repeating an item. For example, `item: [Choice Band, Choice Band, Choice Scarf]` gives a 2/3 chance of getting a Choice Band and a 1/3 chance of getting a Choice Scarf.
