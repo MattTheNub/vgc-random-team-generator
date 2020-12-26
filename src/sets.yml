@@ -957,7 +957,7 @@
     - [Body Press, High Horsepower, Rock Slide, Protect]
   roles:
     - [offense, trickroom]
-    - [support, trickroom]
+    - [speed, trickroom]
     - [dynamax]
 - pokemon: Stakataka
   item: Weakness Policy
@@ -981,7 +981,7 @@
     - [offense, policy, water]
     - [offense, policy, ground]
     - [offense, trickroom]
-    - [support, trickroom]
+    - [speed, trickroom]
     - [dynamax]
 - pokemon: Tapu Fini
   item: Choice Specs
