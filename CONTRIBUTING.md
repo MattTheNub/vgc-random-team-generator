@@ -118,58 +118,58 @@ This is a role given to Pokémon that are helped by the presence of weather. The
 
 This is a role given to Pokémon that rely on self-proccing a Weakness Policy. This tag should be repeated with every type the Pokémon is weak to (ex: `[offense, policy, fighting]`). Note that this tag should not be used with Pokémon that often use Weaknes Policy without a self-proccer, such as Moltres-Galar.
 
-#### `[support]`
+##### `[support]`
 
 This is a role given to Pokémon that primarily play a supportive role. A team is guaranteed to have at least one Pokémon with this role
 
-##### `[support, flinch]`
+###### `[support, flinch]`
 
 This role is given to users of Fake Out.
 
-##### `[support, taunt]`
+###### `[support, taunt]`
 
 This role is given to users of Taunt.
 
-##### `[support, redirection]`
+###### `[support, redirection]`
 
 This role is given to users of Follow Me and Rage Powder.
 
-##### `[support, status]`
+###### `[support, status]`
 
 This role is given to Pokémon that can consistently spread status, through moves such as Nuzzle and Will-O-Wisp.
 
-##### `[support, atkdrop]`
+###### `[support, atkdrop]`
 
 This role is given to Pokémon that can consistently lower the opponent's attacking stats, through moves such as Snarl and Charm.
 
-##### `[support, defdrop]`
+###### `[support, defdrop]`
 
 This role is given to Pokémon that can consistently lower the opponent's defense and special defense stats, through moves such as Tickle and Fake Tears.
 
-##### `[support, atkup]`
+###### `[support, atkup]`
 
 This role is given to Pokémon that can raise their allies' damage output, either through stat boosting moves such as Follow Me, or through Helping Hand.
 
-##### `[support, policy]`
+###### `[support, policy]`
 
 This role is given to Pokémon that are weak users of certain moves, meant to activate Weakness Policy. The type of move should be specified as the third element (ex: `[support, policy, ground]`).
 
-#### `[speed]`
+##### `[speed]`
 
 This role is generally used for speed control. There will almost always be a subcategory you should be using. If there isn't, it is possible that it should be added.
 
-##### `[speed, statdrop]`
+###### `[speed, statdrop]`
 
 This role is given to Pokémon that use moves such as Electroweb and Icy Wind for speed control.
 
-##### `[speed, tailwind]`
+###### `[speed, tailwind]`
 
 This role is given to users of Tailwind.
 
-##### `[speed, trickroom]`
+###### `[speed, trickroom]`
 
 This role is given to users of Trick Room
 
-##### `[speed, weather]`
+###### `[speed, weather]`
 
 While not solely used for speed control, all weather setters should be given this role. The type of weather should be specified as the third element (ex: `[speed, weather, rain]`)
