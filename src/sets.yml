@@ -709,8 +709,9 @@
     - Fake Out
     - Volt Switch
     - [Nuzzle, Nuzzle, Eerie Impulse, Eerie Impulse, Charm]
-    - [Electroweb, Thunderbolt, Detect]
+    - [Electroweb, Thunderbolt, Protect]
   roles:
+    - [support, flinch]
     - [support, status]
     - [speed, statdrop]
     - [support, atkdrop]
@@ -722,10 +723,11 @@
     Jolly Nature
   moves:
     - Fake Out
-    - [Volt Switch, Detect]
+    - [Volt Switch, Protect]
     - [Nuzzle, Nuzzle, Eerie Impulse, Eerie Impulse, Volt Switch, Charm]
     - Volt Tackle
   roles:
+    - [support, flinch]
     - [support, status]
     - [speed, statdrop]
     - [support, atkdrop]
@@ -742,6 +744,7 @@
     - Thunderbolt
     - [Electroweb, Electro Ball]
   roles:
+    - [support, flinch]
     - [speed, statdrop]
     - [support, status]
 - pokemon: Raichu
@@ -756,6 +759,7 @@
     - Nuzzle
     - [Volt Switch, Play Rough]
   roles:
+    - [support, flinch]
     - [support, status]
     - [speed, statdrop]
 - pokemon: Raichu
@@ -770,6 +774,7 @@
     - Nuzzle
     - Brick Break
   roles:
+    - [support, flinch]
     - [support, status]
     - [speed, statdrop]
     - [support, policy, fighting]
@@ -785,6 +790,7 @@
     - Nuzzle
     - Brutal Swing
   roles:
+    - [support, flinch]
     - [support, status]
     - [speed, statdrop]
     - [support, policy, dark]
@@ -801,6 +807,7 @@
     - [Thunderbolt, Electroweb]
     - Brick Break
   roles:
+    - [support, flinch]
     - [speed, statdrop]
     - [support, policy, fighting]
 - pokemon: Raichu
@@ -816,6 +823,7 @@
     - [Thunderbolt, Electroweb]
     - Brutal Swing
   roles:
+    - [support, flinch]
     - [speed, statdrop]
     - [support, policy, dark]
 - pokemon: Raichu
@@ -828,9 +836,10 @@
   moves:
     - Fake Out
     - Volt Switch
-    - [Thunderbolt, Electroweb, Detect]
+    - [Thunderbolt, Electroweb, Protect]
     - Brick Break
   roles:
+    - [support, flinch]
     - [speed, statdrop]
     - [support, policy, fighting]
 - pokemon: Raichu
@@ -843,7 +852,7 @@
   moves:
     - Fake Out
     - Volt Switch
-    - [Thunderbolt, Electroweb, Detect]
+    - [Thunderbolt, Electroweb, Protect]
     - Brutal Swing
   roles:
     - [speed, statdrop]
