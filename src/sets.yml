@@ -889,6 +889,33 @@
     - [support, flinch]
     - [support, status]
     - [support, policy, electric]
+- pokemon: Regidrago
+  item: Dragon Fang
+  ability: Dragon's Maw
+  spread: |
+    EVs: 4 HP / 252 SpA / 252 Spe
+    Jolly Nature
+  moves:
+    - Protect
+    - Dragon Energy
+    - Dragon Pulse
+    - Draco Meteor
+  roles:
+    - [offense]
+    - [dynamax]
+- pokemon: Regidrago
+  item: Choice Specs
+  ability: Dragon's Maw
+  spread: |
+    EVs: 4 HP / 252 SpA / 252 Spe
+    Jolly Nature
+  moves:
+    - Hyper Beam
+    - Dragon Energy
+    - Dragon Pulse
+    - Draco Meteor
+  roles:
+    - [offense]
 - pokemon: Regieleki
   item: Light Clay
   ability: Transistor
