@@ -1026,7 +1026,6 @@
     - Superpower
   roles:
     - [support, status]
-    - [speed, statdrop]
 - pokemon: Thundurus
   item: [Focus Sash, Mental Herb]
   ability: Prankster
