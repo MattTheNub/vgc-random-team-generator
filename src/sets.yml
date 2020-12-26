@@ -894,7 +894,7 @@
   ability: Dragon's Maw
   spread: |
     EVs: 4 HP / 252 SpA / 252 Spe
-    Jolly Nature
+    Timid Nature
   moves:
     - Protect
     - Dragon Energy
@@ -908,7 +908,7 @@
   ability: Dragon's Maw
   spread: |
     EVs: 4 HP / 252 SpA / 252 Spe
-    Jolly Nature
+    Timid Nature
   moves:
     - Hyper Beam
     - Dragon Energy
@@ -1217,6 +1217,36 @@
     - Close Combat
     - [Ice Punch, Fire Punch, Thunder Punch, Poison Jab, Sucker Punch, Sucker Punch]
     - [Ice Punch, Fire Punch, Thunder Punch, Poison Jab, Sucker Punch, Sucker Punch]
+  roles:
+    - [offense]
+- pokemon: Urshifu-Rapid-Strike
+  item: Focus Sash
+  ability: Unseen Fist
+  spread: |
+    Gigantamax: Yes
+    EVs: 4 HP / 252 Atk / 252 Spe
+    Jolly Nature
+  moves:
+    - Detect
+    - Aqua Jet
+    - Surging Strikes
+    - Close Combat
+  roles:
+    - [offense]
+    - [dynamax]
+    - [support, policy, water]
+- pokemon: Urshifu-Rapid-Strike
+  item: [Choice Scarf, Choice Band]
+  ability: Unseen Fist
+  spread: |
+    Gigantamax: Yes
+    EVs: 4 HP / 252 Atk / 252 Spe
+    Jolly Nature
+  moves:
+    - [Poison Jab, Poison Jab, U-Turn, U-Turn, Thunder Punch]
+    - Aqua Jet
+    - Surging Strikes
+    - Close Combat
   roles:
     - [offense]
 - pokemon: Venusaur
