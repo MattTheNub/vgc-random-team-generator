@@ -1,5 +1,5 @@
 - pokemon: Amoonguss
-  item: Coba Berry
+  item: [Coba Berry, Yache Berry, Focus Sash]
   ability: Regenerator
   spread: |
     EVs: 252 HP / 156 Def / 100 SpD
@@ -36,6 +36,22 @@
     IVs: 0 Atk
   moves:
     - Protect
+    - Flash Cannon
+    - Flamethrower
+    - Air Slash
+    - Meteor Beam
+  roles:
+    - [offense]
+    - [dynamax]
+- pokemon: Celesteela
+  item: Assault Vest
+  ability: Beast Boost
+  spread: |
+    EVs: 252 HP / 252 SpA / 4 SpD
+    Modest Nature
+    IVs: 0 Atk
+  moves:
+    - Meteor Beam
     - Flash Cannon
     - Flamethrower
     - Air Slash
@@ -87,7 +103,6 @@
   roles:
     - [speed, statdrop]
     - [support, atkup]
-    - [support, redirection]
 - pokemon: Cresselia
   item: [Colbur Berry, Sitrus Berry, Mental Herb]
   ability: Levitate
@@ -103,9 +118,8 @@
   roles:
     - [speed, trickroom]
     - [suport, atkup]
-    - [support, redirection]
 - pokemon: Dracovish
-  item: [Choice Scarf]
+  item: Choice Scarf
   ability: Strong Jaw
   spread:
     - |
@@ -122,7 +136,7 @@
   roles:
     - [offense]
 - pokemon: Dracovish
-  item: [Choice Band]
+  item: Choice Band
   ability: Strong Jaw
   spread: |
     EVs: 4 HP / 252 Atk / 252 Spe
@@ -189,7 +203,6 @@
     - Dragon Darts
     - [Dragon Dance, Fly]
     - Protect
-    - [Dragon Rush, Ice Fang, Rock Slide, Crunch]
   roles:
     - [offense, policy, dark]
     - [offense, policy, dragon]
@@ -261,7 +274,7 @@
     - [support, status]
     - [speed, trickroom]
 - pokemon: Entei
-  item: [Assault Vest]
+  item: Assault Vest
   ability: Inner Focus
   spread: |
     EVs: 4 HP / 244 Atk / 4 Def / 4 SpD / 252 Spe
@@ -289,7 +302,7 @@
     - [offense]
     - [support, status]
 - pokemon: Entei
-  item: [Assault Vest]
+  item: Assault Vest
   ability: Inner Focus
   spread: |
     EVs: 4 HP / 244 Atk / 4 Def / 4 SpD / 252 Spe
@@ -371,7 +384,7 @@
   item: [Shuca Berry, Air Balloon, Life Orb, Weakness Policy]
   ability: Flash Fire
   spread: |
-    EVs: 252 HP / 252 Spa / 4 Def
+    EVs: 252 HP / 252 SpA / 4 Def
     Modest Nature
     IVs: 0 Atk
   moves:
@@ -685,7 +698,6 @@
     - [Ice Beam, Thunderbolt, Tri Attack, Ally Switch]
   roles:
     - [speed, trickroom]
-    - [support, redirection]
 - pokemon: Raichu
   item: [Focus Sash, Air Balloon]
   ability: Lightning Rod
@@ -699,6 +711,7 @@
     - [Nuzzle, Nuzzle, Eerie Impulse, Eerie Impulse, Charm]
     - [Electroweb, Thunderbolt, Protect]
   roles:
+    - [support, flinch]
     - [support, status]
     - [speed, statdrop]
     - [support, atkdrop]
@@ -715,6 +728,7 @@
     - [Nuzzle, Nuzzle, Eerie Impulse, Eerie Impulse, Volt Switch, Charm]
     - Volt Tackle
   roles:
+    - [support, flinch]
     - [support, status]
     - [speed, statdrop]
     - [support, atkdrop]
@@ -732,6 +746,7 @@
     - Thunderbolt
     - [Electroweb, Electro Ball]
   roles:
+    - [support, flinch]
     - [speed, statdrop]
     - [support, status]
     - [support, flinch]
@@ -747,6 +762,7 @@
     - Nuzzle
     - [Volt Switch, Play Rough]
   roles:
+    - [support, flinch]
     - [support, status]
     - [speed, statdrop]
     - [support, status]
@@ -763,6 +779,7 @@
     - Nuzzle
     - Brick Break
   roles:
+    - [support, flinch]
     - [support, status]
     - [speed, statdrop]
     - [support, policy, fighting]
@@ -779,6 +796,7 @@
     - Nuzzle
     - Brutal Swing
   roles:
+    - [support, flinch]
     - [support, status]
     - [speed, statdrop]
     - [support, policy, dark]
@@ -796,6 +814,7 @@
     - [Thunderbolt, Electroweb]
     - Brick Break
   roles:
+    - [support, flinch]
     - [speed, statdrop]
     - [support, policy, fighting]
     - [support, flinch]
@@ -812,9 +831,26 @@
     - [Thunderbolt, Electroweb]
     - Brutal Swing
   roles:
+    - [support, flinch]
     - [speed, statdrop]
     - [support, policy, dark]
     - [support, flinch]
+- pokemon: Raichu
+  item: Assault Vest
+  ability: Lightning Rod
+  spread: |
+    EVs: 252 HP / 4 Atk / 252 Spe
+    Jolly Nature
+    IVs: 0 SpA
+  moves:
+    - Fake Out
+    - Volt Switch
+    - Volt Tackle
+    - Nuzzle
+  roles:
+    - [support, flinch]
+    - [support, status]
+    - [support, policy, electric]
 - pokemon: Raichu
   item: Focus Sash
   ability: Lightning Rod
@@ -828,6 +864,7 @@
     - [Thunderbolt, Electroweb, Protect]
     - Brick Break
   roles:
+    - [support, flinch]
     - [speed, statdrop]
     - [support, policy, fighting]
     - [support, flinch]
@@ -846,7 +883,49 @@
   roles:
     - [speed, statdrop]
     - [support, policy, dark]
+- pokemon: Raichu
+  item: Focus Sash
+  ability: Lightning Rod
+  spread: |
+    EVs: 252 HP / 4 Atk / 252 Spe
+    Jolly Nature
+    IVs: 0 SpA
+  moves:
+    - Fake Out
+    - Volt Switch
+    - [Volt Tackle, Nuzzle, Protect]
+    - [Volt Tackle, Nuzzle, Protect]
+  roles:
     - [support, flinch]
+    - [support, status]
+    - [support, policy, electric]
+- pokemon: Regidrago
+  item: Dragon Fang
+  ability: Dragon's Maw
+  spread: |
+    EVs: 4 HP / 252 SpA / 252 Spe
+    Timid Nature
+  moves:
+    - Protect
+    - Dragon Energy
+    - Dragon Pulse
+    - Draco Meteor
+  roles:
+    - [offense]
+    - [dynamax]
+- pokemon: Regidrago
+  item: Choice Specs
+  ability: Dragon's Maw
+  spread: |
+    EVs: 4 HP / 252 SpA / 252 Spe
+    Timid Nature
+  moves:
+    - Hyper Beam
+    - Dragon Energy
+    - Dragon Pulse
+    - Draco Meteor
+  roles:
+    - [offense]
 - pokemon: Regieleki
   item: Light Clay
   ability: Transistor
@@ -1025,7 +1104,6 @@
     - Superpower
   roles:
     - [support, status]
-    - [speed, statdrop]
 - pokemon: Thundurus
   item: [Focus Sash, Mental Herb]
   ability: Prankster
@@ -1149,6 +1227,36 @@
     - Close Combat
     - [Ice Punch, Fire Punch, Thunder Punch, Poison Jab, Sucker Punch, Sucker Punch]
     - [Ice Punch, Fire Punch, Thunder Punch, Poison Jab, Sucker Punch, Sucker Punch]
+  roles:
+    - [offense]
+- pokemon: Urshifu-Rapid-Strike
+  item: Focus Sash
+  ability: Unseen Fist
+  spread: |
+    Gigantamax: Yes
+    EVs: 4 HP / 252 Atk / 252 Spe
+    Jolly Nature
+  moves:
+    - Detect
+    - Aqua Jet
+    - Surging Strikes
+    - Close Combat
+  roles:
+    - [offense]
+    - [dynamax]
+    - [support, policy, water]
+- pokemon: Urshifu-Rapid-Strike
+  item: [Choice Scarf, Choice Band]
+  ability: Unseen Fist
+  spread: |
+    Gigantamax: Yes
+    EVs: 4 HP / 252 Atk / 252 Spe
+    Jolly Nature
+  moves:
+    - [Poison Jab, Poison Jab, U-Turn, U-Turn, Thunder Punch]
+    - Aqua Jet
+    - Surging Strikes
+    - Close Combat
   roles:
     - [offense]
 - pokemon: Venusaur
