@@ -13,66 +13,6 @@
   roles:
     - [support, redirection]
     - [support, status]
-- pokemon: Dracovish
-  item: [Choice Scarf]
-  ability: Strong Jaw
-  spread:
-    - |
-      EVs: 4 HP / 252 Atk / 252 Spe
-      Adamant Nature
-    - |
-      EVs: 4 HP / 252 Atk / 252 Spe
-      Jolly Nature
-  moves:
-    - Fishious Rend
-    - Psychic Fangs
-    - Crunch
-    - [Dragon Rush, Ice Fang, Rock Slide]
-  roles:
-    - [offense]
-- pokemon: Dracovish
-  item: [Choice Band]
-  ability: Strong Jaw
-  spread: |
-    EVs: 4 HP / 252 Atk / 252 Spe
-    Jolly Nature
-  moves:
-    - Fishious Rend
-    - Psychic Fangs
-    - Crunch
-    - [Dragon Rush, Ice Fang, Rock Slide]
-  roles:
-    - [offense]
-- pokemon: Dracovish
-  item: Choice Band
-  ability: Sand Rush
-  spread:
-    - |
-      EVs: 4 HP / 252 Atk / 252 Spe
-      Adamant Nature
-    - |
-      EVs: 4 HP / 252 Atk / 252 Spe
-      Jolly Nature
-  moves:
-    - Fishious Rend
-    - Psychic Fangs
-    - [Dragon Rush, Iron Head, Rock Slide, Earthquake, Crunch, Ice Fang]
-    - [Dragon Rush, Iron Head, Rock Slide, Earthquake, Crunch, Ice Fang]
-  roles:
-    - [offense, weather, sand]
-- pokemon: Dracovish
-  item: Mystic Water
-  ability: Strong Jaw
-  spread: |
-    EVs: 4 HP / 252 Atk / 252 Spe
-    Jolly Nature
-  moves:
-    - Fishious Rend
-    - Psychic Fangs
-    - Protect
-    - [Dragon Rush, Ice Fang, Rock Slide, Crunch]
-  roles:
-    - [offense]
 - pokemon: Celesteela
   item: Leftovers
   ability: Beast Boost
@@ -164,6 +104,66 @@
     - [speed, trickroom]
     - [suport, atkup]
     - [support, redirection]
+- pokemon: Dracovish
+  item: [Choice Scarf]
+  ability: Strong Jaw
+  spread:
+    - |
+      EVs: 4 HP / 252 Atk / 252 Spe
+      Adamant Nature
+    - |
+      EVs: 4 HP / 252 Atk / 252 Spe
+      Jolly Nature
+  moves:
+    - Fishious Rend
+    - Psychic Fangs
+    - Crunch
+    - [Dragon Rush, Ice Fang, Rock Slide]
+  roles:
+    - [offense]
+- pokemon: Dracovish
+  item: [Choice Band]
+  ability: Strong Jaw
+  spread: |
+    EVs: 4 HP / 252 Atk / 252 Spe
+    Jolly Nature
+  moves:
+    - Fishious Rend
+    - Psychic Fangs
+    - Crunch
+    - [Dragon Rush, Ice Fang, Rock Slide]
+  roles:
+    - [offense]
+- pokemon: Dracovish
+  item: Choice Band
+  ability: Sand Rush
+  spread:
+    - |
+      EVs: 4 HP / 252 Atk / 252 Spe
+      Adamant Nature
+    - |
+      EVs: 4 HP / 252 Atk / 252 Spe
+      Jolly Nature
+  moves:
+    - Fishious Rend
+    - Psychic Fangs
+    - [Dragon Rush, Iron Head, Rock Slide, Earthquake, Crunch, Ice Fang]
+    - [Dragon Rush, Iron Head, Rock Slide, Earthquake, Crunch, Ice Fang]
+  roles:
+    - [offense, weather, sand]
+- pokemon: Dracovish
+  item: Mystic Water
+  ability: Strong Jaw
+  spread: |
+    EVs: 4 HP / 252 Atk / 252 Spe
+    Jolly Nature
+  moves:
+    - Fishious Rend
+    - Psychic Fangs
+    - Protect
+    - [Dragon Rush, Ice Fang, Rock Slide, Crunch]
+  roles:
+    - [offense]
 - pokemon: Dragapult
   item: [Focus Sash, Life Orb, Colbur Berry]
   ability: Clear Body
