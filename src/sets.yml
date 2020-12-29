@@ -28,7 +28,7 @@
   roles:
     - [offense]
 - pokemon: Celesteela
-  item: Life Orb # TODO: Add Weakness Policy Celesteela once a proccer gets added to the database
+  item: Life Orb
   ability: Beast Boost
   spread: |
     EVs: 252 HP / 252 SpA / 4 SpD
@@ -71,6 +71,23 @@
     - [Earthquake, Acrobatics, Fly, Substitute]
   roles:
     - [offense]
+- pokemon: Celesteela
+  item: Weakness Policy
+  ability: Beast Boost
+  spread: |
+    EVs: 252 HP / 252 SpA / 4 SpD
+    Modest Nature
+    IVs: 0 Atk
+  moves:
+    - Protect
+    - Flash Cannon
+    - Flamethrower
+    - Air Slash
+    - Meteor Beam
+  roles:
+    - [offense, policy, electric]
+    - [offense, policy, fire]
+    - [dynamax]
 - pokemon: Clefairy
   item: Eviolite
   ability: Friend Guard
