@@ -189,6 +189,7 @@
     - Dragon Darts
     - [Dragon Dance, Fly]
     - Protect
+    - [Dragon Rush, Ice Fang, Rock Slide, Crunch]
   roles:
     - [offense, policy, dark]
     - [offense, policy, dragon]
@@ -944,7 +945,7 @@
     - [Body Press, High Horsepower, Rock Slide, Protect]
   roles:
     - [offense, trickroom]
-    - [support, trickroom]
+    - [speed, trickroom]
     - [dynamax]
 - pokemon: Stakataka
   item: Weakness Policy
@@ -968,7 +969,7 @@
     - [offense, policy, water]
     - [offense, policy, ground]
     - [offense, trickroom]
-    - [support, trickroom]
+    - [speed, trickroom]
     - [dynamax]
 - pokemon: Tapu Fini
   item: Choice Specs
@@ -1045,7 +1046,7 @@
   roles:
     - [speed, weather, sun]
 - pokemon: Torkoal
-  item: [Choice Specs]
+  item: Choice Specs
   ability: Drought
   spread: |
     EVs: 252 HP / 252 SpA / 4 SpD

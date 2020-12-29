@@ -17,6 +17,8 @@ const sets = safeLoad(
 ) as SetData[]
 const species = new Set([...sets].map(set => set.pokemon.split('-')[0]))
 
+let weather: string = null
+
 function generateSet(set: SetData, usedItems: string[]) {
   const randomSet: Partial<SetData> & { export?: string } = {
     pokemon: set.pokemon,
@@ -49,12 +51,17 @@ function generateSet(set: SetData, usedItems: string[]) {
   randomSet.export = stripIndents`
   ${randomSet.pokemon} @ ${randomSet.item}
   Ability: ${randomSet.ability}
-  Level: 50
+  Level: 50${Math.random() < 1 / 4096 ? '\nShiny: Yes' : ''}
   ${randomSet.spread.trim()}
   - ${randomSet.moves[0]}
   - ${randomSet.moves[1]}
   - ${randomSet.moves[2]}
   - ${randomSet.moves[3]}`
+
+  const weatherIndex = set.roles.findIndex(role => role[1] === 'weather')
+  if (weatherIndex !== -1) {
+    weather = set.roles[weatherIndex][2]
+  }
 
   return randomSet as SetData & { export?: string }
 }
@@ -211,6 +218,31 @@ function generate() {
   do {
     if (
       pokemon.findIndex(
+        ({ roles }) =>
+          roles.findIndex(
+            role => role[0] === 'offense' && role[1] === 'weather'
+          ) !== -1
+      ) !== -1 &&
+      pokemon.findIndex(
+        ({ roles }) =>
+          roles.findIndex(
+            role => role[0] === 'speed' && role[1] === 'weather'
+          ) !== -1
+      ) === -1
+    ) {
+      console.log(`Picking weather setter: ${weather}`)
+      generatedPokemon = generatePokemon(
+        items,
+        ({ roles }) =>
+          roles.findIndex(
+            role =>
+              role[0] === 'speed' &&
+              role[1] === 'weather' &&
+              role[2] === weather
+          ) !== -1
+      )
+    } else if (
+      pokemon.findIndex(
         ({ roles }) => roles.findIndex(role => role[0] === 'support') !== -1
       ) === -1
     ) {
@@ -306,6 +338,14 @@ function generatePokemon(
       Array.isArray(item)
         ? item.findIndex(item => !usedItems.includes(item)) !== -1
         : !usedItems.includes(item)
+    )
+    .filter(
+      ({ roles }) =>
+        weather === null ||
+        roles.findIndex(role => role[1] === 'weather') === -1 ||
+        roles.findIndex(
+          role => role[1] === 'weather' && role[2] === weather
+        ) !== -1
     )
     .filter(requirement)
 
