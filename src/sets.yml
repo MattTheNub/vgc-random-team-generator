@@ -70,7 +70,7 @@
     - Heavy Slam
     - [Earthquake, Acrobatics, Fly, Substitute]
   roles:
-    [offense]
+    - [offense]
 - pokemon: Clefairy
   item: Eviolite
   ability: Friend Guard
