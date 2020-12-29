@@ -697,11 +697,12 @@
     - Fake Out
     - Volt Switch
     - [Nuzzle, Nuzzle, Eerie Impulse, Eerie Impulse, Charm]
-    - [Electroweb, Thunderbolt, Detect]
+    - [Electroweb, Thunderbolt, Protect]
   roles:
     - [support, status]
     - [speed, statdrop]
     - [support, atkdrop]
+    - [support, flinch]
 - pokemon: Raichu
   item: [Focus Sash, Air Balloon]
   ability: Lightning Rod
@@ -710,13 +711,14 @@
     Jolly Nature
   moves:
     - Fake Out
-    - [Volt Switch, Detect]
+    - [Volt Switch, Protect]
     - [Nuzzle, Nuzzle, Eerie Impulse, Eerie Impulse, Volt Switch, Charm]
     - Volt Tackle
   roles:
     - [support, status]
     - [speed, statdrop]
     - [support, atkdrop]
+    - [support, flinch]
 - pokemon: Raichu
   item: Assault Vest
   ability: Lightning Rod
@@ -732,6 +734,7 @@
   roles:
     - [speed, statdrop]
     - [support, status]
+    - [support, flinch]
 - pokemon: Raichu
   item: Assault Vest
   ability: Lightning Rod
@@ -746,6 +749,8 @@
   roles:
     - [support, status]
     - [speed, statdrop]
+    - [support, status]
+    - [support, flinch]
 - pokemon: Raichu
   item: Assault Vest
   ability: Lightning Rod
@@ -761,6 +766,7 @@
     - [support, status]
     - [speed, statdrop]
     - [support, policy, fighting]
+    - [support, flinch]
 - pokemon: Raichu
   item: Assault Vest
   ability: Lightning Rod
@@ -776,6 +782,7 @@
     - [support, status]
     - [speed, statdrop]
     - [support, policy, dark]
+    - [support, flinch]
 - pokemon: Raichu
   item: Assault Vest
   ability: Lightning Rod
@@ -791,6 +798,7 @@
   roles:
     - [speed, statdrop]
     - [support, policy, fighting]
+    - [support, flinch]
 - pokemon: Raichu
   item: Assault Vest
   ability: Lightning Rod
@@ -806,6 +814,7 @@
   roles:
     - [speed, statdrop]
     - [support, policy, dark]
+    - [support, flinch]
 - pokemon: Raichu
   item: Focus Sash
   ability: Lightning Rod
@@ -816,11 +825,12 @@
   moves:
     - Fake Out
     - Volt Switch
-    - [Thunderbolt, Electroweb, Detect]
+    - [Thunderbolt, Electroweb, Protect]
     - Brick Break
   roles:
     - [speed, statdrop]
     - [support, policy, fighting]
+    - [support, flinch]
 - pokemon: Raichu
   item: Focus Sash
   ability: Lightning Rod
@@ -831,11 +841,12 @@
   moves:
     - Fake Out
     - Volt Switch
-    - [Thunderbolt, Electroweb, Detect]
+    - [Thunderbolt, Electroweb, Protect]
     - Brutal Swing
   roles:
     - [speed, statdrop]
     - [support, policy, dark]
+    - [support, flinch]
 - pokemon: Regieleki
   item: Light Clay
   ability: Transistor
