@@ -106,9 +106,9 @@
     - [speed, statdrop]
     - [support, status]
 - pokemon: Coalossal
-  item: [Weakness Policy]
+  item: Weakness Policy
   ability: Steam Engine
-  spread: |
+  spread:
     - |
       EVs: 4 HP / 252 SpA / 252 Spe
       Modest Nature
