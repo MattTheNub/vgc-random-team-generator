@@ -105,6 +105,26 @@
     - [support, atkup]
     - [speed, statdrop]
     - [support, status]
+- pokemon: Coalossal
+  item: [Weakness Policy]
+  ability: Steam Engine
+  spread: |
+    - |
+      EVs: 4 HP / 252 SpA / 252 Spe
+      Modest Nature
+      IVs: 0 Atk
+    - |
+      EVs: 4 HP / 252 SpA / 252 Spe
+      Timid Nature
+      IVs: 0 Atk
+  moves:
+    - Heat Wave
+    - Meteor Beam
+    - [Earth Power, Solar Beam]
+    - Protect
+  roles:
+    - [dynamax]
+    - [offense, policy, water]
 - pokemon: Cresselia
   item: [Colbur Berry, Sitrus Berry, Mental Herb]
   ability: Levitate
@@ -227,6 +247,37 @@
     - [offense, policy, ghost]
     - [offense, policy, ice]
     - [dynamax]
+- pokemon: Dragapult
+  item: [Light Clay, Safety Goggles, Focus Sash, Colbur Berry, Light Clay]
+  ability: Clear Body
+  spread: |
+    EVs: 204 HP / 4 Atk / 44 Def / 4 SpD / 252 Spe
+    Jolly Nature
+  moves:
+    - Will-o-Wisp
+    - Breaking Swipe
+    - Reflect
+    - Light Screen
+  roles:
+    - [support, screens]
+    - [support, status]
+    - [support, atkdrop]
+- pokemon: Dragapult
+  item: [Light Clay, Safety Goggles, Focus Sash, Light Clay]
+  ability: Clear Body
+  spread: |
+    EVs: 204 HP / 4 Atk / 44 Def / 4 SpD / 252 Spe
+    Jolly Nature
+  moves:
+    - Surf
+    - Breaking Swipe
+    - [Reflect, Will-o-Wisp]
+    - Light Screen
+  roles:
+    - [support, screens]
+    - [support, status]
+    - [support, atkdrop]
+    - [support, policy, water]
 - pokemon: Dusclops
   item: Eviolite
   ability: Frisk
@@ -732,6 +783,7 @@
     - [support, status]
     - [speed, statdrop]
     - [support, atkdrop]
+    - [support, flinch]
 - pokemon: Raichu
   item: [Focus Sash, Air Balloon]
   ability: Lightning Rod
@@ -748,6 +800,7 @@
     - [support, status]
     - [speed, statdrop]
     - [support, atkdrop]
+    - [support, flinch]
 - pokemon: Raichu
   item: Assault Vest
   ability: Lightning Rod
@@ -764,6 +817,7 @@
     - [support, flinch]
     - [speed, statdrop]
     - [support, status]
+    - [support, flinch]
 - pokemon: Raichu
   item: Assault Vest
   ability: Lightning Rod
@@ -779,6 +833,8 @@
     - [support, flinch]
     - [support, status]
     - [speed, statdrop]
+    - [support, status]
+    - [support, flinch]
 - pokemon: Raichu
   item: Assault Vest
   ability: Lightning Rod
@@ -795,6 +851,7 @@
     - [support, status]
     - [speed, statdrop]
     - [support, policy, fighting]
+    - [support, flinch]
 - pokemon: Raichu
   item: Assault Vest
   ability: Lightning Rod
@@ -811,6 +868,7 @@
     - [support, status]
     - [speed, statdrop]
     - [support, policy, dark]
+    - [support, flinch]
 - pokemon: Raichu
   item: Assault Vest
   ability: Lightning Rod
@@ -827,6 +885,7 @@
     - [support, flinch]
     - [speed, statdrop]
     - [support, policy, fighting]
+    - [support, flinch]
 - pokemon: Raichu
   item: Assault Vest
   ability: Lightning Rod
@@ -843,6 +902,7 @@
     - [support, flinch]
     - [speed, statdrop]
     - [support, policy, dark]
+    - [support, flinch]
 - pokemon: Raichu
   item: Assault Vest
   ability: Lightning Rod
@@ -875,6 +935,7 @@
     - [support, flinch]
     - [speed, statdrop]
     - [support, policy, fighting]
+    - [support, flinch]
 - pokemon: Raichu
   item: Focus Sash
   ability: Lightning Rod
