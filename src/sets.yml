@@ -1057,7 +1057,7 @@
   moves:
     - [Stomping Tantrum, Earthquake]
     - [Rock Slide, Stone Edge]
-    - [Curse, Drain Punch, Iron Head, Ice Punch]
+    - [Curse, Drain Punch, Iron Head, Ice Punch, Body Press]
     - Protect
   roles:
     - [offense, dynamax]
@@ -1088,7 +1088,7 @@
     EVs: 252 HP / 252 Atk / 4 SpD
     Adamant Nature
   moves:
-    - [Stomping Tantrum, Earthquake, Drain Punch, Iron Head, Ice Punch]
+    - [Stomping Tantrum, Earthquake, Drain Punch, Iron Head, Ice Punch, Body Press]
     - [Rock Slide, Stone Edge]
     - Curse
     - Protect
@@ -1102,7 +1102,7 @@
     Brave Nature
     IVs: 0 Spe
   moves:
-    - [Stomping Tantrum, Earthquake, Drain Punch, Iron Head, Ice Punch]
+    - [Stomping Tantrum, Earthquake, Drain Punch, Iron Head, Ice Punch, Body Press]
     - [Rock Slide, Stone Edge]
     - Curse
     - Protect
