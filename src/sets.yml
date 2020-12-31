@@ -1188,6 +1188,52 @@
   roles:
     - [offense]
     - [dynamax]
+- pokemon: Spectrier
+  item: [Life Orb, Spell Tag, Focus Sash]
+  ability: Grim Neigh
+  spread: |
+    EVs: 4 HP / 252 SpA / 252 Spe
+    Timid Nature
+    IVs: 0 Atk
+  moves:
+    - Shadow Ball
+    - [Nasty Plot, Hyper Beam, Dark Pulse, Mud Shot]
+    - [Nasty Plot, Hyper Beam, Dark Pulse, Mud Shot]
+    - Protect
+  roles:
+    - [offense]
+    - [dynamax]
+- pokemon: Spectrier
+  item: [Wide Lens, Focus Sash, Colbur Berry, Safety Goggles]
+  ability: Grim Neigh
+  spread: |
+    EVs: 252 HP / 116 Def / 4 SpA / 28 SpD / 108 Spe
+    Timid Nature
+    IVs: 0 Atk
+  moves:
+    - Shadow Ball
+    - Snarl
+    - Will-o-Wisp
+    - Taunt
+  roles:
+    - [support, atkdrop]
+    - [support, status]
+- pokemon: Spectrier
+  item: [Wide Lens, Focus Sash, Colbur Berry, Safety Goggles]
+  ability: Grim Neigh
+  spread: |
+    EVs: 252 HP / 116 Def / 4 SpA / 28 SpD / 108 Spe
+    Timid Nature
+    IVs: 0 Atk
+  moves:
+    - Shadow Ball
+    - Snarl
+    - Will-o-Wisp
+    - Bulldoze
+  roles:
+    - [support, atkdrop]
+    - [support, status]
+    - [support, policy, ground]
 - pokemon: Stakataka
   item: [Shuca Berry, Life Orb]
   ability: Beast Boost
