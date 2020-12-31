@@ -1164,7 +1164,22 @@
   moves:
     - Overheat
     - Thunderbolt
-    - [Nasty Plot, Will-O-Wisp, Ally Switch]
+    - [Nasty Plot, Nasty Plot, Will-O-Wisp, Ally Switch]
+    - Protect
+  roles:
+    - [offense]
+    - [dynamax]
+- pokemon: Rotom-Wash
+  item: [Sitrus Berry, Safety Goggles]
+  ability: Levitate
+  spread: |
+    EVs: 252 HP / 212 SpA / 44 Spe
+    Modest Nature
+    IVs: 0 Atk
+  moves:
+    - Hydro Pump
+    - Thunderbolt
+    - [Nasty Plot, Nasty Plot, Will-O-Wisp, Ally Switch]
     - Protect
   roles:
     - [offense]
