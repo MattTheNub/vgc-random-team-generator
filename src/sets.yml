@@ -1060,7 +1060,8 @@
     - [Curse, Drain Punch, Iron Head, Ice Punch, Body Press]
     - Protect
   roles:
-    - [offense, dynamax]
+    - [offense]
+    - [dynamax]
     - [offense, policy, ground]
     - [offense, policy, fighting]
     - [offense, policy, water]
@@ -1077,7 +1078,8 @@
     - [Curse, Drain Punch, Iron Head, Ice Punch, Body Press]
     - Protect
   roles:
-    - [offense, dynamax]
+    - [offense]
+    - [dynamax]
     - [offense, policy, ground]
     - [offense, policy, fighting]
     - [offense, policy, water]
@@ -1093,7 +1095,8 @@
     - Curse
     - Protect
   roles:
-    - [offense, dynamax]
+    - [offense]
+    - [dynamax]
 - pokemon: Regirock
   item: Leftovers
   ability: Clear Body
@@ -1107,7 +1110,8 @@
     - Curse
     - Protect
   roles:
-    - [offense, dynamax]
+    - [offense]
+    - [dynamax]
     - [offense, trickroom]
 - pokemon: Rillaboom
   item: Miracle Seed
@@ -1259,6 +1263,51 @@
   roles:
     - [offense]
     - [dynamax]
+- pokemon: Tapu Koko
+  ability: Electric Surge
+  item: [Life Orb, Focus Sash, Shuca Berry]
+  spread: |
+    EVs: 4 HP / 252 SpA / 252 Spe
+    Timid Nature
+    IVs: 0 Atk
+  moves:
+    - Dazzling Gleam
+    - Thunderbolt
+    - [Volt Switch, Electroweb, Taunt]
+    - Protect
+  roles:
+    - [offense]
+    - [dynamax]
+    - [speed, statdrop]
+- pokemon: Tapu Koko
+  ability: Electric Surge
+  item: [Life Orb, Focus Sash, Shuca Berry]
+  spread: |
+    EVs: 4 HP / 252 Atk / 252 Spe
+    Jolly Nature
+  moves:
+    - Wild Charge
+    - Brave Bird
+    - [U-Turn, Taunt]
+    - Protect
+  roles:
+    - [offense]
+    - [dynamax]
+- pokemon: Tapu Koko
+  ability: Electric Surge
+  item: [Light Clay, Focus Sash]
+  spread: |
+    EVs: 4 HP / 252 SpA / 252 Spe
+    Timid Nature
+    IVs: 0 Atk
+  moves:
+    - Dazzling Gleam
+    - [Thunderbolt, Electroweb]
+    - Reflect
+    - Light Screen
+  roles:
+    - [support, screens]
+    - [speed, statdrop]
 - pokemon: Thundurus
   item: [Life Orb, Expert Belt]
   ability: Defiant
@@ -1318,7 +1367,8 @@
     - Air Slash
   roles:
     - [support, redirection]
-    - [offense, dynamax]
+    - [offense]
+    - [dynamax]
 - pokemon: Togekiss
   item: Weakness Policy
   ability: [Super Luck, Serene Grace]
@@ -1333,7 +1383,8 @@
     - Air Slash
   roles:
     - [support, redirection]
-    - [offense, dynamax]
+    - [offense]
+    - [dynamax]
 - pokemon: Torkoal
   item: [Charcoal, Sitrus Berry]
   ability: Drought
