@@ -1047,6 +1047,68 @@
   roles:
     - [offense]
     - [speed, statdrop]
+- pokemon: Regirock
+  item: Weakness Policy
+  ability: Clear Body
+  spread: |
+    EVs: 252 HP / 252 Atk / 4 SpD
+    Brave Nature
+    IVs: 0 Spe
+  moves:
+    - [Stomping Tantrum, Earthquake]
+    - [Rock Slide, Stone Edge]
+    - [Curse, Drain Punch, Iron Head, Ice Punch]
+    - Protect
+  roles:
+    - [offense, dynamax]
+    - [offense, policy, ground]
+    - [offense, policy, fighting]
+    - [offense, policy, water]
+    - [offense, trickroom]
+- pokemon: Regirock
+  item: Weakness Policy
+  ability: Clear Body
+  spread: |
+    EVs: 252 HP / 252 Atk / 4 SpD
+    Adamant Nature
+  moves:
+    - [Stomping Tantrum, Earthquake]
+    - [Rock Slide, Stone Edge]
+    - [Curse, Drain Punch, Iron Head, Ice Punch, Body Press]
+    - Protect
+  roles:
+    - [offense, dynamax]
+    - [offense, policy, ground]
+    - [offense, policy, fighting]
+    - [offense, policy, water]
+- pokemon: Regirock
+  item: Leftovers
+  ability: Clear Body
+  spread: |
+    EVs: 252 HP / 252 Atk / 4 SpD
+    Adamant Nature
+  moves:
+    - [Stomping Tantrum, Earthquake, Drain Punch, Iron Head, Ice Punch]
+    - [Rock Slide, Stone Edge]
+    - Curse
+    - Protect
+  roles:
+    - [offense, dynamax]
+- pokemon: Regirock
+  item: Leftovers
+  ability: Clear Body
+  spread: |
+    EVs: 252 HP / 252 Atk / 4 SpD
+    Brave Nature
+    IVs: 0 Spe
+  moves:
+    - [Stomping Tantrum, Earthquake, Drain Punch, Iron Head, Ice Punch]
+    - [Rock Slide, Stone Edge]
+    - Curse
+    - Protect
+  roles:
+    - [offense, dynamax]
+    - [offense, trickroom]
 - pokemon: Rillaboom
   item: Miracle Seed
   ability: Grassy Surge
