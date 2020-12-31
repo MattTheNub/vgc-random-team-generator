@@ -431,6 +431,39 @@
   roles:
     - [offense, trickroom]
     - [dynamax]
+- pokemon: Grimmsnarl
+  item: [Light Clay, Light Clay, Babiri Berry]
+  ability: Prankster
+  spread: |
+    EVs: 164 HP / 116 Def / 228 SpD
+    Careful Nature
+  moves:
+    - Spirit Break
+    - Reflect
+    - Light Screen
+    - [Fake Out, Fake Out, Fake Tears, Thunder Wave, Taunt]
+  roles:
+    - [support, status]
+    - [support, flinch]
+    - [support, defdrop]
+    - [speed, statdrop]
+    - [support, atkdrop]
+- pokemon: Grimmsnarl
+  item: [Lax Incense, Lagging Tail]
+  ability: Prankster
+  spread: |
+    EVs: 164 HP / 116 Def / 228 SpD
+    Careful Nature
+  moves:
+    - Spirit Break
+    - Reflect
+    - [Light Screen, Fake Tears]
+    - Trick
+  roles:
+    - [support, status]
+    - [support, atkdrop]
+    - [support, defdrop]
+    - [speed, statdrop]
 - pokemon: Heatran
   item: [Shuca Berry, Air Balloon, Life Orb, Weakness Policy]
   ability: Flash Fire
@@ -766,7 +799,6 @@
     - [support, status]
     - [speed, statdrop]
     - [support, atkdrop]
-    - [support, flinch]
 - pokemon: Raichu
   item: [Focus Sash, Air Balloon]
   ability: Lightning Rod
@@ -783,7 +815,6 @@
     - [support, status]
     - [speed, statdrop]
     - [support, atkdrop]
-    - [support, flinch]
 - pokemon: Raichu
   item: Assault Vest
   ability: Lightning Rod
@@ -800,7 +831,6 @@
     - [support, flinch]
     - [speed, statdrop]
     - [support, status]
-    - [support, flinch]
 - pokemon: Raichu
   item: Assault Vest
   ability: Lightning Rod
@@ -814,10 +844,8 @@
     - [Volt Switch, Play Rough]
   roles:
     - [support, flinch]
-    - [support, status]
     - [speed, statdrop]
     - [support, status]
-    - [support, flinch]
 - pokemon: Raichu
   item: Assault Vest
   ability: Lightning Rod
@@ -834,7 +862,6 @@
     - [support, status]
     - [speed, statdrop]
     - [support, policy, fighting]
-    - [support, flinch]
 - pokemon: Raichu
   item: Assault Vest
   ability: Lightning Rod
@@ -851,7 +878,6 @@
     - [support, status]
     - [speed, statdrop]
     - [support, policy, dark]
-    - [support, flinch]
 - pokemon: Raichu
   item: Assault Vest
   ability: Lightning Rod
@@ -868,7 +894,6 @@
     - [support, flinch]
     - [speed, statdrop]
     - [support, policy, fighting]
-    - [support, flinch]
 - pokemon: Raichu
   item: Assault Vest
   ability: Lightning Rod
@@ -885,7 +910,6 @@
     - [support, flinch]
     - [speed, statdrop]
     - [support, policy, dark]
-    - [support, flinch]
 - pokemon: Raichu
   item: Assault Vest
   ability: Lightning Rod
@@ -918,7 +942,6 @@
     - [support, flinch]
     - [speed, statdrop]
     - [support, policy, fighting]
-    - [support, flinch]
 - pokemon: Raichu
   item: Focus Sash
   ability: Lightning Rod
