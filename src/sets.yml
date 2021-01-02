@@ -1678,3 +1678,17 @@
   roles:
     - [offense]
     - [dynamax]
+- pokemon: Zapdos-Galar
+  item: [Life Orb, Safety Goggles, Weakness Policy, Focus Sash, Lum Berry]
+  ability: Defiant
+  spread: |
+    EVs: 4 HP / 252 Atk / 252 Spe
+    Jolly Nature
+  moves:
+    - Brave Bird
+    - [Close Combat, Thunderous Kick]
+    - [Detect, Detect, Taunt, Stomping Tantrum, Blaze Kick]
+    - [Detect, Detect, Taunt, Stomping Tantrum, Blaze Kick]
+  roles:
+    - [offense]
+    - [dynamax]
