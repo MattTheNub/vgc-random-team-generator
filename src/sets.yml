@@ -81,12 +81,25 @@
   moves:
     - Protect
     - Flash Cannon
-    - Flamethrower
+    - [Flamethrower, Meteor Beam]
     - Air Slash
-    - Meteor Beam
   roles:
     - [offense, policy, electric]
     - [offense, policy, fire]
+    - [dynamax]
+- pokemon: Charizard
+  item: [Life Orb, Wise Glasses, Safety Goggles, Life Orb]
+  ability: Solar Power
+  spread: |
+    EVs: 4 HP / 252 SpA / 252 Spe
+    Timid Nature
+  moves:
+    - Protect
+    - [Heat Wave, Blast Burn]
+    - [Air Slash, Hurricane]
+    - [Scorching Sands, Solar Beam]
+  roles:
+    - [offense, weather, sun]
     - [dynamax]
 - pokemon: Cinderace
   item: [Life Orb, Focus Sash, Expert Belt]
