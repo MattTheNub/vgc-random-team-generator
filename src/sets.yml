@@ -676,6 +676,21 @@
   roles:
     - [offense]
     - [dynamax]
+- pokemon: Marowak-Alola
+  item: Thick Club
+  ability: Lightning Rod
+  spread:
+    - |
+      EVs: 236 HP / 252 Atk / 20 Spe
+      Adamant Nature
+  moves:
+    - Flare Blitz
+    - Bonemerang
+    - [Poltergeist, Shadow Bone]
+    - Detect
+  roles:
+    - [offense]
+    - [dynamax]
 - pokemon: Metagross
   item: Weakness Policy
   ability: Clear Body
