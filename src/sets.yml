@@ -1455,6 +1455,45 @@
   roles:
     - [support, screens]
     - [speed, statdrop]
+- pokemon: Tapu Lele
+  ability: Psychic Surge
+  item: [Choice Specs, Choice Scarf]
+  spread: 
+    - |
+      EVs: 92 HP / 4 Def / 156 SpA / 4 SpD / 252 Spe
+      Modest Nature
+      IVs: 0 Atk
+    - |
+      EVs: 4 HP / 252 SpA / 252 Spe
+      Timid Nature
+      IVs: 0 Atk
+  moves:
+    - Psychic
+    - Moonblast
+    - Dazzling Gleam
+    - [Psyshock, Shadow Ball, Thunderbolt, Focus Blast]
+  roles:
+    - [offense]
+- pokemon: Tapu Lele
+  ability: Psychic Surge
+  item: [Focus Sash, Sitrus Berry, Life Orb]
+  spread: 
+    - |
+      EVs: 92 HP / 4 Def / 156 SpA / 4 SpD / 252 Spe
+      Modest Nature
+      IVs: 0 Atk
+    - |
+      EVs: 4 HP / 252 SpA / 252 Spe
+      Timid Nature
+      IVs: 0 Atk
+  moves:
+    - Psychic
+    - Moonblast
+    - Protect
+    - [Psyshock, Shadow Ball, Thunderbolt, Focus Blast, Dazzling Gleam, Calm Mind, Taunt]
+  roles:
+    - [offense]
+    - [dynamax]
 - pokemon: Thundurus
   item: [Life Orb, Expert Belt]
   ability: Defiant
