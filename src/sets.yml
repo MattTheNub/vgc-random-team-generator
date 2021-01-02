@@ -887,6 +887,37 @@
   roles:
     - [offense]
     - [dynamax]
+- pokemon: Politoed
+  item: [Sitrus Berry, Wiki Berry, Damp Rock]
+  ability: Drizzle
+  spread: |
+    EVs: 252 HP / 172 Def / 84 SpD
+    Calm Nature
+  moves:
+    - [Scald, Muddy Water]
+    - Protect
+    - Helping Hand
+    - [Perish Song, Icy Wind]
+  roles:
+    - [speed, weather, rain]
+    - [support, atkup]
+    - [speed, statdrop]
+- pokemon: Politoed
+  item: Choice Specs
+  ability: Drizzle
+  spread: |
+    EVs: 92 HP / 4 Def / 236 SpA / 4 SpD / 172
+    Modest Nature
+  moves:
+    - Scald
+    - Muddy Water
+    - Ice Beam
+    - [Icy Wind, Focus Blast, Earth Power, Helping Hand]
+  roles:
+    - [speed, weather, rain]
+    - [support, atkup]
+    - [speed, statdrop]
+    - [offense]
 - pokemon: Porygon2
   item: Eviolite
   ability: Download
