@@ -415,6 +415,34 @@
     - [offense]
     - [support, status]
     - [support, policy, ground]
+- pokemon: Ferrothorn
+  item: Leftovers
+  ability: Iron Barbs
+  spread: |
+    EVs: 244 HP / 196 Def / 68 SpD
+    Relaxed Nature
+    IVs: 0 Spe
+  moves:
+    - Protect
+    - Leech Seed
+    - Body Press
+    - Iron Defense
+  roles:
+    - [offense, trickroom]
+- pokemon: Ferrothorn
+  item: Leftovers
+  ability: Iron Barbs
+  spread: |
+    EVs: 244 HP / 196 Def / 68 SpD
+    Relaxed Nature
+    IVs: 0 Spe
+  moves:
+    - Protect
+    - Leech Seed
+    - Gyro Ball
+    - Power Whip
+  roles:
+    - [offense, trickroom]
 - pokemon: Garchomp
   item: [Life Orb, Weakness Policy, Lum Berry, White Herb]
   ability: [Rough Skin, Sand Veil]
