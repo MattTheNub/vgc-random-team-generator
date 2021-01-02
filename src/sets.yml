@@ -88,6 +88,22 @@
     - [offense, policy, electric]
     - [offense, policy, fire]
     - [dynamax]
+- pokemon: Cinderace
+  item: [Life Orb, Focus Sash, Expert Belt]
+  ability: Libero
+  spread: |
+    EVs: 4 HP / 252 Atk / 252 Spe
+    Jolly Nature
+  moves:
+    - Protect
+    - High Jump Kick
+    - Pyro Ball
+    - Bounce
+    - Iron Head
+    - Sucker Punch
+  roles:
+    - [offense]
+    - [dynamax]
 - pokemon: Clefairy
   item: Eviolite
   ability: Friend Guard
