@@ -91,6 +91,7 @@
   item: [Life Orb, Wise Glasses, Safety Goggles, Life Orb]
   ability: Solar Power
   spread: |
+    Gigantamax: Yes
     EVs: 4 HP / 252 SpA / 252 Spe
     Timid Nature
   moves:
