@@ -415,6 +415,34 @@
     - [offense]
     - [support, status]
     - [support, policy, ground]
+- pokemon: Garchomp
+  item: [Life Orb, Weakness Policy, Lum Berry, White Herb]
+  ability: [Rough Skin, Sand Veil]
+  spread: |
+    EVs: 4 HP / 252 Atk / 252 Spe
+    Jolly Nature
+  moves:
+    - Rock Slide
+    - [Earthquake, Stomping Tantrum]
+    - [Swords Dance, Dragon Claw, Iron Head]
+    - Protect
+  roles:
+    - [offense]
+    - [dynamax]
+- pokemon: Garchomp
+  item: Assault Vest
+  ability: [Rough Skin, Sand Veil]
+  spread: |
+    EVs: 4 HP / 252 Atk / 252 Spe
+    Jolly Nature
+  moves:
+    - Rock Slide
+    - [Earthquake, Stomping Tantrum]
+    - Dragon Claw
+    - Iron Head
+  roles:
+    - [offense]
+    - [dynamax]
 - pokemon: Glastrier
   item: Weakness Policy
   ability: Chilling Neigh
