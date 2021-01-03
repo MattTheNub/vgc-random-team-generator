@@ -13,6 +13,21 @@
   roles:
     - [support, redirection]
     - [support, status]
+- pokemon: Articuno-Galar
+  item: [Life Orb, Weakness Policy, Focus Sash]
+  ability: Competitive
+  spread: |
+    EVs: 20 HP / 84 Def / 148 SpD / 4 SpD / 252
+    Modest Nature
+    IVs: 0 Atk
+  moves:
+    - Freezing Glare
+    - [Hurricane, Air Slash]
+    - Protect
+    - [Tailwind, Shadow Ball, Trick Room]
+  roles:
+    - [offense]
+    - [dynamax]
 - pokemon: Celesteela
   item: Leftovers
   ability: Beast Boost
