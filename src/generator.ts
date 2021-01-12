@@ -86,7 +86,7 @@ function generateMoves(moves: string[] | string[][], amount: number = 4) {
   return moveChoices as string[]
 }
 
-function generate() {
+export default function generate() {
   const pokemon: SetData[] = []
   const items: string[] = []
 
@@ -362,9 +362,3 @@ function generatePokemon(
     return false
   }
 }
-
-const team = generate()
-console.log('\n\n===============================\n\n')
-console.log(team.export)
-
-document.getElementById('paste').textContent = team.export
