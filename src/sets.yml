@@ -191,7 +191,7 @@
   spread: |
     EVs: 252 HP / 236 Def / 20 SpD
     Relaxed Nature
-    IVs: 0 Atk, 0 Spe
+    IVs: 0 Atk / 0 Spe
   moves:
     - Trick Room
     - [Helping Hand, Ally Switch, Psychic, Ice Beam]
@@ -1504,7 +1504,7 @@
 - pokemon: Tapu Lele
   ability: Psychic Surge
   item: [Choice Specs, Choice Scarf]
-  spread: 
+  spread:
     - |
       EVs: 92 HP / 4 Def / 156 SpA / 4 SpD / 252 Spe
       Modest Nature
@@ -1523,7 +1523,7 @@
 - pokemon: Tapu Lele
   ability: Psychic Surge
   item: [Focus Sash, Sitrus Berry, Life Orb]
-  spread: 
+  spread:
     - |
       EVs: 92 HP / 4 Def / 156 SpA / 4 SpD / 252 Spe
       Modest Nature
