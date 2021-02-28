@@ -274,7 +274,7 @@ export default function generate() {
       species.has(set.pokemon.replace(/-.+$/, '')),
     )
     if (Requirement.role('offense', 'policy').testIn(sets)) {
-      const policyType = findPolicyType(sets)
+      const policyType = findPolicyTypes(sets)
       if (
         Requirement.role('offense', 'trickroom').testIn(sets) &&
         !Requirement.role('speed', 'trickroom').testIn(sets)
@@ -283,6 +283,7 @@ export default function generate() {
         // try to find a Pokémon that satisfies both requirements
         if (
           Requirement.and(
+            Requirement.weather(findWeather(sets)),
             Requirement.role('speed', 'trickroom'),
             Requirement.role('support', 'policy', policyType),
             Requirement.not(Requirement.restricted()),
@@ -552,14 +553,16 @@ function findWeather(sets: Iterable<SetData>) {
   return null
 }
 
-function findPolicyType(sets: Iterable<SetData>) {
-  for (const set of sets) {
-    const role = set.roles.find(
-      role => role[0] === 'offense' && role[1] === 'policy',
-    )
+function findPolicyTypes(sets: Iterable<SetData>) {
+  const types = new Set<string>()
 
-    if (role) return role[2]
+  for (const set of sets) {
+    set.roles.forEach(role => {
+      if (role[0] === 'offense' && role[1] === 'policy') {
+        types.add(role[2])
+      }
+    })
   }
 
-  return null
+  return [...types.values()]
 }
