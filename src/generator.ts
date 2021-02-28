@@ -512,6 +512,10 @@ function generatePokemon(
     const speciesName =
       speciesArray[Math.floor(Math.random() * speciesArray.length)]
 
+    if (!speciesName) {
+      throw new Error('No species found')
+    }
+
     const speciesSets = setData.filter(
       set =>
         set.pokemon.startsWith(speciesName) && // Find all the sets for the species
