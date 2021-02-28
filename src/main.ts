@@ -1,5 +1,10 @@
+import 'alpinejs'
 import generate from './generator'
 
-const team = generate()
+const paste = document.getElementById('paste')
 
-document.getElementById('paste').textContent = team.export
+paste.textContent = generate()
+
+document.getElementById('generate-button').addEventListener('click', () => {
+  paste.textContent = generate()
+})

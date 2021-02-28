@@ -3,28 +3,151 @@ import path from 'path'
 import { safeLoad } from 'js-yaml'
 import { stripIndents } from 'common-tags'
 
+const setData = safeLoad(
+  fs.readFileSync(path.join(__dirname, 'sets.yml'), 'utf8'),
+) as SetData[]
+
 type SetData = {
   pokemon: string
   item: string | string[]
   ability: string | string[]
   spread: string
-  moves: string[] | string[][]
+  moves: (string | string[])[]
   roles: string[][]
 }
 
-const sets = safeLoad(
-  fs.readFileSync(path.join(__dirname, 'sets.yml'), 'utf8')
-) as SetData[]
-const species = new Set([...sets].map(set => set.pokemon.split('-')[0]))
+type GeneratedSetData = {
+  pokemon: string
+  item: string
+  ability: string
+  spread: string
+  moves: string[]
+  roles: string[][]
+  export: string
+}
 
-let weather: string = null
+class Requirement {
+  constructor(public test: (set: SetData) => boolean) {}
+
+  testIn(sets: Iterable<SetData>) {
+    for (const set of sets) {
+      if (this.test(set)) return true
+    }
+
+    return false
+  }
+  countIn(sets: Iterable<SetData>) {
+    let count = 0
+
+    for (const set of sets) {
+      if (this.test(set)) count++
+    }
+
+    return count
+  }
+
+  static restricted() {
+    return Requirement.role('restricted')
+  }
+  static dynamax() {
+    return Requirement.role('dynamax')
+  }
+  static offense() {
+    return Requirement.role('offense')
+  }
+  static support() {
+    return Requirement.role('support')
+  }
+  static weather(weather?: string) {
+    return weather
+      ? Requirement.or(
+          Requirement.role(null, 'weather', weather),
+          Requirement.not(Requirement.role(null, 'weather')),
+        )
+      : Requirement.none()
+  }
+  static noTRSetters() {
+    return Requirement.not(Requirement.role('speed', 'trickroom'))
+  }
+  static noTRUsers() {
+    return Requirement.not(Requirement.role('offense', 'trickroom'))
+  }
+  static noWPProccers() {
+    return Requirement.not(Requirement.role('support', 'policy'))
+  }
+  static noWPUsers() {
+    return Requirement.not(Requirement.role('offense', 'policy'))
+  }
+  static noAdditionalTR(sets: GeneratedSetData[]) {
+    return this.noTRSetters().testIn(sets)
+      ? Requirement.noTRUsers()
+      : Requirement.none()
+  }
+  static noAdditionalWeather(sets: GeneratedSetData[]) {
+    return findWeather(sets)
+      ? Requirement.weather(findWeather(sets))
+      : Requirement.not(Requirement.role('offense', 'weather'))
+  }
+
+  static itemClause(items: string[]) {
+    return new Requirement(set =>
+      Array.isArray(set.item)
+        ? set.item.findIndex(item => !items.includes(item)) !== -1
+        : !items.includes(set.item),
+    )
+  }
+  static role(...role: (string | string[])[]) {
+    return new Requirement(
+      set =>
+        set.roles.findIndex((setRole, index) => {
+          let allow = true
+
+          for (let i = 0; i < role.length; i++) {
+            if (role[i] === null) {
+              continue
+            } else if (Array.isArray(role[i])) {
+              if (!role[i].includes(setRole[i])) {
+                allow = false
+                break
+              }
+            } else if (role[i] !== setRole[i]) {
+              allow = false
+              break
+            }
+          }
+
+          return allow
+        }) !== -1,
+    )
+  }
+  static not(requirement: Requirement) {
+    return new Requirement(set => !requirement.test(set))
+  }
+  static and(...requirements: Requirement[]) {
+    return new Requirement(
+      set =>
+        requirements.findIndex(requirement => !requirement.test(set)) === -1,
+    )
+  }
+  static or(...requirements: Requirement[]) {
+    return new Requirement(
+      set =>
+        requirements.findIndex(requirement => requirement.test(set)) !== -1,
+    )
+  }
+  static none() {
+    return new Requirement(() => true)
+  }
+}
 
 function generateSet(set: SetData, usedItems: string[]) {
-  const randomSet: Partial<SetData> & { export?: string } = {
+  // The Pokémon and roles will always be constant
+  const randomSet: Partial<GeneratedSetData> = {
     pokemon: set.pokemon,
     roles: set.roles,
   }
 
+  // If the item is an array, pick a random item from the array that hasn't already been used
   if (Array.isArray(set.item)) {
     const items = set.item.filter(item => !usedItems.includes(item))
 
@@ -33,6 +156,7 @@ function generateSet(set: SetData, usedItems: string[]) {
     randomSet.item = set.item
   }
 
+  // If the ability is an array, pick a random ability from the array
   if (Array.isArray(set.ability)) {
     randomSet.ability =
       set.ability[Math.floor(Math.random() * set.ability.length)]
@@ -40,6 +164,7 @@ function generateSet(set: SetData, usedItems: string[]) {
     randomSet.ability = set.ability
   }
 
+  // If the spread is an array, pick a random spread from the array
   if (Array.isArray(set.spread)) {
     randomSet.spread = set.spread[Math.floor(Math.random() * set.spread.length)]
   } else {
@@ -58,28 +183,26 @@ function generateSet(set: SetData, usedItems: string[]) {
   - ${randomSet.moves[2]}
   - ${randomSet.moves[3]}`
 
-  const weatherIndex = set.roles.findIndex(role => role[1] === 'weather')
-  if (weatherIndex !== -1) {
-    weather = set.roles[weatherIndex][2]
-  }
-
-  return randomSet as SetData & { export?: string }
+  return randomSet as GeneratedSetData
 }
 
-function generateMoves(moves: string[] | string[][], amount: number = 4) {
+function generateMoves(moves: (string | string[])[], amount: number = 4) {
   const moveChoices = moves
   while (moveChoices.length > amount) {
+    // Remove random moves until only the desired amount remains
     moveChoices.splice(Math.floor(Math.random() * moveChoices.length), 1)
   }
 
   moveChoices.forEach((choice: any, index: number) => {
+    // If the move slot is an array, select a random move from the array
     if (Array.isArray(choice)) {
       let moveChoice
       do {
         moveChoice = generateMoves([...choice], 1)[0]
-      } while (moveChoices.includes(moveChoice as any))
+
+        // Ensure that the move has not already been selected
+      } while (moveChoices.includes(moveChoice))
       moveChoices[index] = moveChoice
-    } else {
     }
   })
 
@@ -87,278 +210,352 @@ function generateMoves(moves: string[] | string[][], amount: number = 4) {
 }
 
 export default function generate() {
-  const pokemon: SetData[] = []
-  const items: string[] = []
+  let sets: GeneratedSetData[] = []
+  const species = new Set(setData.map(set => set.pokemon.replace(/-.+$/, '')))
+  const usedItems: string[] = []
 
-  {
-    let generatedPokemon: SetData | false
-    while (!generatedPokemon) {
-      console.log(`Picking offensive pokemon`)
-      generatedPokemon = generatePokemon(
-        items,
-        ({ roles }) => roles.findIndex(role => role[0] === 'offense') !== -1
-      )
-    }
-    pokemon.push(generatedPokemon)
-    items.push(generatedPokemon.item as string)
-  }
-  {
-    let generatedPokemon: SetData | false
-    while (!generatedPokemon) {
-      console.log(`Picking dynamax pokemon`)
-      generatedPokemon = generatePokemon(
-        items,
-        ({ roles }) => roles.findIndex(role => role[0] === 'dynamax') !== -1
-      )
-    }
-    pokemon.push(generatedPokemon)
-    items.push(generatedPokemon.item as string)
-  }
+  // The first Pokémon must be a restricted legendary
+  sets.push(
+    generatePokemon(
+      // The weather requirement is skipped since the team is empty,
+      // so no weather could have been established
+      // There are also no weakness policy proccing restricted Pokémon,
+      // so that requirement is also omitted
+      Requirement.and(Requirement.restricted()),
+      species,
+      usedItems,
+    ),
+  )
+
+  // Add an offensive Pokémon in the second slot
+  sets.push(
+    generatePokemon(
+      Requirement.and(
+        // Check if the first Pokémon was a dynamax target
+        // If it wasn't, force the second Pokémon to be a dynamax target
+        Requirement.dynamax().test(sets[0])
+          ? Requirement.offense()
+          : Requirement.dynamax(),
+
+        // From this point on, Pokémon cannot summon or rely on a different
+        // weather if one of the earlier generated Pokémon already summons or
+        // relies on a different weather
+        Requirement.weather(findWeather(sets)),
+        // Weakness policy proccers will also not be allowed to be selected,
+        // with the exception of the fifth slot
+        Requirement.noWPProccers(),
+        // We must also ensure that no other Pokémon are restricted legendareis
+        Requirement.not(Requirement.restricted()),
+      ),
+      species,
+      usedItems,
+    ),
+  )
+
+  // Generate two random Pokémon (no added restrictions)
   for (let i = 0; i < 2; i++) {
-    let generatedPokemon: SetData | false
-    while (!generatedPokemon) {
-      console.log(`Picking random pokemon #${i + 1}`)
-      generatedPokemon = generatePokemon(items)
-    }
-    pokemon.push(generatedPokemon)
-    items.push(generatedPokemon.item as string)
+    sets.push(
+      generatePokemon(
+        Requirement.and(
+          Requirement.weather(findWeather(sets)),
+          Requirement.noWPProccers(),
+          Requirement.not(Requirement.restricted()),
+        ),
+        species,
+        usedItems,
+      ),
+    )
   }
 
-  let generatedPokemon: SetData | false
-  while (!generatedPokemon) {
-    if (
-      pokemon.findIndex(
-        ({ roles }) =>
-          roles.findIndex(
-            role => role[0] === 'offense' && role[1] === 'trickroom'
-          ) !== -1
-      ) !== -1
-    ) {
-      if (findPolicyAndTrickRoomUser(pokemon)) {
-        console.log('Picking WP + TR user')
-        generatedPokemon = generatePokemon(
-          items,
-          ({ roles }) =>
-            roles.findIndex(
-              role => role[0] === 'speed' && role[1] === 'trickroom'
-            ) !== -1 &&
-            roles.findIndex(
-              role =>
-                role[0] === 'support' &&
-                role[1] === 'policy' &&
-                findPolicyTypes(pokemon).includes(role[2])
-            ) !== -1
-        )
-      } else if (
-        pokemon.findIndex(
-          ({ roles }) =>
-            roles.findIndex(
-              role => role[0] === 'speed' && role[1] === 'trickroom'
-            ) !== -1 &&
-            roles.findIndex(
-              role => role[0] === 'support' && role[1] === 'policy'
-            ) === -1
-        ) === -1
+  {
+    // Fifth slot
+    // Find all remaining available sets
+    const availableSets = setData.filter(set =>
+      species.has(set.pokemon.replace(/-.+$/, '')),
+    )
+    if (Requirement.role('offense', 'policy').testIn(sets)) {
+      const policyType = findPolicyType(sets)
+      if (
+        Requirement.role('offense', 'trickroom').testIn(sets) &&
+        !Requirement.role('speed', 'trickroom').testIn(sets)
       ) {
-        console.log('Picking TR user')
-        generatedPokemon = generatePokemon(
-          items,
-          ({ roles }) =>
-            roles.findIndex(
-              role => role[0] === 'speed' && role[1] === 'trickroom'
-            ) !== -1
-        )
+        // If the team requires weakness policy and trick room support,
+        // try to find a Pokémon that satisfies both requirements
+        if (
+          Requirement.and(
+            Requirement.role('speed', 'trickroom'),
+            Requirement.role('support', 'policy', policyType),
+            Requirement.not(Requirement.restricted()),
+          ).testIn(availableSets)
+        ) {
+          // If one exists, generate it
+          sets.push(
+            generatePokemon(
+              Requirement.and(
+                Requirement.weather(findWeather(sets)),
+                Requirement.role('speed', 'trickroom'),
+                Requirement.role('support', 'policy', policyType),
+                Requirement.not(Requirement.restricted()),
+              ),
+              species,
+              usedItems,
+            ),
+          )
+        }
       } else {
-        console.log('Picking random pokemon (speed control/policy slot)')
-        generatedPokemon = generatePokemon(
-          items,
-          set =>
-            set.roles.findIndex(role => role[1] === 'policy') === -1 &&
-            set.roles.findIndex(role => role[1] === 'trickroom') !== -1
+        // If there is no need for trick room, no extra steps are needed
+        // Just generate the weakness policy proccer
+        sets.push(
+          generatePokemon(
+            Requirement.and(
+              Requirement.weather(findWeather(sets)),
+              Requirement.not(Requirement.restricted()),
+              Requirement.noTRSetters(), // Specifically disallow trick room setters from appearing
+              Requirement.role('support', 'policy', policyType),
+            ),
+            species,
+            usedItems,
+          ),
         )
       }
     } else if (
-      pokemon.findIndex(
-        ({ roles }) =>
-          roles.findIndex(
-            role => role[0] === 'offense' && role[1] === 'policy'
-          ) !== -1
-      ) !== -1 &&
-      pokemon.findIndex(
-        ({ roles }) =>
-          roles.findIndex(
-            role => role[0] === 'support' && role[1] === 'policy'
-          ) !== -1
-      ) === -1
+      Requirement.role('speed', 'trickroom').testIn(sets) &&
+      !Requirement.role('offense', 'trickroom').testIn(sets)
     ) {
-      console.log('Picking WP proccer')
-      generatedPokemon = generatePokemon(
-        items,
-        ({ roles }) =>
-          roles.findIndex(
-            role =>
-              role[0] === 'support' &&
-              role[1] === 'policy' &&
-              findPolicyTypes(pokemon).includes(role[2])
-          ) !== -1
+      // If the team has a trick room Pokémon with no trick room setter, add one
+      sets.push(
+        generatePokemon(
+          Requirement.and(
+            Requirement.weather(findWeather(sets)),
+            Requirement.noWPProccers(),
+            Requirement.not(Requirement.restricted()),
+            Requirement.role('speed', 'trickroom'),
+          ),
+          species,
+          usedItems,
+        ),
+      )
+    } else if (
+      Requirement.role('speed', 'trickroom').testIn(sets) &&
+      !Requirement.role('offense', 'trickroom').testIn(sets)
+    ) {
+      // If the team has a trick room setter with no trick room Pokémon, add one
+      sets.push(
+        generatePokemon(
+          Requirement.and(
+            Requirement.weather(findWeather(sets)),
+            Requirement.noWPProccers(),
+            Requirement.not(Requirement.restricted()),
+            Requirement.role('offense', 'trickroom'),
+          ),
+          species,
+          usedItems,
+        ),
+      )
+    } else if (Requirement.support().countIn(sets) < 2) {
+      // If the team has less than 2 support Pokémon, add another
+      // support Pokémon
+      sets.push(
+        generatePokemon(
+          Requirement.and(
+            Requirement.weather(findWeather(sets)),
+            Requirement.noWPProccers(),
+            Requirement.not(Requirement.restricted()),
+            Requirement.support(),
+          ),
+          species,
+          usedItems,
+        ),
       )
     } else {
-      console.log('Picking random pokemon (speed control/policy slot)')
-      generatedPokemon = generatePokemon(
-        items,
-        set =>
-          set.roles.findIndex(role => role[1] === 'policy') === -1 &&
-          set.roles.findIndex(role => role[1] === 'trickroom') === -1
+      // If none of the above conditions apply, just generate
+      // another random Pokémon
+      sets.push(
+        generatePokemon(
+          Requirement.and(
+            Requirement.weather(findWeather(sets)),
+            Requirement.noWPProccers(),
+            Requirement.not(Requirement.restricted()),
+            // At this point, do not add new trick room setters,
+            // and do not add trick room Pokémon unless trick room
+            // is already on the team
+            Requirement.noTRSetters(),
+            Requirement.noAdditionalTR(sets),
+            // Also, do not add any new Weakness Policy Pokémon
+            // at this point
+            Requirement.noWPUsers(),
+          ),
+          species,
+          usedItems,
+        ),
       )
     }
   }
-  pokemon.push(generatedPokemon)
-  items.push(generatedPokemon.item as string)
 
-  do {
+  {
+    // Sixth slot
+
     if (
-      pokemon.findIndex(
-        ({ roles }) =>
-          roles.findIndex(
-            role => role[0] === 'offense' && role[1] === 'weather'
-          ) !== -1
-      ) !== -1 &&
-      pokemon.findIndex(
-        ({ roles }) =>
-          roles.findIndex(
-            role => role[0] === 'speed' && role[1] === 'weather'
-          ) !== -1
-      ) === -1
+      findWeather(sets) &&
+      !Requirement.role('speed', 'weather', findWeather(sets)).testIn(sets)
     ) {
-      console.log(`Picking weather setter: ${weather}`)
-      generatedPokemon = generatePokemon(
-        items,
-        ({ roles }) =>
-          roles.findIndex(
-            role =>
-              role[0] === 'speed' &&
-              role[1] === 'weather' &&
-              role[2] === weather
-          ) !== -1
+      // If the team needs weather support, add it
+      sets.push(
+        generatePokemon(
+          Requirement.and(
+            Requirement.role('speed', 'weather', findWeather(sets)),
+            Requirement.noWPProccers(),
+            Requirement.not(Requirement.restricted()),
+            Requirement.noTRSetters(),
+            Requirement.noAdditionalTR(sets),
+            Requirement.noWPUsers(),
+          ),
+          species,
+          usedItems,
+        ),
       )
     } else if (
-      pokemon.findIndex(
-        ({ roles }) => roles.findIndex(role => role[0] === 'support') !== -1
-      ) === -1
+      Requirement.role('speed', 'trickroom').testIn(sets) &&
+      !Requirement.role('offense', 'trickroom').testIn(sets)
     ) {
-      console.log('Picking support pokemon')
-      generatedPokemon = generatePokemon(
-        items,
-        set =>
-          set.roles.findIndex(role => role[0] === 'support') !== -1 &&
-          set.roles.findIndex(role => role[1] === 'policy') === -1 &&
-          set.roles.findIndex(role => role[1] === 'trickroom') === -1
+      // If the team has a trick room Pokémon with no trick room setter, add one
+      // This may not have been achieved in the previous slot due to the possibility
+      // of having a weakness policy proccer in that sloat instead
+      sets.push(
+        generatePokemon(
+          Requirement.and(
+            Requirement.weather(findWeather(sets)),
+            Requirement.noWPProccers(),
+            Requirement.not(Requirement.restricted()),
+            Requirement.role('speed', 'trickroom'),
+            Requirement.noWPUsers(),
+          ),
+          species,
+          usedItems,
+        ),
       )
     } else if (
-      pokemon.filter(
-        ({ roles }) =>
-          roles.findIndex(
-            role => role[0] === 'support' //  || role[0] === 'speed'
-          ) !== -1
-      ).length >= 2
+      Requirement.role('speed', 'trickroom').testIn(sets) &&
+      !Requirement.role('offense', 'trickroom').testIn(sets)
     ) {
-      console.log(
-        'Picking non-support pokemon (too many support pokemon already picked)'
-      )
-      generatedPokemon = generatePokemon(
-        items,
-        set => set.roles.findIndex(role => role[0] === 'support') === -1
+      // If the team has a trick room setter with no trick room Pokémon, add one
+      // Similarly to above, this may have been omitted in the previous slot
+      sets.push(
+        generatePokemon(
+          Requirement.and(
+            Requirement.weather(findWeather(sets)),
+            Requirement.noWPProccers(),
+            Requirement.not(Requirement.restricted()),
+            Requirement.role('offense', 'trickroom'),
+            Requirement.noWPUsers(),
+          ),
+          species,
+          usedItems,
+        ),
       )
     } else {
-      console.log('Picking random pokemon (support slot)')
-      generatedPokemon = generatePokemon(
-        items,
-        set =>
-          set.roles.findIndex(role => role[1] === 'policy') === -1 &&
-          set.roles.findIndex(role => role[1] === 'trickroom') === -1
+      // If none of the above conditions apply, just generate
+      // another random Pokémon
+      sets.push(
+        generatePokemon(
+          Requirement.and(
+            Requirement.weather(findWeather(sets)),
+            Requirement.noWPProccers(),
+            Requirement.not(Requirement.restricted()),
+            Requirement.noTRSetters(),
+            Requirement.noAdditionalTR(sets),
+            Requirement.noWPUsers(),
+            // Ensure the last Pokémon does not rely on a new weather,
+            // as no weather Pokémon will be added
+            Requirement.noAdditionalWeather(sets),
+          ),
+          species,
+          usedItems,
+        ),
       )
     }
-  } while (!generatedPokemon)
-
-  pokemon.push(generatedPokemon)
-
-  return {
-    data: pokemon,
-    export: (pokemon as any).map((set: any) => set.export).join('\n\n'),
   }
-}
 
-function findPolicyAndTrickRoomUser(pokemon: SetData[]) {
-  return (
-    pokemon.findIndex(
-      ({ roles }) =>
-        roles.findIndex(
-          role => role[0] === 'offense' && role[1] === 'policy'
-        ) !== -1
-    ) !== -1 &&
-    sets.findIndex(
-      set =>
-        species.has(set.pokemon.split('-')[0]) &&
-        set.roles.findIndex(
-          role =>
-            role[0] === 'support' &&
-            role[1] === 'policy' &&
-            findPolicyTypes(pokemon).includes(role[2])
-        ) !== -1
-    ) !== -1
-  )
-}
+  if (process.env.NODE_ENV === 'production') {
+    // Randomize the order of the Pokémon
+    // This step is skipped in development to make it easier to recognize
+    // how each Pokémon has been generated
+    const shuffledSets = []
+    for (let i = 0; i < 6; i++) {
+      const index = Math.floor(Math.random() * sets.length)
+      shuffledSets.push(sets[index])
+      sets.splice(index, 1)
+    }
+    sets = shuffledSets
+  }
 
-function findPolicyTypes(pokemon: SetData[]) {
-  return pokemon
-    .find(({ roles }) =>
-      roles.find(role => role[0] === 'offense' && role[1] === 'policy')
-    )
-    .roles.filter(role => role[0] === 'offense' && role[1] === 'policy')
-    .map(role => role[2])
+  return sets.map(set => set.export).join('\n\n')
 }
 
 function generatePokemon(
+  requirements: Requirement,
+  species: Set<string>,
   usedItems: string[],
-  requirement: (set: SetData) => boolean = set =>
-    set.roles.findIndex(
-      role =>
-        (role[0] === 'support' || role[0] === 'speed') &&
-        (role[1] === 'policy' || role[1] === 'trickroom')
-    ) === -1
-): SetData | false {
-  const randomSpecies = [...species.values()][
-    Math.floor(Math.random() * species.size)
-  ]
+) {
+  // Create a copy of the set of available species
+  const availableSpecies = new Set(species)
 
-  console.log(`Finding sets... ${randomSpecies}`)
-  const possibleSets = sets
-    .filter(({ pokemon }) => pokemon.split('-')[0] === randomSpecies)
-    .filter(({ item }) =>
-      Array.isArray(item)
-        ? item.findIndex(item => !usedItems.includes(item)) !== -1
-        : !usedItems.includes(item)
-    )
-    .filter(
-      ({ roles }) =>
-        weather === null ||
-        roles.findIndex(role => role[1] === 'weather') === -1 ||
-        roles.findIndex(
-          role => role[1] === 'weather' && role[2] === weather
-        ) !== -1
-    )
-    .filter(requirement)
+  // Include Item Clause as a requirement
+  requirements = Requirement.and(
+    Requirement.itemClause(usedItems),
+    requirements,
+  )
 
-  if (possibleSets.length) {
-    species.delete(randomSpecies)
-    console.log('Found set. Generating...\n')
+  while (true) {
+    // Select a random species from the set of available species
+    const speciesArray = [...availableSpecies.values()]
+    const speciesName =
+      speciesArray[Math.floor(Math.random() * speciesArray.length)]
 
-    return generateSet(
-      possibleSets[Math.floor(Math.random() * possibleSets.length)],
-      usedItems
+    const speciesSets = setData.filter(
+      set =>
+        set.pokemon.startsWith(speciesName) && // Find all the sets for the species
+        requirements.test(set), // and select only the ones that match the requirements
     )
-  } else {
-    console.log('No available sets!')
-    return false
+
+    if (speciesSets.length === 0) {
+      // If no sets were found, remove the species and try another one
+      availableSpecies.delete(speciesName)
+      continue
+    }
+
+    // Select a random set to use
+    const set = speciesSets[Math.floor(Math.random() * speciesSets.length)]
+
+    // Remove the species from the global set of species (Species Clause)
+    species.delete(speciesName)
+
+    // Generate a set and add its item to the item array before returning
+    const generatedSet = generateSet(set, usedItems)
+    usedItems.push(generatedSet.item)
+
+    return generatedSet
   }
+}
+
+function findWeather(sets: Iterable<SetData>) {
+  for (const set of sets) {
+    const role = set.roles.find(role => role[1] === 'weather')
+
+    if (role) return role[2]
+  }
+
+  return null
+}
+
+function findPolicyType(sets: Iterable<SetData>) {
+  for (const set of sets) {
+    const role = set.roles.find(
+      role => role[0] === 'offense' && role[1] === 'policy',
+    )
+
+    if (role) return role[2]
+  }
+
+  return null
 }

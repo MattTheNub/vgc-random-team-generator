@@ -1,3 +1,78 @@
+# Restricted Legendaries
+- pokemon: Kyogre
+  item: Life Orb
+  ability: Drizzle
+  spread:
+    - |
+      EVs: 4 HP / 252 SpA / 252 Spe
+      Modest Nature
+    - |
+      EVs: 52 HP / 4 Def / 252 SpA / 4 SpD / 196 Spe
+      Modest Nature
+  moves:
+    - Water Spout
+    - [Origin Pulse, Ice Beam, Thunder, Protect]
+    - [Origin Pulse, Ice Beam, Thunder, Protect]
+    - [Origin Pulse, Ice Beam, Thunder, Protect]
+  roles:
+    - [offense]
+    - [dynamax]
+    - [restricted]
+    - [speed, weather, rain]
+- pokemon: Kyogre
+  item: [Choice Specs, Choice Scarf]
+  ability: Drizzle
+  spread:
+    - |
+      EVs: 4 HP / 252 SpA / 252 Spe
+      Modest Nature
+    - |
+      EVs: 52 HP / 4 Def / 252 SpA / 4 SpD / 196 Spe
+      Modest Nature
+  moves:
+    - Water Spout
+    - Origin Pulse
+    - Ice Beam
+    - Thunder
+  roles:
+    - [offense]
+    - [restricted]
+    - [speed, weather, rain]
+- pokemon: Yveltal
+  item: Life Orb
+  ability: Dark Aura
+  spread:
+    - |
+      EVs: 4 HP / 252 SpA / 252 Spe
+      Timid Nature
+    - |
+      EVs: 4 HP / 252 SpA / 252 Spe
+      Modest Nature
+  moves:
+    - Dark Pulse
+    - Oblivion Wing
+    - [Sucker Punch, Heat Wave, Focus Blast, Psychic, Shadow Ball]
+    - Protect
+  roles:
+    - [offense]
+    - [dynamax]
+    - [restricted]
+- pokemon: Zacian-Crowned
+  item: Rusted Sword
+  ability: Intrepid Sword
+  spread: |
+    EVs: 4 HP / 252 Atk / 252 Spe
+    Jolly Nature
+  moves:
+    - Behemoth Blade
+    - Play Rough
+    - [Wild Charge, Close Combat, Protect]
+    - [Wild Charge, Close Combat, Protect]
+  roles:
+    - [offense]
+    - [restricted]
+
+# Regular Pokemon
 - pokemon: Amoonguss
   item: [Coba Berry, Yache Berry, Focus Sash]
   ability: Regenerator
@@ -155,10 +230,12 @@
   ability: Steam Engine
   spread:
     - |
+      Gigantamax: Yes
       EVs: 4 HP / 252 SpA / 252 Spe
       Modest Nature
       IVs: 0 Atk
     - |
+      Gigantamax: Yes
       EVs: 4 HP / 252 SpA / 252 Spe
       Timid Nature
       IVs: 0 Atk
@@ -1237,7 +1314,14 @@
     EVs: 252 HP / 252 Atk / 4 SpD
     Adamant Nature
   moves:
-    - [Stomping Tantrum, Earthquake, Drain Punch, Iron Head, Ice Punch, Body Press]
+    - [
+        Stomping Tantrum,
+        Earthquake,
+        Drain Punch,
+        Iron Head,
+        Ice Punch,
+        Body Press,
+      ]
     - [Rock Slide, Stone Edge]
     - Curse
     - Protect
@@ -1252,7 +1336,14 @@
     Brave Nature
     IVs: 0 Spe
   moves:
-    - [Stomping Tantrum, Earthquake, Drain Punch, Iron Head, Ice Punch, Body Press]
+    - [
+        Stomping Tantrum,
+        Earthquake,
+        Drain Punch,
+        Iron Head,
+        Ice Punch,
+        Body Press,
+      ]
     - [Rock Slide, Stone Edge]
     - Curse
     - Protect
@@ -1536,7 +1627,15 @@
     - Psychic
     - Moonblast
     - Protect
-    - [Psyshock, Shadow Ball, Thunderbolt, Focus Blast, Dazzling Gleam, Calm Mind, Taunt]
+    - [
+        Psyshock,
+        Shadow Ball,
+        Thunderbolt,
+        Focus Blast,
+        Dazzling Gleam,
+        Calm Mind,
+        Taunt,
+      ]
   roles:
     - [offense]
     - [dynamax]
@@ -1707,8 +1806,28 @@
   moves:
     - Wicked Blow
     - Close Combat
-    - [Ice Punch, Fire Punch, Thunder Punch, Poison Jab, Sucker Punch, Sucker Punch, Detect, Detect, Detect]
-    - [Ice Punch, Fire Punch, Thunder Punch, Poison Jab, Sucker Punch, Sucker Punch, Detect, Detect, Detect]
+    - [
+        Ice Punch,
+        Fire Punch,
+        Thunder Punch,
+        Poison Jab,
+        Sucker Punch,
+        Sucker Punch,
+        Detect,
+        Detect,
+        Detect,
+      ]
+    - [
+        Ice Punch,
+        Fire Punch,
+        Thunder Punch,
+        Poison Jab,
+        Sucker Punch,
+        Sucker Punch,
+        Detect,
+        Detect,
+        Detect,
+      ]
   roles:
     - [offense]
     - [dynamax]
@@ -1722,8 +1841,22 @@
   moves:
     - Wicked Blow
     - Close Combat
-    - [Ice Punch, Fire Punch, Thunder Punch, Poison Jab, Sucker Punch, Sucker Punch]
-    - [Ice Punch, Fire Punch, Thunder Punch, Poison Jab, Sucker Punch, Sucker Punch]
+    - [
+        Ice Punch,
+        Fire Punch,
+        Thunder Punch,
+        Poison Jab,
+        Sucker Punch,
+        Sucker Punch,
+      ]
+    - [
+        Ice Punch,
+        Fire Punch,
+        Thunder Punch,
+        Poison Jab,
+        Sucker Punch,
+        Sucker Punch,
+      ]
   roles:
     - [offense]
 - pokemon: Urshifu-Rapid-Strike
