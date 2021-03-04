@@ -1,4 +1,20 @@
 # Restricted Legendaries
+- pokemon: Groudon
+  item: [Wide Lens, Sitrus Berry, Lum Berry, White Herb]
+  ability: Drought
+  spread: |
+    EVs: 244 HP / 252 Atk / 4 Def / 4 SpD / 4 Spe
+    Adamant Nature
+  moves:
+    - Precipice Blades
+    - [Rock Slide, Swords Dance, Fire Punch]
+    - [Rock Slide, Swords Dance, Fire Punch]
+    - Protect
+  roles:
+    - [offense]
+    - [dynamax]
+    - [restricted]
+    - [speed, weather, sun]
 - pokemon: Kyogre
   item: Life Orb
   ability: Drizzle
