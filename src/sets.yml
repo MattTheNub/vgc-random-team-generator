@@ -1970,25 +1970,15 @@
 - pokemon: Zapdos
   item: [Life Orb, Sitrus Berry, Weakness Policy]
   ability: Static
-  spread: |
-    EVs: 4 HP / 252 SpA / 252 Spe
-    Timid Nature
-    IVs: 0 Atk
-  moves:
-    - Thunderbolt
-    - [Heat Wave, Detect, Roost]
-    - Hurricane
-    - [Heat Wave, Detect, Roost]
-  roles:
-    - [offense]
-    - [dynamax]
-- pokemon: Zapdos
-  item: [Life Orb, Sitrus Berry, Weakness Policy]
-  ability: Static
-  spread: |
-    EVs: 188 HP / 4 Def / 116 SpA / 12 SpD / 118 Spe
-    Modest Nature
-    IVs: 0 Atk
+  spread:
+    - |
+      EVs: 4 HP / 252 SpA / 252 Spe
+      Timid Nature
+      IVs: 0 Atk
+    - |
+      EVs: 188 HP / 4 Def / 116 SpA / 12 SpD / 118 Spe
+      Modest Nature
+      IVs: 0 Atk
   moves:
     - Thunderbolt
     - [Heat Wave, Detect, Roost]
