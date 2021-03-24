@@ -1952,7 +1952,7 @@
   roles:
     - [offense, weather, sun]
 - pokemon: Whimsicott
-  item: [Focus Sash, Coba Berry]
+  item: [Focus Sash, Coba Berry, Mental Herb]
   ability: Prankster
   spread: |
     EVs: 4 HP / 252 SpA / 252 Spe
