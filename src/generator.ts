@@ -421,7 +421,7 @@ export default function generate() {
     ) {
       // If the team has a trick room Pokémon with no trick room setter, add one
       // This may not have been achieved in the previous slot due to the possibility
-      // of having a weakness policy proccer in that sloat instead
+      // of having a weakness policy proccer in that slot instead
       sets.push(
         generatePokemon(
           Requirement.and(
