@@ -3,6 +3,11 @@ import path from 'path'
 import { safeLoad } from 'js-yaml'
 import { stripIndents } from 'common-tags'
 
+export enum Format {
+  Series8,
+  Series9,
+}
+
 const setData = safeLoad(
   fs.readFileSync(path.join(__dirname, 'sets.yml'), 'utf8'),
 ) as SetData[]
@@ -209,23 +214,35 @@ function generateMoves(moves: (string | string[])[], amount: number = 4) {
   return moveChoices as string[]
 }
 
-export default function generate() {
+export default function generate(format: Format) {
   let sets: GeneratedSetData[] = []
   const species = new Set(setData.map(set => set.pokemon.replace(/-.+$/, '')))
   const usedItems: string[] = []
 
-  // The first Pokémon must be a restricted legendary
-  sets.push(
-    generatePokemon(
-      // The weather requirement is skipped since the team is empty,
-      // so no weather could have been established
-      // There are also no weakness policy proccing restricted Pokémon,
-      // so that requirement is also omitted
-      Requirement.and(Requirement.restricted()),
-      species,
-      usedItems,
-    ),
-  )
+  if (format === Format.Series8) {
+    // The first Pokémon must be a restricted legendary
+    sets.push(
+      generatePokemon(
+        // The weather requirement is skipped since the team is empty,
+        // so no weather could have been established
+        // There are also no weakness policy proccing restricted Pokémon,
+        // so that requirement is also omitted
+        Requirement.and(Requirement.restricted()),
+        species,
+        usedItems,
+      ),
+    )
+  } else if (format === Format.Series9) {
+    // The first Pokémon is an offensive pokemon
+    sets.push(
+      generatePokemon(
+        // The weather requirement is skipped; see above
+        Requirement.and(Requirement.offense()),
+        species,
+        usedItems,
+      ),
+    )
+  }
 
   // Add an offensive Pokémon in the second slot
   sets.push(
