@@ -237,7 +237,7 @@ export default function generate(format: Format) {
     sets.push(
       generatePokemon(
         // The weather requirement is skipped; see above
-        Requirement.and(Requirement.offense()),
+        Requirement.and(Requirement.offense(), Requirement.not(Requirement.restricted())),
         species,
         usedItems,
       ),
