@@ -6,6 +6,7 @@ import { stripIndents } from 'common-tags'
 export enum Format {
   Series8,
   Series9,
+  Series10,
 }
 
 const setData = safeLoad(
@@ -219,29 +220,35 @@ export default function generate(format: Format) {
   const species = new Set(setData.map(set => set.pokemon.replace(/-.+$/, '')))
   const usedItems: string[] = []
 
-  if (format === Format.Series8) {
-    // The first Pokémon must be a restricted legendary
-    sets.push(
-      generatePokemon(
-        // The weather requirement is skipped since the team is empty,
-        // so no weather could have been established
-        // There are also no weakness policy proccing restricted Pokémon,
-        // so that requirement is also omitted
-        Requirement.and(Requirement.restricted()),
-        species,
-        usedItems,
-      ),
-    )
-  } else if (format === Format.Series9) {
-    // The first Pokémon is an offensive pokemon
-    sets.push(
-      generatePokemon(
-        // The weather requirement is skipped; see above
-        Requirement.and(Requirement.offense(), Requirement.not(Requirement.restricted())),
-        species,
-        usedItems,
-      ),
-    )
+  switch (format) {
+    case Format.Series8:
+    case Format.Series10:
+      // The first Pokémon must be a restricted legendary
+      sets.push(
+        generatePokemon(
+          // The weather requirement is skipped since the team is empty,
+          // so no weather could have been established
+          // There are also no weakness policy proccing restricted Pokémon,
+          // so that requirement is also omitted
+          Requirement.and(Requirement.restricted()),
+          species,
+          usedItems,
+        ),
+      )
+
+    case Format.Series9:
+      // The first Pokémon is an offensive pokemon
+      sets.push(
+        generatePokemon(
+          // The weather requirement is skipped; see above
+          Requirement.and(
+            Requirement.offense(),
+            Requirement.not(Requirement.restricted()),
+          ),
+          species,
+          usedItems,
+        ),
+      )
   }
 
   // Add an offensive Pokémon in the second slot
@@ -250,7 +257,9 @@ export default function generate(format: Format) {
       Requirement.and(
         // Check if the first Pokémon was a dynamax target
         // If it wasn't, force the second Pokémon to be a dynamax target
-        Requirement.dynamax().test(sets[0])
+        Requirement.dynamax().test(sets[0]) &&
+          // Additionally, skip this check in series 10 since there is no dynamax
+          format != Format.Series10
           ? Requirement.offense()
           : Requirement.dynamax(),
 
