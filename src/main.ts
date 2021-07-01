@@ -2,7 +2,7 @@
 import generate, { Format } from './generator'
 
 const paste = document.getElementById('paste')
-let format = Format.Series10
+let format = Format.Series9
 
 paste.textContent = generate(format)
 
