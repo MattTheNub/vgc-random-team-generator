@@ -33,6 +33,7 @@ paste.textContent = generate(format)
     document.getElementById('format-dropdown-options').style.display = 'none'
     document.getElementById('format-dropdown-value').textContent =
       'VGC 2021 Series 10'
+    document.getElementById('series-10-warning').style.display = 'flex'
     format = Format.Series10
   })
 }
