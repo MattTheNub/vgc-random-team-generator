@@ -58,6 +58,9 @@ class Requirement {
   static dynamax() {
     return Requirement.role('dynamax')
   }
+  static nonmax() {
+    return Requirement.not(Requirement.role('dynamax', 'required'))
+  }
   static offense() {
     return Requirement.role('offense')
   }
@@ -231,7 +234,16 @@ export default function generate(format: Format) {
           // so no weather could have been established
           // There are also no weakness policy proccing restricted Pokémon,
           // so that requirement is also omitted
-          Requirement.and(Requirement.restricted()),
+          Requirement.and(
+            Requirement.restricted(),
+
+            // The nonmax requirement ensures that the set does
+            // not heavily rely on dynamax.
+            // This requirement is set for every Pokémon in Series 10
+            format === Format.Series10
+              ? Requirement.nonmax()
+              : Requirement.none(),
+          ),
           species,
           usedItems,
         ),
@@ -275,6 +287,7 @@ export default function generate(format: Format) {
         Requirement.noWPProccers(),
         // We must also ensure that no other Pokémon are restricted legendareis
         Requirement.not(Requirement.restricted()),
+        format === Format.Series10 ? Requirement.nonmax() : Requirement.none(),
       ),
       species,
       usedItems,
@@ -290,6 +303,9 @@ export default function generate(format: Format) {
           Requirement.weather(findWeather(sets)),
           Requirement.noWPProccers(),
           Requirement.not(Requirement.restricted()),
+          format === Format.Series10
+            ? Requirement.nonmax()
+            : Requirement.none(),
         ),
         species,
         usedItems,
@@ -317,6 +333,9 @@ export default function generate(format: Format) {
             Requirement.role('speed', 'trickroom'),
             Requirement.role('support', 'policy', policyType),
             Requirement.not(Requirement.restricted()),
+            format === Format.Series10
+              ? Requirement.nonmax()
+              : Requirement.none(),
           ).testIn(availableSets)
         ) {
           // If one exists, generate it
@@ -328,6 +347,9 @@ export default function generate(format: Format) {
                 Requirement.role('speed', 'trickroom'),
                 Requirement.role('support', 'policy', policyType),
                 Requirement.not(Requirement.restricted()),
+                format === Format.Series10
+                  ? Requirement.nonmax()
+                  : Requirement.none(),
               ),
               species,
               usedItems,
@@ -345,6 +367,9 @@ export default function generate(format: Format) {
               Requirement.not(Requirement.restricted()),
               Requirement.noTRSetters(), // Specifically disallow trick room setters from appearing
               Requirement.role('support', 'policy', policyType),
+              format === Format.Series10
+                ? Requirement.nonmax()
+                : Requirement.none(),
             ),
             species,
             usedItems,
@@ -364,6 +389,9 @@ export default function generate(format: Format) {
             Requirement.noWPProccers(),
             Requirement.not(Requirement.restricted()),
             Requirement.role('speed', 'trickroom'),
+            format === Format.Series10
+              ? Requirement.nonmax()
+              : Requirement.none(),
           ),
           species,
           usedItems,
@@ -382,6 +410,9 @@ export default function generate(format: Format) {
             Requirement.noWPProccers(),
             Requirement.not(Requirement.restricted()),
             Requirement.role('offense', 'trickroom'),
+            format === Format.Series10
+              ? Requirement.nonmax()
+              : Requirement.none(),
           ),
           species,
           usedItems,
@@ -398,6 +429,9 @@ export default function generate(format: Format) {
             Requirement.noWPProccers(),
             Requirement.not(Requirement.restricted()),
             Requirement.support(),
+            format === Format.Series10
+              ? Requirement.nonmax()
+              : Requirement.none(),
           ),
           species,
           usedItems,
@@ -421,6 +455,9 @@ export default function generate(format: Format) {
             // Also, do not add any new Weakness Policy Pokémon
             // at this point
             Requirement.noWPUsers(),
+            format === Format.Series10
+              ? Requirement.nonmax()
+              : Requirement.none(),
           ),
           species,
           usedItems,
@@ -447,6 +484,9 @@ export default function generate(format: Format) {
             Requirement.noTRSetters(),
             Requirement.noAdditionalTR(sets),
             Requirement.noWPUsers(),
+            format === Format.Series10
+              ? Requirement.nonmax()
+              : Requirement.none(),
           ),
           species,
           usedItems,
@@ -468,6 +508,9 @@ export default function generate(format: Format) {
             Requirement.not(Requirement.restricted()),
             Requirement.role('speed', 'trickroom'),
             Requirement.noWPUsers(),
+            format === Format.Series10
+              ? Requirement.nonmax()
+              : Requirement.none(),
           ),
           species,
           usedItems,
@@ -488,6 +531,9 @@ export default function generate(format: Format) {
             Requirement.not(Requirement.restricted()),
             Requirement.role('offense', 'trickroom'),
             Requirement.noWPUsers(),
+            format === Format.Series10
+              ? Requirement.nonmax()
+              : Requirement.none(),
           ),
           species,
           usedItems,
@@ -509,6 +555,9 @@ export default function generate(format: Format) {
             // Ensure the last Pokémon does not rely on a new weather,
             // as no weather Pokémon will be added
             Requirement.noAdditionalWeather(sets),
+            format === Format.Series10
+              ? Requirement.nonmax()
+              : Requirement.none(),
           ),
           species,
           usedItems,
