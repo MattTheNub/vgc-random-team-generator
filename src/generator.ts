@@ -226,6 +226,7 @@ export default function generate(format: Format) {
       // The first Pokémon must be a restricted legendary
       sets.push(
         generatePokemon(
+          format,
           // The weather requirement is skipped since the team is empty,
           // so no weather could have been established
           // There are also no weakness policy proccing restricted Pokémon,
@@ -240,6 +241,7 @@ export default function generate(format: Format) {
       // The first Pokémon is an offensive pokemon
       sets.push(
         generatePokemon(
+          format,
           // The weather requirement is skipped; see above
           Requirement.and(
             Requirement.offense(),
@@ -254,6 +256,7 @@ export default function generate(format: Format) {
   // Add an offensive Pokémon in the second slot
   sets.push(
     generatePokemon(
+      format,
       Requirement.and(
         // Check if the first Pokémon was a dynamax target
         // If it wasn't, force the second Pokémon to be a dynamax target
@@ -282,6 +285,7 @@ export default function generate(format: Format) {
   for (let i = 0; i < 2; i++) {
     sets.push(
       generatePokemon(
+        format,
         Requirement.and(
           Requirement.weather(findWeather(sets)),
           Requirement.noWPProccers(),
@@ -318,6 +322,7 @@ export default function generate(format: Format) {
           // If one exists, generate it
           sets.push(
             generatePokemon(
+              format,
               Requirement.and(
                 Requirement.weather(findWeather(sets)),
                 Requirement.role('speed', 'trickroom'),
@@ -334,6 +339,7 @@ export default function generate(format: Format) {
         // Just generate the weakness policy proccer
         sets.push(
           generatePokemon(
+            format,
             Requirement.and(
               Requirement.weather(findWeather(sets)),
               Requirement.not(Requirement.restricted()),
@@ -352,6 +358,7 @@ export default function generate(format: Format) {
       // If the team has a trick room Pokémon with no trick room setter, add one
       sets.push(
         generatePokemon(
+          format,
           Requirement.and(
             Requirement.weather(findWeather(sets)),
             Requirement.noWPProccers(),
@@ -369,6 +376,7 @@ export default function generate(format: Format) {
       // If the team has a trick room setter with no trick room Pokémon, add one
       sets.push(
         generatePokemon(
+          format,
           Requirement.and(
             Requirement.weather(findWeather(sets)),
             Requirement.noWPProccers(),
@@ -384,6 +392,7 @@ export default function generate(format: Format) {
       // support Pokémon
       sets.push(
         generatePokemon(
+          format,
           Requirement.and(
             Requirement.weather(findWeather(sets)),
             Requirement.noWPProccers(),
@@ -399,6 +408,7 @@ export default function generate(format: Format) {
       // another random Pokémon
       sets.push(
         generatePokemon(
+          format,
           Requirement.and(
             Requirement.weather(findWeather(sets)),
             Requirement.noWPProccers(),
@@ -429,6 +439,7 @@ export default function generate(format: Format) {
       // If the team needs weather support, add it
       sets.push(
         generatePokemon(
+          format,
           Requirement.and(
             Requirement.role('speed', 'weather', findWeather(sets)),
             Requirement.noWPProccers(),
@@ -450,6 +461,7 @@ export default function generate(format: Format) {
       // of having a weakness policy proccer in that slot instead
       sets.push(
         generatePokemon(
+          format,
           Requirement.and(
             Requirement.weather(findWeather(sets)),
             Requirement.noWPProccers(),
@@ -469,6 +481,7 @@ export default function generate(format: Format) {
       // Similarly to above, this may have been omitted in the previous slot
       sets.push(
         generatePokemon(
+          format,
           Requirement.and(
             Requirement.weather(findWeather(sets)),
             Requirement.noWPProccers(),
@@ -485,6 +498,7 @@ export default function generate(format: Format) {
       // another random Pokémon
       sets.push(
         generatePokemon(
+          format,
           Requirement.and(
             Requirement.weather(findWeather(sets)),
             Requirement.noWPProccers(),
@@ -520,6 +534,7 @@ export default function generate(format: Format) {
 }
 
 function generatePokemon(
+  format: Format,
   requirements: Requirement,
   species: Set<string>,
   usedItems: string[],
@@ -564,6 +579,11 @@ function generatePokemon(
     // Generate a set and add its item to the item array before returning
     const generatedSet = generateSet(set, usedItems)
     usedItems.push(generatedSet.item)
+
+    // Workaround for Series 10's gigantamax ban
+    if (format === Format.Series10) {
+      generatedSet.export = generatedSet.export.replace('Gigantamax: Yes\n', '')
+    }
 
     return generatedSet
   }
