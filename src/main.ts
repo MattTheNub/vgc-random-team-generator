@@ -2,7 +2,7 @@
 import generate, { Format } from './generator'
 
 const paste = document.getElementById('paste')
-let format = Format.Series9
+let format = Format.Series10
 
 paste.textContent = generate(format)
 
@@ -33,7 +33,7 @@ paste.textContent = generate(format)
     document.getElementById('format-dropdown-options').style.display = 'none'
     document.getElementById('format-dropdown-value').textContent =
       'VGC 2021 Series 10'
-    document.getElementById('series-10-warning').style.display = 'flex'
+    // document.getElementById('series-10-warning').style.display = 'flex'
     format = Format.Series10
   })
 }
