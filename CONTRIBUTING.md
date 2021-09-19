@@ -102,6 +102,10 @@ This is a list of roles that a Pokémon can fill on a team. These roles help the
 
 This is a role given to any Pokémon that is consistently a good dynamax option. A team is guaranteed to have at least one Pokémon with this role.
 
+###### `[dynamax, required]`
+
+This is a role given to Pokémon that primarily rely on dynamax, and would not function well in a non-dynamax format.
+
 ##### `[offense]`
 
 This is a role given to any Pokémon whose primary function is dealing damage. While a team is meant to have a minimum of two offensive Pokémon, only one is determined by this tag (the other being determined by having the [dynamax tag](#[dynamax]))
