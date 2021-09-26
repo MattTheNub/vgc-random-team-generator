@@ -7,7 +7,23 @@
     Timid Nature
   moves:
     - Astral Barrage
-    - [Expanding Force, Psyshock]
+    - Expanding Force
+    - [Substitute, Shadow Ball, Dark Pulse, Nasty Plot, Pollen Puff, Mud Shot]
+    - Protect
+  roles:
+    - [offense]
+    - [dynamaxformat]
+    - [restricted]
+    - [offense, terrain, psychic]
+- pokemon: Calyrex-Shadow
+  item: [Life Orb, Focus Sash, Spell Tag]
+  ability: As One (Spectrier)
+  spread: |
+    EVs: 4 HP / 252 SpA / 252 Spe
+    Timid Nature
+  moves:
+    - Astral Barrage
+    - Psyshock
     - [Substitute, Shadow Ball, Dark Pulse, Nasty Plot, Pollen Puff, Mud Shot]
     - Protect
   roles:
@@ -22,7 +38,62 @@
     Timid Nature
   moves:
     - Astral Barrage
-    - [Expanding Force, Psyshock]
+    - Expanding Force
+    - [Shadow Ball, Dark Pulse, Pollen Puff, Mud Shot, Trick]
+    - [Shadow Ball, Dark Pulse, Pollen Puff, Mud Shot, Trick]
+  roles:
+    - [offense]
+    - [dynamaxformat]
+    - [restricted]
+    - [offense, terrain, psychic]
+- pokemon: Calyrex-Shadow
+  item: [Choice Scarf]
+  ability: As One (Spectrier)
+  spread:
+    - |
+      EVs: 76 HP / 236 Def / 68 SpA / 4 SpD / 124 Spe
+      Modest Nature
+    - |
+      EVs: 76 HP / 52 Def / 252 SpA / 4 SpD / 124 Spe
+      Modest Nature
+  moves:
+    - Astral Barrage
+    - Expanding Force
+    - [Shadow Ball, Dark Pulse, Pollen Puff, Mud Shot, Trick]
+    - [Shadow Ball, Dark Pulse, Pollen Puff, Mud Shot, Trick]
+  roles:
+    - [offense]
+    - [dynamaxformat]
+    - [restricted]
+    - [offense, terrain, psychic]
+- pokemon: Calyrex-Shadow
+  item: [Choice Specs, Choice Scarf]
+  ability: As One (Spectrier)
+  spread: |
+    EVs: 4 HP / 252 SpA / 252 Spe
+    Timid Nature
+  moves:
+    - Astral Barrage
+    - Psyshock
+    - [Shadow Ball, Dark Pulse, Pollen Puff, Mud Shot, Trick]
+    - [Shadow Ball, Dark Pulse, Pollen Puff, Mud Shot, Trick]
+  roles:
+    - [offense]
+    - [dynamaxformat]
+    - [restricted]
+- pokemon: Calyrex-Shadow
+  item: [Choice Scarf]
+  ability: As One (Spectrier)
+  spread:
+    - |
+      EVs: 76 HP / 236 Def / 68 SpA / 4 SpD / 124 Spe
+      Modest Nature
+    - |
+      EVs: 76 HP / 52 Def / 252 SpA / 4 SpD / 124 Spe
+      Modest Nature
+  moves:
+    - Astral Barrage
+    - Psyshock
     - [Shadow Ball, Dark Pulse, Pollen Puff, Mud Shot, Trick]
     - [Shadow Ball, Dark Pulse, Pollen Puff, Mud Shot, Trick]
   roles:
