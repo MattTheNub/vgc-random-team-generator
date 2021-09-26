@@ -257,6 +257,7 @@ export default function generate(format: Format) {
           usedItems,
         ),
       )
+      break
 
     case Format.Series9:
       // The first Pokémon is an offensive pokemon
