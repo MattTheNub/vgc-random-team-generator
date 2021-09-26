@@ -1,4 +1,86 @@
 # Restricted Legendaries
+- pokemon: Calyrex-Ice
+  item: [Life Orb, White Herb, Lum Berry]
+  ability: As One (Glastrier)
+  spread: |
+    EVs: 252 HP / 252 Atk / 4 SpD
+    Brave Nature
+    IVs: 0 Spe
+  moves:
+    - Glacial Lance
+    - [High Horsepower, Close Combat]
+    - Trick Room
+    - [Protect, Protect, Close Combat, High Horsepower]
+  roles:
+    - [offense]
+    - [dynamax]
+    - [dynamaxformat]
+    - [restricted]
+    - [speed, trickroom]
+    - [offense, trickroom]
+- pokemon: Calyrex-Ice
+  item: Weakness Policy
+  ability: As One (Glastrier)
+  spread: |
+    EVs: 252 HP / 252 Atk / 4 SpD
+    Brave Nature
+    IVs: 0 Spe
+  moves:
+    - Glacial Lance
+    - [High Horsepower, Close Combat]
+    - Trick Room
+    - [Protect, Protect, Close Combat, High Horsepower]
+  roles:
+    - [offense]
+    - [dynamax]
+    - [dynamaxformat]
+    - [restricted]
+    - [speed, trickroom]
+    - [offense, trickroom]
+    - [offense, policy, dark]
+    - [offense, policy, ghost]
+    - [offense, policy, fire]
+    - [offense, policy, rock]
+- pokemon: Calyrex-Ice
+  item: [Life Orb, White Herb, Lum Berry]
+  ability: As One (Glastrier)
+  spread: |
+    EVs: 252 HP / 252 Atk / 4 SpD
+    Brave Nature
+    IVs: 0 Spe
+  moves:
+    - Glacial Lance
+    - High Horsepower
+    - [Close Combat, Close Combat, Seed Bomb, Icicle Spear, Substitute, Swords Dance]
+    - Protect
+  roles:
+    - [offense]
+    - [dynamax]
+    - [dynamaxformat]
+    - [restricted]
+    - [offense, trickroom]
+- pokemon: Calyrex-Ice
+  item: Weakness Policy
+  ability: As One (Glastrier)
+  spread: |
+    EVs: 252 HP / 252 Atk / 4 SpD
+    Brave Nature
+    IVs: 0 Spe
+  moves:
+    - Glacial Lance
+    - High Horsepower
+    - [Close Combat, Close Combat, Seed Bomb, Icicle Spear, Substitute, Swords Dance]
+    - Protect
+  roles:
+    - [offense]
+    - [dynamax]
+    - [dynamaxformat]
+    - [restricted]
+    - [offense, trickroom]
+    - [offense, policy, dark]
+    - [offense, policy, ghost]
+    - [offense, policy, fire]
+    - [offense, policy, rock]
 - pokemon: Calyrex-Shadow
   item: [Life Orb, Focus Sash, Spell Tag]
   ability: As One (Spectrier)
