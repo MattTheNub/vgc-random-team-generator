@@ -15,7 +15,6 @@
     - [dynamax, required]
     - [restricted]
     - [speed, weather, sun]
-    - [offense, trickroom]
 - pokemon: Groudon
   item: [Wide Lens, Sitrus Berry, Lum Berry, White Herb, Life Orb]
   ability: Drought
@@ -48,6 +47,7 @@
     - [nonmax]
     - [restricted]
     - [speed, weather, sun]
+    - [offense, trick room]
 - pokemon: Kyogre
   item: Life Orb
   ability: Drizzle
