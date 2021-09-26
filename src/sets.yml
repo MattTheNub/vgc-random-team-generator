@@ -847,6 +847,7 @@
   roles:
     - [support, redirection]
     - [support, atkdrop]
+    - [setter, terrain, psychic]
 - pokemon: Kartana
   item: Assault Vest
   ability: Beast Boost
@@ -1495,6 +1496,7 @@
   roles:
     - [offense]
     - [dynamax]
+    - [setter, terrain, grassy]
 - pokemon: Rillaboom
   item: Assault Vest
   ability: Grassy Surge
@@ -1510,6 +1512,7 @@
   roles:
     - [offense]
     - [dynamax]
+    - [setter, terrain, grassy]
 - pokemon: Rillaboom
   item: Choice Band
   ability: Grassy Surge
@@ -1525,6 +1528,7 @@
   roles:
     - [offense]
     - [dynamax]
+    - [setter, terrain, grassy]
 - pokemon: Rotom-Heat
   item: [Sitrus Berry, Safety Goggles]
   ability: Levitate
@@ -1661,6 +1665,7 @@
     - Ice Beam
   roles:
     - [offense]
+    - [setter, terrain, misty]
 - pokemon: Tapu Fini
   ability: Misty Surge
   item: [Wiki Berry, Aguav Berry, Iapapa Berry, Sitrus Berry, Leftovers]
@@ -1676,6 +1681,7 @@
   roles:
     - [offense]
     - [dynamax]
+    - [setter, terrain, misty]
 - pokemon: Tapu Koko
   ability: Electric Surge
   item: [Life Orb, Focus Sash, Shuca Berry]
@@ -1692,6 +1698,7 @@
     - [offense]
     - [dynamax]
     - [speed, statdrop]
+    - [setter, terrain, electric]
 - pokemon: Tapu Koko
   ability: Electric Surge
   item: [Life Orb, Focus Sash, Shuca Berry]
@@ -1706,6 +1713,7 @@
   roles:
     - [offense]
     - [dynamax]
+    - [setter, terrain, electric]
 - pokemon: Tapu Koko
   ability: Electric Surge
   item: [Light Clay, Focus Sash]
@@ -1721,6 +1729,7 @@
   roles:
     - [support, screens]
     - [speed, statdrop]
+    - [setter, terrain, electric]
 - pokemon: Tapu Lele
   ability: Psychic Surge
   item: [Choice Specs, Choice Scarf]
@@ -1740,6 +1749,7 @@
     - [Psyshock, Shadow Ball, Thunderbolt, Focus Blast]
   roles:
     - [offense]
+    - [setter, terrain, psychic]
 - pokemon: Tapu Lele
   ability: Psychic Surge
   item: [Focus Sash, Sitrus Berry, Life Orb]
@@ -1768,6 +1778,7 @@
   roles:
     - [offense]
     - [dynamax]
+    - [setter, terrain, psychic]
 - pokemon: Thundurus
   item: [Life Orb, Expert Belt]
   ability: Defiant

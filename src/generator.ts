@@ -79,6 +79,14 @@ class Requirement {
         )
       : Requirement.none()
   }
+  static terrain(terrains: string[]) {
+    return terrains.length
+      ? Requirement.or(
+          Requirement.role('offense', 'terrain', terrains),
+          Requirement.not(Requirement.role('offense', 'terrain')),
+        )
+      : Requirement.none()
+  }
   static noTRSetters() {
     return Requirement.not(Requirement.role('speed', 'trickroom'))
   }
@@ -100,6 +108,11 @@ class Requirement {
     return findWeather(sets)
       ? Requirement.weather(findWeather(sets))
       : Requirement.not(Requirement.role('offense', 'weather'))
+  }
+  static noAdditionalTerrains(sets: GeneratedSetData[]) {
+    return findTerrains(sets).length
+      ? Requirement.terrain(findTerrains(sets))
+      : Requirement.not(Requirement.role('offense', 'terrain'))
   }
 
   static itemClause(items: string[]) {
@@ -234,8 +247,8 @@ export default function generate(format: Format) {
       sets.push(
         generatePokemon(
           format,
-          // The weather requirement is skipped since the team is empty,
-          // so no weather could have been established
+          // The weather and terrain requirements are skipped since the team
+          // is empty, so no weather could have been established
           // There are also no weakness policy proccing restricted Pokémon,
           // so that requirement is also omitted
           Requirement.and(
@@ -264,7 +277,7 @@ export default function generate(format: Format) {
       sets.push(
         generatePokemon(
           format,
-          // The weather requirement is skipped; see above
+          // The weather/terrain requirements are skipped; see above
           Requirement.and(
             Requirement.offense(),
             Requirement.not(Requirement.restricted()),
@@ -293,6 +306,9 @@ export default function generate(format: Format) {
         // weather if one of the earlier generated Pokémon already summons or
         // relies on a different weather
         Requirement.weather(findWeather(sets)),
+        // The terrain requirement ensures that too many Pokémon depending on
+        // terrain aren't introduced, as their requirements may not be met
+        Requirement.terrain(findTerrains(sets)),
         // Weakness policy proccers will also not be allowed to be selected,
         // with the exception of the fifth slot
         Requirement.noWPProccers(),
@@ -312,6 +328,7 @@ export default function generate(format: Format) {
         format,
         Requirement.and(
           Requirement.weather(findWeather(sets)),
+          Requirement.terrain(findTerrains(sets)),
           Requirement.noWPProccers(),
           Requirement.not(Requirement.restricted()),
           format === Format.Series10
@@ -341,6 +358,7 @@ export default function generate(format: Format) {
         if (
           Requirement.and(
             Requirement.weather(findWeather(sets)),
+            Requirement.terrain(findTerrains(sets)),
             Requirement.role('speed', 'trickroom'),
             Requirement.role('support', 'policy', policyType),
             Requirement.not(Requirement.restricted()),
@@ -355,6 +373,7 @@ export default function generate(format: Format) {
               format,
               Requirement.and(
                 Requirement.weather(findWeather(sets)),
+                Requirement.terrain(findTerrains(sets)),
                 Requirement.role('speed', 'trickroom'),
                 Requirement.role('support', 'policy', policyType),
                 Requirement.not(Requirement.restricted()),
@@ -375,6 +394,7 @@ export default function generate(format: Format) {
             format,
             Requirement.and(
               Requirement.weather(findWeather(sets)),
+              Requirement.terrain(findTerrains(sets)),
               Requirement.not(Requirement.restricted()),
               Requirement.noTRSetters(), // Specifically disallow trick room setters from appearing
               Requirement.role('support', 'policy', policyType),
@@ -397,6 +417,7 @@ export default function generate(format: Format) {
           format,
           Requirement.and(
             Requirement.weather(findWeather(sets)),
+            Requirement.terrain(findTerrains(sets)),
             Requirement.noWPProccers(),
             Requirement.not(Requirement.restricted()),
             Requirement.role('speed', 'trickroom'),
@@ -418,6 +439,7 @@ export default function generate(format: Format) {
           format,
           Requirement.and(
             Requirement.weather(findWeather(sets)),
+            Requirement.terrain(findTerrains(sets)),
             Requirement.noWPProccers(),
             Requirement.not(Requirement.restricted()),
             Requirement.role('offense', 'trickroom'),
@@ -437,6 +459,7 @@ export default function generate(format: Format) {
           format,
           Requirement.and(
             Requirement.weather(findWeather(sets)),
+            Requirement.terrain(findTerrains(sets)),
             Requirement.noWPProccers(),
             Requirement.not(Requirement.restricted()),
             Requirement.support(),
@@ -456,6 +479,7 @@ export default function generate(format: Format) {
           format,
           Requirement.and(
             Requirement.weather(findWeather(sets)),
+            Requirement.terrain(findTerrains(sets)),
             Requirement.noWPProccers(),
             Requirement.not(Requirement.restricted()),
             // At this point, do not add new trick room setters,
@@ -503,7 +527,28 @@ export default function generate(format: Format) {
           usedItems,
         ),
       )
-    } else if (
+    } else if (findNeededTerrain(sets)) {
+      // If the team needs terrain support, generate it
+      sets.push(
+        generatePokemon(
+          format,
+          Requirement.and(
+            Requirement.role('setter', 'terrain', findNeededTerrain(sets)),
+            Requirement.noWPProccers(),
+            Requirement.not(Requirement.restricted()),
+            Requirement.noTRSetters(),
+            Requirement.noAdditionalTR(sets),
+            Requirement.noWPUsers(),
+            format === Format.Series10
+              ? Requirement.nonmaxFormat()
+              : Requirement.maxFormat(),
+          ),
+          species,
+          usedItems,
+        ),
+      )
+    }
+    else if (
       !Requirement.role('speed', 'trickroom').testIn(sets) &&
       Requirement.role('offense', 'trickroom').testIn(sets)
     ) {
@@ -658,6 +703,27 @@ function findWeather(sets: Iterable<SetData>) {
 
   return null
 }
+
+function findTerrains(sets: Iterable<SetData>) {
+  const terrains = []
+
+  for (const set of sets) {
+    const role = set.roles.find(role => role[1] === 'terrain')
+
+    if (role) terrains.push(role[2])
+  }
+
+  return terrains
+}
+
+function findNeededTerrain(sets: Iterable<SetData>) {
+  for (const set of sets) {
+    const role = set.roles.find(role => role[1] === 'terrain')
+
+    if (role && !Requirement.role('setter', 'terrain', 'role').testIn(sets)) return role[2]
+  }
+
+  return null}
 
 function findPolicyTypes(sets: Iterable<SetData>) {
   const types = new Set<string>()
