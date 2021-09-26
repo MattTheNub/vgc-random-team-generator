@@ -12,7 +12,40 @@
     - Protect
   roles:
     - [offense]
-    - [dynamax]
+    - [dynamax, required]
+    - [restricted]
+    - [speed, weather, sun]
+    - [offense, trickroom]
+- pokemon: Groudon
+  item: [Wide Lens, Sitrus Berry, Lum Berry, White Herb, Life Orb]
+  ability: Drought
+  spread: |
+    EVs: 252 HP / 236 Atk / 20 Spe
+    Adamant Nature
+  moves:
+    - Precipice Blades
+    - [Heat Crash, Heat Crash, Swords Dance]
+    - [Heat Crash, Rock Slide, Substitute]
+    - Protect
+  roles:
+    - [offense]
+    - [nonmax]
+    - [restricted]
+    - [speed, weather, sun]
+- pokemon: Groudon
+  item: Iron Ball
+  ability: Drought
+  spread: |
+    EVs: 252 HP / 252 Atk / 4 SpD
+    Adamant Nature
+  moves:
+    - Precipice Blades
+    - Heat Crash
+    - Fling
+    - Protect
+  roles:
+    - [offense]
+    - [nonmax]
     - [restricted]
     - [speed, weather, sun]
 - pokemon: Kyogre
@@ -27,9 +60,9 @@
       Modest Nature
   moves:
     - Water Spout
-    - [Origin Pulse, Ice Beam, Thunder, Protect]
-    - [Origin Pulse, Ice Beam, Thunder, Protect]
-    - [Origin Pulse, Ice Beam, Thunder, Protect]
+    - [Origin Pulse, Scald, Ice Beam, Thunder, Protect]
+    - [Origin Pulse, Scald, Ice Beam, Thunder, Protect]
+    - [Origin Pulse, Scald, Ice Beam, Thunder, Protect]
   roles:
     - [offense]
     - [dynamax]
