@@ -387,8 +387,8 @@ export default function generate(format: Format) {
         )
       }
     } else if (
-      Requirement.role('speed', 'trickroom').testIn(sets) &&
-      !Requirement.role('offense', 'trickroom').testIn(sets)
+      !Requirement.role('speed', 'trickroom').testIn(sets) &&
+      Requirement.role('offense', 'trickroom').testIn(sets)
     ) {
       // If the team has a trick room Pokémon with no trick room setter, add one
       sets.push(
@@ -503,8 +503,8 @@ export default function generate(format: Format) {
         ),
       )
     } else if (
-      Requirement.role('speed', 'trickroom').testIn(sets) &&
-      !Requirement.role('offense', 'trickroom').testIn(sets)
+      !Requirement.role('speed', 'trickroom').testIn(sets) &&
+      Requirement.role('offense', 'trickroom').testIn(sets)
     ) {
       // If the team has a trick room Pokémon with no trick room setter, add one
       // This may not have been achieved in the previous slot due to the possibility
