@@ -47,7 +47,7 @@
     - [nonmax]
     - [restricted]
     - [speed, weather, sun]
-    - [offense, trick room]
+    - [offense, trickroom]
 - pokemon: Kyogre
   item: Life Orb
   ability: Drizzle
@@ -65,7 +65,7 @@
     - [Origin Pulse, Scald, Ice Beam, Thunder, Protect]
   roles:
     - [offense]
-    - [dynamax]
+    - [dynamaxformat]
     - [restricted]
     - [speed, weather, rain]
 - pokemon: Kyogre
@@ -84,9 +84,88 @@
     - Ice Beam
     - Thunder
   roles:
+    - [dynamaxformat]
     - [offense]
     - [restricted]
     - [speed, weather, rain]
+- pokemon: Kyogre
+  item: [Choice Specs, Choice Scarf]
+  ability: Drizzle
+  spread:
+    - |
+      EVs: 4 HP / 252 SpA / 252 Spe
+      Timid Nature
+    - |
+      EVs: 36 HP / 4 Def / 252 SpA / 4 SpD / 212 Spe
+      Timid Nature
+  moves:
+    - Water Spout
+    - [Scald, Scald, Origin Pulse]
+    - Ice Beam
+    - Thunder
+  roles:
+    - [nonmax]
+    - [offense]
+    - [restricted]
+    - [speed, weather, rain]
+- pokemon: Kyogre
+  item: [Mystic Water, Sea Incense, Wave Incense]
+  ability: Drizzle
+  spread:
+    - |
+      EVs: 4 HP / 252 SpA / 252 Spe
+      Timid Nature
+    - |
+      EVs: 36 HP / 4 Def / 252 SpA / 4 SpD / 212 Spe
+      Timid Nature
+  moves:
+    - Water Spout
+    - [Scald, Scald, Origin Pulse]
+    - Ice Beam
+    - Thunder
+  roles:
+    - [nonmax]
+    - [offense]
+    - [restricted]
+    - [speed, weather, rain]
+- pokemon: Kyogre
+  item: [Mystic Water, Sea Incense, Wave Incense]
+  ability: Drizzle
+  spread:
+    - |
+      EVs: 252 HP / 36 Def / 220 SpA
+      Quiet Nature
+    - |
+      EVs: 252 HP / 36 Def / 220 SpA
+      Modest Nature
+  moves:
+    - Water Spout
+    - [Scald, Scald, Origin Pulse]
+    - Ice Beam
+    - Thunder
+  roles:
+    - [nonmax]
+    - [offense]
+    - [restricted]
+    - [speed, weather, rain]
+    - [offense, trickroom]
+- pokemon: Kyogre
+  item: [Assault Vest]
+  ability: Drizzle
+  spread: |
+      EVs: 252 HP / 188 Def / 4 SpA / 64 SpD
+      Bold Nature
+  moves:
+    - Water Spout
+    - [Scald, Scald, Origin Pulse]
+    - Ice Beam
+    - Thunder
+  roles:
+    - [nonmax]
+    - [offense]
+    - [restricted]
+    - [speed, weather, rain]
+    - [offense, trickroom]
 - pokemon: Yveltal
   item: Life Orb
   ability: Dark Aura
