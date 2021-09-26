@@ -364,6 +364,7 @@ export default function generate(format: Format) {
             Requirement.role('speed', 'trickroom'),
             Requirement.role('support', 'policy', policyType),
             Requirement.not(Requirement.restricted()),
+            Requirement.itemClause(usedItems),
             format === Format.Series10
               ? Requirement.nonmaxFormat()
               : Requirement.maxFormat(),
