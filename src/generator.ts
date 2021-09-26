@@ -53,7 +53,7 @@ class Requirement {
   }
 
   static nonmaxFormat() {
-    return Requirement.not( Requirement.role('dynamaxformat'))
+    return Requirement.not(Requirement.role('dynamaxformat'))
   }
   static maxFormat() {
     return Requirement.not(Requirement.role('nonmax'))
