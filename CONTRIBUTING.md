@@ -106,6 +106,10 @@ This is a role given to any Pokémon that is consistently a good dynamax option.
 
 This is a role given to Pokémon that primarily rely on dynamax, and would not function well in a non-dynamax format.
 
+###### `[dynamaxformat]`
+
+This is a role given to Pokémon that do not normally dynamax, but still do not function well in a non-dynamax format.
+
 ##### `[nonmax]`
 
 This is a role given to Pokémon that only perform well in non-dynamax formats (i.e. Series 10).
