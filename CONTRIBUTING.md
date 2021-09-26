@@ -106,6 +106,10 @@ This is a role given to any Pokémon that is consistently a good dynamax option.
 
 This is a role given to Pokémon that primarily rely on dynamax, and would not function well in a non-dynamax format.
 
+##### `[nonmax]`
+
+This is a role given to Pokémon that only perform well in non-dynamax formats (i.e. Series 10).
+
 ##### `[offense]`
 
 This is a role given to any Pokémon whose primary function is dealing damage. While a team is meant to have a minimum of two offensive Pokémon, only one is determined by this tag (the other being determined by having the [dynamax tag](#[dynamax]))
