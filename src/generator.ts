@@ -52,14 +52,18 @@ class Requirement {
     return count
   }
 
+  static nonmaxFormat() {
+    return Requirement.not(Requirement.role('dynamax', 'required'))
+  }
+  static maxFormat() {
+    return Requirement.not(Requirement.role('nonmax'))
+  }
+
   static restricted() {
     return Requirement.role('restricted')
   }
   static dynamax() {
     return Requirement.role('dynamax')
-  }
-  static nonmax() {
-    return Requirement.not(Requirement.role('dynamax', 'required'))
   }
   static offense() {
     return Requirement.role('offense')
@@ -237,12 +241,17 @@ export default function generate(format: Format) {
           Requirement.and(
             Requirement.restricted(),
 
-            // The nonmax requirement ensures that the set does
+            // The nonmaxFormat requirement ensures that the set does
             // not heavily rely on dynamax.
             // This requirement is set for every Pokémon in Series 10
+
+            // The maxFormat requirement ensures that the set does not
+            // rely on the absence of dynamax, such as the use of
+            // weight-based moves.
+            // This requirement is set for every Pokémon in dynamax formats.
             format === Format.Series10
-              ? Requirement.nonmax()
-              : Requirement.none(),
+              ? Requirement.nonmaxFormat()
+              : Requirement.maxFormat(),
           ),
           species,
           usedItems,
@@ -258,6 +267,7 @@ export default function generate(format: Format) {
           Requirement.and(
             Requirement.offense(),
             Requirement.not(Requirement.restricted()),
+            Requirement.maxFormat(),
           ),
           species,
           usedItems,
@@ -287,7 +297,7 @@ export default function generate(format: Format) {
         Requirement.noWPProccers(),
         // We must also ensure that no other Pokémon are restricted legendareis
         Requirement.not(Requirement.restricted()),
-        format === Format.Series10 ? Requirement.nonmax() : Requirement.none(),
+        format === Format.Series10 ? Requirement.nonmaxFormat() : Requirement.maxFormat(),
       ),
       species,
       usedItems,
@@ -304,8 +314,8 @@ export default function generate(format: Format) {
           Requirement.noWPProccers(),
           Requirement.not(Requirement.restricted()),
           format === Format.Series10
-            ? Requirement.nonmax()
-            : Requirement.none(),
+            ? Requirement.nonmaxFormat()
+            : Requirement.maxFormat(),
         ),
         species,
         usedItems,
@@ -334,8 +344,8 @@ export default function generate(format: Format) {
             Requirement.role('support', 'policy', policyType),
             Requirement.not(Requirement.restricted()),
             format === Format.Series10
-              ? Requirement.nonmax()
-              : Requirement.none(),
+              ? Requirement.nonmaxFormat()
+              : Requirement.maxFormat(),
           ).testIn(availableSets)
         ) {
           // If one exists, generate it
@@ -348,8 +358,8 @@ export default function generate(format: Format) {
                 Requirement.role('support', 'policy', policyType),
                 Requirement.not(Requirement.restricted()),
                 format === Format.Series10
-                  ? Requirement.nonmax()
-                  : Requirement.none(),
+                  ? Requirement.nonmaxFormat()
+                  : Requirement.maxFormat(),
               ),
               species,
               usedItems,
@@ -368,8 +378,8 @@ export default function generate(format: Format) {
               Requirement.noTRSetters(), // Specifically disallow trick room setters from appearing
               Requirement.role('support', 'policy', policyType),
               format === Format.Series10
-                ? Requirement.nonmax()
-                : Requirement.none(),
+                ? Requirement.nonmaxFormat()
+                : Requirement.maxFormat(),
             ),
             species,
             usedItems,
@@ -390,8 +400,8 @@ export default function generate(format: Format) {
             Requirement.not(Requirement.restricted()),
             Requirement.role('speed', 'trickroom'),
             format === Format.Series10
-              ? Requirement.nonmax()
-              : Requirement.none(),
+              ? Requirement.nonmaxFormat()
+              : Requirement.maxFormat(),
           ),
           species,
           usedItems,
@@ -411,8 +421,8 @@ export default function generate(format: Format) {
             Requirement.not(Requirement.restricted()),
             Requirement.role('offense', 'trickroom'),
             format === Format.Series10
-              ? Requirement.nonmax()
-              : Requirement.none(),
+              ? Requirement.nonmaxFormat()
+              : Requirement.maxFormat(),
           ),
           species,
           usedItems,
@@ -430,8 +440,8 @@ export default function generate(format: Format) {
             Requirement.not(Requirement.restricted()),
             Requirement.support(),
             format === Format.Series10
-              ? Requirement.nonmax()
-              : Requirement.none(),
+              ? Requirement.nonmaxFormat()
+              : Requirement.maxFormat(),
           ),
           species,
           usedItems,
@@ -456,8 +466,8 @@ export default function generate(format: Format) {
             // at this point
             Requirement.noWPUsers(),
             format === Format.Series10
-              ? Requirement.nonmax()
-              : Requirement.none(),
+              ? Requirement.nonmaxFormat()
+              : Requirement.maxFormat(),
           ),
           species,
           usedItems,
@@ -485,8 +495,8 @@ export default function generate(format: Format) {
             Requirement.noAdditionalTR(sets),
             Requirement.noWPUsers(),
             format === Format.Series10
-              ? Requirement.nonmax()
-              : Requirement.none(),
+              ? Requirement.nonmaxFormat()
+              : Requirement.maxFormat(),
           ),
           species,
           usedItems,
@@ -509,8 +519,8 @@ export default function generate(format: Format) {
             Requirement.role('speed', 'trickroom'),
             Requirement.noWPUsers(),
             format === Format.Series10
-              ? Requirement.nonmax()
-              : Requirement.none(),
+              ? Requirement.nonmaxFormat()
+              : Requirement.maxFormat(),
           ),
           species,
           usedItems,
@@ -532,8 +542,8 @@ export default function generate(format: Format) {
             Requirement.role('offense', 'trickroom'),
             Requirement.noWPUsers(),
             format === Format.Series10
-              ? Requirement.nonmax()
-              : Requirement.none(),
+              ? Requirement.nonmaxFormat()
+              : Requirement.maxFormat(),
           ),
           species,
           usedItems,
@@ -556,8 +566,8 @@ export default function generate(format: Format) {
             // as no weather Pokémon will be added
             Requirement.noAdditionalWeather(sets),
             format === Format.Series10
-              ? Requirement.nonmax()
-              : Requirement.none(),
+              ? Requirement.nonmaxFormat()
+              : Requirement.maxFormat(),
           ),
           species,
           usedItems,
