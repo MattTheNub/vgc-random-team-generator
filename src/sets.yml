@@ -12,7 +12,8 @@
     - Protect
   roles:
     - [offense]
-    - [dynamax, required]
+    - [dynamax]
+    - [dynamaxformat]
     - [restricted]
     - [speed, weather, sun]
 - pokemon: Groudon
