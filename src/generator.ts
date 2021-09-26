@@ -718,9 +718,9 @@ function findTerrains(sets: Iterable<SetData>) {
 
 function findNeededTerrain(sets: Iterable<SetData>) {
   for (const set of sets) {
-    const role = set.roles.find(role => role[1] === 'terrain')
+    const role = set.roles.find(role => role[0] === 'offense' && role[1] === 'terrain')
 
-    if (role && !Requirement.role('setter', 'terrain', 'role').testIn(sets)) return role[2]
+    if (role && !Requirement.role('setter', 'terrain', role).testIn(sets)) return role[2]
   }
 
   return null}
