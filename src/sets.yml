@@ -48,7 +48,7 @@
     - [nonmax]
     - [restricted]
     - [speed, weather, sun]
-    - [offense, trick room]
+    - [offense, trickroom]
 - pokemon: Kyogre
   item: Life Orb
   ability: Drizzle
