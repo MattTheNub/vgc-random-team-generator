@@ -234,9 +234,9 @@
       Modest Nature
   moves:
     - Water Spout
-    - [Origin Pulse, Scald, Ice Beam, Thunder, Protect]
-    - [Origin Pulse, Scald, Ice Beam, Thunder, Protect]
-    - [Origin Pulse, Scald, Ice Beam, Thunder, Protect]
+    - [Origin Pulse, Scald, Ice Beam, Thunder, Protect, Protect]
+    - [Origin Pulse, Scald, Ice Beam, Thunder, Protect, Protect]
+    - [Origin Pulse, Scald, Ice Beam, Thunder, Protect, Protect]
   roles:
     - [offense]
     - [dynamaxformat]
@@ -294,9 +294,9 @@
       Timid Nature
   moves:
     - Water Spout
-    - [Scald, Scald, Origin Pulse]
-    - Ice Beam
-    - Thunder
+    - [Scald, Scald, Origin Pulse, Ice Beam, Thunder]
+    - [Scald, Scald, Origin Pulse, Ice Beam, Thunder]
+    - Protect
   roles:
     - [nonmax]
     - [offense]
@@ -314,9 +314,9 @@
       Modest Nature
   moves:
     - Water Spout
-    - [Scald, Scald, Origin Pulse]
-    - Ice Beam
-    - Thunder
+    - [Scald, Scald, Origin Pulse, Ice Beam, Thunder]
+    - [Scald, Scald, Origin Pulse, Ice Beam, Thunder]
+    - Protect
   roles:
     - [nonmax]
     - [offense]
