@@ -367,9 +367,9 @@
     Jolly Nature
   moves:
     - Behemoth Blade
-    - Play Rough
-    - [Wild Charge, Close Combat, Protect]
-    - [Wild Charge, Close Combat, Protect]
+    - [Sacred Sword, Close Combat]
+    - [Play Rough, Substitute, Swords Dance, Quick Attack, Wild Charge]
+    - Protect
   roles:
     - [offense]
     - [restricted]
