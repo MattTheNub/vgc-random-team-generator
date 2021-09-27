@@ -112,7 +112,7 @@ This is a role given to Pokémon that only perform well in non-dynamax formats (
 
 ##### `[offense]`
 
-This is a role given to any Pokémon whose primary function is dealing damage. While a team is meant to have a minimum of two offensive Pokémon, only one is determined by this tag (the other being determined by having the [dynamax tag](#[dynamax]))
+This is a role given to any Pokémon whose primary function is dealing damage. While a team is meant to have a minimum of two offensive Pokémon, only one is determined by this tag (the other being determined by having the [dynamax tag](#dynamax))
 
 ###### `[offense, trickroom]`
 
@@ -121,6 +121,12 @@ This is a role given to any Pokémon that relies on Trick Room for speed control
 ###### `[offense, weather]`
 
 This is a role given to Pokémon that are helped by the presence of weather. The type of weather should be specified as a third element (ex: `[offense, weather, sun]`). These Pokémon will be paired with a Pokémon capable of setting the weather.
+
+###### `[offense, terrain]`
+
+This is a role given to Pokémon that rely on terrain. The type of terrain should be specified as a third element (ex: `[offense, weather, grassy]`). These Pokémon will be paired with Pokémon that set that terrain.
+
+**NOTE:** Do not add this tag to Pokémon that already set their own terrain (ex: Grassy Glide Rillaboom). However, they should have the [terrain setter tag](#setter-terrain)
 
 ###### `[offense, policy]`
 
@@ -181,3 +187,11 @@ This role is given to users of Trick Room
 ###### `[speed, weather]`
 
 While not solely used for speed control, all weather setters should be given this role. The type of weather should be specified as the third element (ex: `[speed, weather, rain]`)
+
+##### `[setter]`
+
+This tag is intended for Pokémon that set up certain conditions, but is currently only used for terrains.
+
+###### `[setter, terrain]`
+
+All terrain setters should be given this role. The type of terrain should be specified as the third element (ex: `[setter, terrain, grassy]`)
