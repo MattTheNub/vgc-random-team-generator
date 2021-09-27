@@ -1833,7 +1833,6 @@
   moves:
     - Trick Room
     - Gyro Ball
-    - [dynamaxformat]
     - [Body Press, High Horsepower, Rock Slide, Protect]
     - [Body Press, High Horsepower, Rock Slide, Protect]
   roles:
@@ -1843,6 +1842,7 @@
     - [offense, trickroom]
     - [speed, trickroom]
     - [dynamax]
+    - [dynamaxformat]
 - pokemon: Tapu Fini
   item: Choice Specs
   ability: Misty Surge
