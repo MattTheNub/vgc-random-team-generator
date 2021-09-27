@@ -566,6 +566,7 @@
     - Protect
   roles:
     - [dynamax]
+    - [dynamaxformat]
     - [offense, policy, water]
 - pokemon: Cresselia
   item: [Colbur Berry, Sitrus Berry, Mental Herb]
