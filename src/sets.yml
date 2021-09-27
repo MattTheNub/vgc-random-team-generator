@@ -435,6 +435,23 @@
   roles:
     - [offense]
     - [dynamax]
+    - [dynamaxformat]
+- pokemon: Celesteela
+  item: Life Orb
+  ability: Beast Boost
+  spread: |
+    EVs: 252 HP / 252 SpA / 4 SpD
+    Modest Nature
+    IVs: 0 Atk
+  moves:
+    - Protect
+    - Flash Cannon
+    - Flamethrower
+    - Air Slash
+  roles:
+    - [offense]
+    - [nonmax]
+    - [dynamax]
 - pokemon: Celesteela
   item: Assault Vest
   ability: Beast Boost
@@ -478,6 +495,7 @@
   roles:
     - [offense, policy, electric]
     - [offense, policy, fire]
+    - [dynamaxformat]
     - [dynamax]
 - pokemon: Charizard
   item: [Life Orb, Wise Glasses, Safety Goggles, Life Orb]
