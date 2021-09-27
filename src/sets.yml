@@ -14,7 +14,6 @@
   roles:
     - [offense]
     - [dynamax]
-    - [dynamaxformat]
     - [restricted]
     - [speed, trickroom]
     - [offense, trickroom]
@@ -33,7 +32,6 @@
   roles:
     - [offense]
     - [dynamax]
-    - [dynamaxformat]
     - [restricted]
     - [speed, trickroom]
     - [offense, trickroom]
@@ -56,7 +54,6 @@
   roles:
     - [offense]
     - [dynamax]
-    - [dynamaxformat]
     - [restricted]
     - [offense, trickroom]
 - pokemon: Calyrex-Ice
@@ -74,7 +71,6 @@
   roles:
     - [offense]
     - [dynamax]
-    - [dynamaxformat]
     - [restricted]
     - [offense, trickroom]
     - [offense, policy, dark]
@@ -94,7 +90,6 @@
     - Protect
   roles:
     - [offense]
-    - [dynamaxformat]
     - [restricted]
     - [offense, terrain, psychic]
 - pokemon: Calyrex-Shadow
@@ -110,7 +105,6 @@
     - Protect
   roles:
     - [offense]
-    - [dynamaxformat]
     - [restricted]
 - pokemon: Calyrex-Shadow
   item: [Choice Specs, Choice Scarf]
@@ -125,7 +119,6 @@
     - [Shadow Ball, Dark Pulse, Pollen Puff, Mud Shot, Trick]
   roles:
     - [offense]
-    - [dynamaxformat]
     - [restricted]
     - [offense, terrain, psychic]
 - pokemon: Calyrex-Shadow
@@ -145,7 +138,6 @@
     - [Shadow Ball, Dark Pulse, Pollen Puff, Mud Shot, Trick]
   roles:
     - [offense]
-    - [dynamaxformat]
     - [restricted]
     - [offense, terrain, psychic]
 - pokemon: Calyrex-Shadow
@@ -161,7 +153,6 @@
     - [Shadow Ball, Dark Pulse, Pollen Puff, Mud Shot, Trick]
   roles:
     - [offense]
-    - [dynamaxformat]
     - [restricted]
 - pokemon: Calyrex-Shadow
   item: [Choice Scarf]
@@ -180,7 +171,6 @@
     - [Shadow Ball, Dark Pulse, Pollen Puff, Mud Shot, Trick]
   roles:
     - [offense]
-    - [dynamaxformat]
     - [restricted]
 - pokemon: Groudon
   item: [Wide Lens, Sitrus Berry, Lum Berry, White Herb]
