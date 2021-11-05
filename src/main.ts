@@ -2,7 +2,7 @@
 import generate, { Format } from './generator'
 
 const paste = document.getElementById('paste')
-let format = Format.Series10
+let format = Format.Series11
 
 paste.textContent = generate(format)
 
@@ -15,11 +15,11 @@ paste.textContent = generate(format)
       : 'none'
   })
 
-  document.getElementById('series-8').addEventListener('click', () => {
+  document.getElementById('series-11').addEventListener('click', () => {
     document.getElementById('format-dropdown-options').style.display = 'none'
     document.getElementById('format-dropdown-value').textContent =
-      'VGC 2021 Series 8'
-    format = Format.Series8
+      'VGC 2021 Series 11'
+    format = Format.Series11
   })
 
   document.getElementById('series-9').addEventListener('click', () => {
@@ -33,7 +33,7 @@ paste.textContent = generate(format)
     document.getElementById('format-dropdown-options').style.display = 'none'
     document.getElementById('format-dropdown-value').textContent =
       'VGC 2021 Series 10'
-    // document.getElementById('series-10-warning').style.display = 'flex'
+    document.getElementById('series-10-warning').style.display = 'flex'
     format = Format.Series10
   })
 }

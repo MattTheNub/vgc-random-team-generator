@@ -4,9 +4,9 @@ import { safeLoad } from 'js-yaml'
 import { stripIndents } from 'common-tags'
 
 export enum Format {
-  Series8,
   Series9,
   Series10,
+  Series11,
 }
 
 const setData = safeLoad(
@@ -241,7 +241,7 @@ export default function generate(format: Format) {
   const usedItems: string[] = []
 
   switch (format) {
-    case Format.Series8:
+    case Format.Series11:
     case Format.Series10:
       // The first Pokémon must be a restricted legendary
       sets.push(
