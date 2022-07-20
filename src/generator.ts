@@ -7,6 +7,7 @@ export enum Format {
   Series9,
   Series10,
   Series11,
+  Series12,
 }
 
 const setData = safeLoad(
@@ -241,6 +242,7 @@ export default function generate(format: Format) {
   const usedItems: string[] = []
 
   switch (format) {
+    case Format.Series12:
     case Format.Series11:
     case Format.Series10:
       // The first Pokémon must be a restricted legendary
@@ -323,8 +325,44 @@ export default function generate(format: Format) {
     ),
   )
 
-  // Generate two random Pokémon (no added restrictions)
-  for (let i = 0; i < 2; i++) {
+  // Generate a random Pokémon (no added restrictions)
+  sets.push(
+    generatePokemon(
+      format,
+      Requirement.and(
+        Requirement.weather(findWeather(sets)),
+        Requirement.terrain(findTerrains(sets)),
+        Requirement.noWPProccers(),
+        Requirement.not(Requirement.restricted()),
+        format === Format.Series10
+          ? Requirement.nonmaxFormat()
+          : Requirement.maxFormat(),
+      ),
+      species,
+      usedItems,
+    ),
+  )
+
+  if (format == Format.Series12) {
+    // In series 12, this is where we generate our second restricted legendary
+
+    sets.push(
+      generatePokemon(
+        format,
+        Requirement.and(
+          Requirement.weather(findWeather(sets)),
+          Requirement.terrain(findTerrains(sets)),
+          Requirement.noWPProccers(),
+          Requirement.restricted(),
+          Requirement.maxFormat(),
+        ),
+        species,
+        usedItems,
+      ),
+    )
+  } else {
+    // Otherwise, generate another random Pokemon
+
     sets.push(
       generatePokemon(
         format,
