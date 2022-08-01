@@ -29,6 +29,13 @@ paste.textContent = generate(format)
     format = Format.Series12
   })
 
+  document.getElementById('series-13').addEventListener('click', () => {
+    document.getElementById('format-dropdown-options').style.display = 'none'
+    document.getElementById('format-dropdown-value').textContent =
+      'VGC 2022 Series 13'
+    format = Format.Series13
+  })
+
   document.getElementById('series-9').addEventListener('click', () => {
     document.getElementById('format-dropdown-options').style.display = 'none'
     document.getElementById('format-dropdown-value').textContent =

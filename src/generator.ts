@@ -8,6 +8,7 @@ export enum Format {
   Series10,
   Series11,
   Series12,
+  Series13,
 }
 
 const setData = safeLoad(
@@ -62,6 +63,9 @@ class Requirement {
 
   static restricted() {
     return Requirement.role('restricted')
+  }
+  static mythical() {
+    return Requirement.role('mythical')
   }
   static dynamax() {
     return Requirement.role('dynamax')
@@ -241,6 +245,14 @@ export default function generate(format: Format) {
   const species = new Set(setData.map(set => set.pokemon.replace(/-.+$/, '')))
   const usedItems: string[] = []
 
+  // there are unlimited restricted legendaries and mythicals in Series 13
+  const restrictedReq =
+    format === Format.Series13
+      ? Requirement.none()
+      : Requirement.not(
+          Requirement.or(Requirement.restricted(), Requirement.mythical()),
+        )
+
   switch (format) {
     case Format.Series12:
     case Format.Series11:
@@ -275,6 +287,7 @@ export default function generate(format: Format) {
       break
 
     case Format.Series9:
+    case Format.Series13:
       // The first Pokémon is an offensive pokemon
       sets.push(
         generatePokemon(
@@ -282,7 +295,7 @@ export default function generate(format: Format) {
           // The weather/terrain requirements are skipped; see above
           Requirement.and(
             Requirement.offense(),
-            Requirement.not(Requirement.restricted()),
+            restrictedReq,
             Requirement.maxFormat(),
           ),
           species,
@@ -314,8 +327,8 @@ export default function generate(format: Format) {
         // Weakness policy proccers will also not be allowed to be selected,
         // with the exception of the fifth slot
         Requirement.noWPProccers(),
-        // We must also ensure that no other Pokémon are restricted legendareis
-        Requirement.not(Requirement.restricted()),
+        // We must also ensure that no other Pokémon are restricted legendaries
+        restrictedReq,
         format === Format.Series10
           ? Requirement.nonmaxFormat()
           : Requirement.maxFormat(),
@@ -333,7 +346,7 @@ export default function generate(format: Format) {
         Requirement.weather(findWeather(sets)),
         Requirement.terrain(findTerrains(sets)),
         Requirement.noWPProccers(),
-        Requirement.not(Requirement.restricted()),
+        restrictedReq,
         format === Format.Series10
           ? Requirement.nonmaxFormat()
           : Requirement.maxFormat(),
@@ -370,7 +383,7 @@ export default function generate(format: Format) {
           Requirement.weather(findWeather(sets)),
           Requirement.terrain(findTerrains(sets)),
           Requirement.noWPProccers(),
-          Requirement.not(Requirement.restricted()),
+          restrictedReq,
           format === Format.Series10
             ? Requirement.nonmaxFormat()
             : Requirement.maxFormat(),
@@ -401,7 +414,7 @@ export default function generate(format: Format) {
             Requirement.terrain(findTerrains(sets)),
             Requirement.role('speed', 'trickroom'),
             Requirement.role('support', 'policy', policyType),
-            Requirement.not(Requirement.restricted()),
+            restrictedReq,
             Requirement.itemClause(usedItems),
             format === Format.Series10
               ? Requirement.nonmaxFormat()
@@ -417,7 +430,7 @@ export default function generate(format: Format) {
                 Requirement.terrain(findTerrains(sets)),
                 Requirement.role('speed', 'trickroom'),
                 Requirement.role('support', 'policy', policyType),
-                Requirement.not(Requirement.restricted()),
+                restrictedReq,
                 format === Format.Series10
                   ? Requirement.nonmaxFormat()
                   : Requirement.maxFormat(),
@@ -436,7 +449,7 @@ export default function generate(format: Format) {
             Requirement.and(
               Requirement.weather(findWeather(sets)),
               Requirement.terrain(findTerrains(sets)),
-              Requirement.not(Requirement.restricted()),
+              restrictedReq,
               Requirement.noTRSetters(), // Specifically disallow trick room setters from appearing
               Requirement.role('support', 'policy', policyType),
               format === Format.Series10
@@ -460,7 +473,7 @@ export default function generate(format: Format) {
             Requirement.weather(findWeather(sets)),
             Requirement.terrain(findTerrains(sets)),
             Requirement.noWPProccers(),
-            Requirement.not(Requirement.restricted()),
+            restrictedReq,
             Requirement.role('speed', 'trickroom'),
             format === Format.Series10
               ? Requirement.nonmaxFormat()
@@ -482,7 +495,7 @@ export default function generate(format: Format) {
             Requirement.weather(findWeather(sets)),
             Requirement.terrain(findTerrains(sets)),
             Requirement.noWPProccers(),
-            Requirement.not(Requirement.restricted()),
+            restrictedReq,
             Requirement.role('offense', 'trickroom'),
             format === Format.Series10
               ? Requirement.nonmaxFormat()
@@ -502,7 +515,7 @@ export default function generate(format: Format) {
             Requirement.weather(findWeather(sets)),
             Requirement.terrain(findTerrains(sets)),
             Requirement.noWPProccers(),
-            Requirement.not(Requirement.restricted()),
+            restrictedReq,
             Requirement.support(),
             format === Format.Series10
               ? Requirement.nonmaxFormat()
@@ -522,7 +535,7 @@ export default function generate(format: Format) {
             Requirement.weather(findWeather(sets)),
             Requirement.terrain(findTerrains(sets)),
             Requirement.noWPProccers(),
-            Requirement.not(Requirement.restricted()),
+            restrictedReq,
             // At this point, do not add new trick room setters,
             // and do not add trick room Pokémon unless trick room
             // is already on the team
@@ -556,7 +569,7 @@ export default function generate(format: Format) {
           Requirement.and(
             Requirement.role('speed', 'weather', findWeather(sets)),
             Requirement.noWPProccers(),
-            Requirement.not(Requirement.restricted()),
+            restrictedReq,
             Requirement.noTRSetters(),
             Requirement.noAdditionalTR(sets),
             Requirement.noWPUsers(),
@@ -576,7 +589,7 @@ export default function generate(format: Format) {
           Requirement.and(
             Requirement.role('setter', 'terrain', findNeededTerrain(sets)),
             Requirement.noWPProccers(),
-            Requirement.not(Requirement.restricted()),
+            restrictedReq,
             Requirement.noTRSetters(),
             Requirement.noAdditionalTR(sets),
             Requirement.noWPUsers(),
@@ -601,7 +614,7 @@ export default function generate(format: Format) {
           Requirement.and(
             Requirement.weather(findWeather(sets)),
             Requirement.noWPProccers(),
-            Requirement.not(Requirement.restricted()),
+            restrictedReq,
             Requirement.role('speed', 'trickroom'),
             Requirement.noWPUsers(),
             format === Format.Series10
@@ -624,7 +637,7 @@ export default function generate(format: Format) {
           Requirement.and(
             Requirement.weather(findWeather(sets)),
             Requirement.noWPProccers(),
-            Requirement.not(Requirement.restricted()),
+            restrictedReq,
             Requirement.role('offense', 'trickroom'),
             Requirement.noWPUsers(),
             format === Format.Series10
@@ -644,7 +657,7 @@ export default function generate(format: Format) {
           Requirement.and(
             Requirement.weather(findWeather(sets)),
             Requirement.noWPProccers(),
-            Requirement.not(Requirement.restricted()),
+            restrictedReq,
             Requirement.noTRSetters(),
             Requirement.noAdditionalTR(sets),
             Requirement.noWPUsers(),

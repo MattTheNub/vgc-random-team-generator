@@ -98,6 +98,14 @@ moves:
 
 This is a list of roles that a Pokémon can fill on a team. These roles help the generator create more viable teams. A Pokémon can have multiple roles, but please avoid giving a Pokémon a role if it already has a more specific one. For example, if a Pokémon already has the `[offense, trickroom]` role, do not give it the `[offense]` role.
 
+##### `[restricted]`
+
+This is a role given to restricted legendaries (allowed in Series 8, 10, 11, 12, 13).
+
+##### `[mythical]`
+
+This is a role given to mythicals (allowed in Series 13).
+
 ##### `[dynamax]`
 
 This is a role given to any Pokémon that is consistently a good dynamax option. A team is guaranteed to have at least one Pokémon with this role.

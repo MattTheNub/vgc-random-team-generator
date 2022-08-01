@@ -476,6 +476,9 @@
     - [offense]
     - [restricted]
 
+# Mythicals
+# (none for now)
+
 # Regular Pokemon
 - pokemon: Amoonguss
   item: [Coba Berry, Yache Berry, Focus Sash]
