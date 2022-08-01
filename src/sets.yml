@@ -442,6 +442,25 @@
     - [offense]
     - [dynamax]
     - [restricted]
+- pokemon: Xerneas
+  item: Power Herb
+  ability: Fairy Aura
+  spread:
+    - |
+      EVs: 4 HP / 252 SpA / 252 Spe
+      Timid Nature
+    - |
+      EVs: 100 HP / 196 Def / 44 SpA / 12 SpD / 156 Spe
+      Modest Nature
+  moves:
+    - Geomancy
+    - Moonblast
+    - Dazzling Gleam
+    - Protect
+  roles:
+    - [offense]
+    - [dynamax]
+    - [restricted]
 - pokemon: Zacian-Crowned
   item: Rusted Sword
   ability: Intrepid Sword
