@@ -49,7 +49,14 @@
   moves:
     - Glacial Lance
     - High Horsepower
-    - [Close Combat, Close Combat, Seed Bomb, Icicle Spear, Substitute, Swords Dance]
+    - [
+        Close Combat,
+        Close Combat,
+        Seed Bomb,
+        Icicle Spear,
+        Substitute,
+        Swords Dance,
+      ]
     - Protect
   roles:
     - [offense]
@@ -66,7 +73,14 @@
   moves:
     - Glacial Lance
     - High Horsepower
-    - [Close Combat, Close Combat, Seed Bomb, Icicle Spear, Substitute, Swords Dance]
+    - [
+        Close Combat,
+        Close Combat,
+        Seed Bomb,
+        Icicle Spear,
+        Substitute,
+        Swords Dance,
+      ]
     - Protect
   roles:
     - [offense]
@@ -362,6 +376,53 @@
     - [restricted]
     - [speed, weather, rain]
     - [offense, trickroom]
+- pokemon: Solgaleo
+  item: Weakness Policy
+  ability: Full Metal Body
+  spread:
+    - |
+      EVs: 4 HP / 252 Atk / 252 Spe
+      Jolly Nature
+    - |
+      EVs: 84 HP / 140 Atk / 12 Def / 220 SpD / 52 Spe
+      Adamant Nature
+  moves:
+    - Sunsteel Strike
+    - Earthquake
+    - [Psychic Fangs, Rock Slide, Protect, Wild Charge]
+    - [Psychic Fangs, Rock Slide, Protect, Wild Charge]
+  roles:
+    - [dynamax]
+    - [restricted]
+    - [offense, policy, dark]
+    - [offense, policy, ground]
+    - [offense, policy, fire]
+    - [offense, policy, ghost]
+- pokemon: Solgaleo
+  item: Weakness Policy
+  ability: Full Metal Body
+  spread:
+    - |
+      EVs: 60 HP / 100 Atk / 100 Def / 244 SpD
+      Brave Nature
+      IVs: 0 Spe
+    - |
+      EVs: 84 HP / 140 Atk / 12 Def / 220 SpD / 52 Spe
+      Adamant Nature
+  moves:
+    - Trick Room
+    - Sunsteel Strike
+    - Earthquake
+    - [Psychic Fangs, Rock Slide, Protect, Wild Charge]
+  roles:
+    - [dynamax]
+    - [restricted]
+    - [offense, policy, dark]
+    - [offense, policy, ground]
+    - [offense, policy, fire]
+    - [offense, policy, ghost]
+    - [offense, trickroom]
+    - [speed, trickroom]
 - pokemon: Yveltal
   item: Life Orb
   ability: Dark Aura
