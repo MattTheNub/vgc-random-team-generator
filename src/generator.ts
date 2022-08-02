@@ -460,6 +460,7 @@ export default function generate(format: Format) {
             Requirement.weather(findWeather(sets)),
             Requirement.terrain(findTerrains(sets)),
             Requirement.noWPProccers(),
+            Requirement.noWPUsers(),
             Requirement.not(Requirement.restricted()),
             Requirement.role('speed', 'trickroom'),
             format === Format.Series10
@@ -482,6 +483,7 @@ export default function generate(format: Format) {
             Requirement.weather(findWeather(sets)),
             Requirement.terrain(findTerrains(sets)),
             Requirement.noWPProccers(),
+            Requirement.noWPUsers(),
             Requirement.not(Requirement.restricted()),
             Requirement.role('offense', 'trickroom'),
             format === Format.Series10
@@ -502,6 +504,7 @@ export default function generate(format: Format) {
             Requirement.weather(findWeather(sets)),
             Requirement.terrain(findTerrains(sets)),
             Requirement.noWPProccers(),
+            Requirement.noWPUsers(),
             Requirement.not(Requirement.restricted()),
             Requirement.support(),
             format === Format.Series10
