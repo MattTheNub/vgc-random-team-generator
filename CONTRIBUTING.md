@@ -132,6 +132,10 @@ This is a role given to Pokémon that rely on terrain. The type of terrain shoul
 
 This is a role given to Pokémon that rely on self-proccing a Weakness Policy. This tag should be repeated with every type the Pokémon is weak to (ex: `[offense, policy, fighting]`). Note that this tag should not be used with Pokémon that often use Weaknes Policy without a self-proccer, such as Moltres-Galar.
 
+###### `[offense, setup]`
+
+This is a role given to Pokémon that use setup moves. These Pokémon will be more likely to get paired with a redirector or a Fake Out user.
+
 ##### `[support]`
 
 This is a role given to Pokémon that primarily play a supportive role. A team is guaranteed to have at least one Pokémon with this role
@@ -195,3 +199,9 @@ This tag is intended for Pokémon that set up certain conditions, but is current
 ###### `[setter, terrain]`
 
 All terrain setters should be given this role. The type of terrain should be specified as the third element (ex: `[setter, terrain, grassy]`)
+
+#### `weight`
+
+This property decides how likely a set is to be selected relative to other sets (i.e. `weight: 2` = twice as likely as all other sets; `weight: 0.5` = half as likely as all other sets). This is usually used when a specific (but uncommon) move necessitates a different tag, as to avoid weighting that move the same as all the other moves.
+
+Note that this property is local to the species' sets, as all species have an equal probability of being selected regardless of weight.

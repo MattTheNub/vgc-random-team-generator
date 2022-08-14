@@ -21,6 +21,7 @@ type SetData = {
   spread: string
   moves: (string | string[])[]
   roles: string[][]
+  weight?: number
 }
 
 type GeneratedSetData = {
@@ -71,6 +72,15 @@ class Requirement {
   }
   static support() {
     return Requirement.role('support')
+  }
+  static setup() {
+    return Requirement.role('offense', 'setup')
+  }
+  static setupSupport() {
+    return Requirement.or(
+      Requirement.role('support', 'flinch'),
+      Requirement.role('support', 'redirection'),
+    )
   }
   static weather(weather?: string) {
     return weather
@@ -494,6 +504,30 @@ export default function generate(format: Format) {
           usedItems,
         ),
       )
+    } else if (
+      Requirement.setup().testIn(sets) &&
+      !Requirement.setupSupport().testIn(sets)
+    ) {
+      // If the team has a setup Pokémon without a redirector or Fake Out user,
+      // add one
+      sets.push(
+        generatePokemon(
+          format,
+          Requirement.and(
+            Requirement.weather(findWeather(sets)),
+            Requirement.terrain(findTerrains(sets)),
+            Requirement.noWPProccers(),
+            Requirement.noWPUsers(),
+            Requirement.not(Requirement.restricted()),
+            Requirement.setupSupport(),
+            format === Format.Series10
+              ? Requirement.nonmaxFormat()
+              : Requirement.maxFormat(),
+          ),
+          species,
+          usedItems,
+        ),
+      )
     } else if (Requirement.support().countIn(sets) < 2) {
       // If the team has less than 2 support Pokémon, add another
       // support Pokémon
@@ -638,6 +672,29 @@ export default function generate(format: Format) {
           usedItems,
         ),
       )
+    } else if (
+      Requirement.setup().testIn(sets) &&
+      !Requirement.setupSupport().testIn(sets)
+    ) {
+      // Re-check for setup Pokémon in case they weren't accounted for in slot 5
+      sets.push(
+        generatePokemon(
+          format,
+          Requirement.and(
+            Requirement.weather(findWeather(sets)),
+            Requirement.terrain(findTerrains(sets)),
+            Requirement.noWPProccers(),
+            Requirement.noWPUsers(),
+            Requirement.not(Requirement.restricted()),
+            Requirement.setupSupport(),
+            format === Format.Series10
+              ? Requirement.nonmaxFormat()
+              : Requirement.maxFormat(),
+          ),
+          species,
+          usedItems,
+        ),
+      )
     } else {
       // If none of the above conditions apply, just generate
       // another random Pokémon
@@ -719,7 +776,23 @@ function generatePokemon(
     }
 
     // Select a random set to use
-    const set = speciesSets[Math.floor(Math.random() * speciesSets.length)]
+    // Find the sum of all weights
+    const weightSum = speciesSets.reduce(
+      (prev, set) => prev + (set.weight ?? 1),
+      0,
+    )
+    // Choose a random number in [0, weightSum)
+    const idx = Math.random() * weightSum
+    let set,
+      curSum = 0
+    // Find the set that corresponds to the number
+    for (const curSet of speciesSets) {
+      set = curSet
+      curSum += curSet.weight ?? 1
+      if (curSum > idx) {
+        break
+      }
+    }
 
     // Remove the species from the global set of species (Species Clause)
     species.delete(speciesName)
