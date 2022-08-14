@@ -2,6 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import { safeLoad } from 'js-yaml'
 import { stripIndents } from 'common-tags'
+import GeneratorLog from './log'
 
 export enum Format {
   Series9,
@@ -24,7 +25,7 @@ type SetData = {
   weight?: number
 }
 
-type GeneratedSetData = {
+export type GeneratedSetData = {
   pokemon: string
   item: string
   ability: string
@@ -34,8 +35,8 @@ type GeneratedSetData = {
   export: string
 }
 
-class Requirement {
-  constructor(public test: (set: SetData) => boolean) {}
+export class Requirement {
+  constructor(public test: (set: SetData) => boolean, public name: string) {}
 
   testIn(sets: Iterable<SetData>) {
     for (const set of sets) {
@@ -53,84 +54,103 @@ class Requirement {
 
     return count
   }
+  withName(name: string) {
+    return new Requirement(this.test, name)
+  }
 
   static nonmaxFormat() {
-    return Requirement.not(Requirement.role('dynamaxformat'))
+    return Requirement.not(Requirement.role('dynamaxformat')).withName(
+      'nonmax format',
+    )
   }
   static maxFormat() {
-    return Requirement.not(Requirement.role('nonmax'))
+    return Requirement.not(Requirement.role('nonmax')).withName('max format')
   }
 
   static restricted() {
-    return Requirement.role('restricted')
+    return Requirement.role('restricted').withName('restricted')
   }
   static dynamax() {
-    return Requirement.role('dynamax')
+    return Requirement.role('dynamax').withName('dynamax')
   }
   static offense() {
-    return Requirement.role('offense')
+    return Requirement.role('offense').withName('offense')
   }
   static support() {
-    return Requirement.role('support')
+    return Requirement.role('support').withName('support')
   }
   static setup() {
-    return Requirement.role('offense', 'setup')
+    return Requirement.role('offense', 'setup').withName('setup')
   }
   static setupSupport() {
     return Requirement.or(
       Requirement.role('support', 'flinch'),
       Requirement.role('support', 'redirection'),
-    )
+    ).withName('setup support')
   }
   static weather(weather?: string) {
     return weather
       ? Requirement.or(
           Requirement.role(null, 'weather', weather),
           Requirement.not(Requirement.role(null, 'weather')),
-        )
-      : Requirement.none()
+        ).withName(`weather: ${weather}`)
+      : Requirement.none().withName('any weather')
   }
   static terrain(terrains: string[]) {
     return terrains.length
       ? Requirement.or(
           Requirement.role('offense', 'terrain', terrains),
           Requirement.not(Requirement.role('offense', 'terrain')),
-        )
-      : Requirement.none()
+        ).withName(`terrains: ${terrains.join('/')}`)
+      : Requirement.none().withName('any terrain')
   }
   static noTRSetters() {
-    return Requirement.not(Requirement.role('speed', 'trickroom'))
+    return Requirement.not(Requirement.role('speed', 'trickroom')).withName(
+      'no TR setters',
+    )
   }
   static noTRUsers() {
-    return Requirement.not(Requirement.role('offense', 'trickroom'))
+    return Requirement.not(Requirement.role('offense', 'trickroom')).withName(
+      'no TR users',
+    )
   }
   static noWPProccers() {
-    return Requirement.not(Requirement.role('support', 'policy'))
+    return Requirement.not(Requirement.role('support', 'policy')).withName(
+      'no WP proccers',
+    )
   }
   static noWPUsers() {
-    return Requirement.not(Requirement.role('offense', 'policy'))
+    return Requirement.not(Requirement.role('offense', 'policy')).withName(
+      'no WP users',
+    )
   }
   static noAdditionalTR(sets: GeneratedSetData[]) {
     return this.noTRSetters().testIn(sets)
       ? Requirement.noTRUsers()
-      : Requirement.none()
+      : Requirement.none().withName('allow TR')
   }
   static noAdditionalWeather(sets: GeneratedSetData[]) {
     return findWeather(sets)
       ? Requirement.weather(findWeather(sets))
-      : Requirement.not(Requirement.role('offense', 'weather'))
+      : Requirement.not(Requirement.role('offense', 'weather')).withName(
+          'no weather',
+        )
   }
   static noAdditionalTerrains(sets: GeneratedSetData[]) {
     return findTerrains(sets).length
       ? Requirement.terrain(findTerrains(sets))
-      : Requirement.not(Requirement.role('offense', 'terrain'))
+      : Requirement.not(Requirement.role('offense', 'terrain')).withName(
+          'no terrain',
+        )
   }
 
   static itemClause(items: string[]) {
-    return new Requirement(set =>
-      Array.isArray(set.item)
-        ? set.item.findIndex(item => !items.includes(item)) !== -1
-        : !items.includes(set.item),
+    return new Requirement(
+      set =>
+        Array.isArray(set.item)
+          ? set.item.findIndex(item => !items.includes(item)) !== -1
+          : !items.includes(set.item),
+      `item clause: ${items.join('/')}`,
     )
   }
   static role(...role: (string | string[])[]) {
@@ -155,25 +175,33 @@ class Requirement {
 
           return allow
         }) !== -1,
+      role
+        .map(role => (Array.isArray(role) ? `${role.join('/')}` : role))
+        .join(','),
     )
   }
   static not(requirement: Requirement) {
-    return new Requirement(set => !requirement.test(set))
+    return new Requirement(
+      set => !requirement.test(set),
+      `NOT (${requirement.name})`,
+    )
   }
   static and(...requirements: Requirement[]) {
     return new Requirement(
       set =>
         requirements.findIndex(requirement => !requirement.test(set)) === -1,
+      `(${requirements.map(req => req.name).join(' + ')})`,
     )
   }
   static or(...requirements: Requirement[]) {
     return new Requirement(
       set =>
         requirements.findIndex(requirement => requirement.test(set)) !== -1,
+      `(${requirements.map(req => req.name).join(' OR ')})`,
     )
   }
   static none() {
-    return new Requirement(() => true)
+    return new Requirement(() => true, '_')
   }
 }
 
@@ -246,10 +274,13 @@ function generateMoves(moves: (string | string[])[], amount: number = 4) {
   return moveChoices as string[]
 }
 
+let log: GeneratorLog
+
 export default function generate(format: Format) {
   let sets: GeneratedSetData[] = []
   const species = new Set(setData.map(set => set.pokemon.replace(/-.+$/, '')))
   const usedItems: string[] = []
+  log = new GeneratorLog(sets)
 
   switch (format) {
     case Format.Series12:
@@ -752,6 +783,7 @@ function generatePokemon(
     Requirement.itemClause(usedItems),
     requirements,
   )
+  log.beginSet(requirements)
 
   while (true) {
     // Select a random species from the set of available species
@@ -760,6 +792,7 @@ function generatePokemon(
       speciesArray[Math.floor(Math.random() * speciesArray.length)]
 
     if (!speciesName) {
+      log.crash('No species found')
       throw new Error('No species found')
     }
 
@@ -772,6 +805,7 @@ function generatePokemon(
     if (speciesSets.length === 0) {
       // If no sets were found, remove the species and try another one
       availableSpecies.delete(speciesName)
+      log.noneFound(speciesName)
       continue
     }
 
