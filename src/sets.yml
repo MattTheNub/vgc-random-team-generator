@@ -2325,7 +2325,40 @@
     Modest Nature
     IVs: 0 Atk
   moves:
-    - [Follow Me, Heat Wave]
+    - Heat Wave
+    - Protect
+    - Dazzling Gleam
+    - Air Slash
+  roles:
+    - [offense]
+    - [dynamax]
+  weight: 0.5
+- pokemon: Togekiss
+  item: Scope Lens
+  ability: Super Luck
+  spread: |
+    EVs: 180 HP / 4 Def / 132 SpA / 12 SpD / 156 Spe
+    Modest Nature
+    IVs: 0 Atk
+  moves:
+    - Follow Me
+    - Protect
+    - Dazzling Gleam
+    - Air Slash
+  roles:
+    - [support, redirection]
+    - [offense]
+    - [dynamax]
+  weight: 0.5
+- pokemon: Togekiss
+  item: Weakness Policy
+  ability: [Super Luck, Serene Grace]
+  spread: |
+    EVs: 180 HP / 4 Def / 132 SpA / 12 SpD / 156 Spe
+    Modest Nature
+    IVs: 0 Atk
+  moves:
+    - Follow Me
     - Protect
     - Dazzling Gleam
     - Air Slash
@@ -2341,14 +2374,14 @@
     Modest Nature
     IVs: 0 Atk
   moves:
-    - [Follow Me, Heat Wave]
+    - Heat Wave
     - Protect
     - Dazzling Gleam
     - Air Slash
   roles:
-    - [support, redirection]
     - [offense]
     - [dynamax]
+  weight: 0.5
 - pokemon: Torkoal
   item: [Charcoal, Sitrus Berry]
   ability: Drought
