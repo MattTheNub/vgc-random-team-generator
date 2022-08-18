@@ -1816,6 +1816,20 @@
   roles:
     - [offense]
     - [speed, statdrop]
+- pokemon: Regieleki
+  item: [Magnet, Life Orb]
+  ability: Transistor
+  spread: |
+    EVs: 252 Atk / 4 SpD / 252 Spe
+    Jolly Nature
+  moves:
+    - Wild Charge
+    - Bounce
+    - Assurance
+    - Protect
+  roles:
+    - [offense]
+    - [dynamax]
 - pokemon: Regirock
   item: Weakness Policy
   ability: Clear Body
