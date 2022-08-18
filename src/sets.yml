@@ -170,7 +170,7 @@
     - Nasty Plot
     - Protect
   roles:
-    - [offense]
+    - [offense, setup]
     - [restricted]
   weight: 0.2
 - pokemon: Calyrex-Shadow
