@@ -44,6 +44,10 @@ These are the Pokémon's different possible held items. One item can be entered 
 
 This is the Pokémon's ability. Similarly to [items](#item), this can be one ability, or multiple as an array.
 
+#### `tera`
+
+This is the Pokémon's tera type. This can be one type, or multiple as an array.
+
 #### `spread`
 
 This is the Pokémon's spread, including EVs, natures, IVs, and miscellanious information (ex: gigantamax). This is directly added into Pokémon Showdown's export format, so information can be copied from there, or simply written in the same format. Multiple spreads can also be listed.
@@ -98,21 +102,9 @@ moves:
 
 This is a list of roles that a Pokémon can fill on a team. These roles help the generator create more viable teams. A Pokémon can have multiple roles, but please avoid giving a Pokémon a role if it already has a more specific one. For example, if a Pokémon already has the `[offense, trickroom]` role, do not give it the `[offense]` role.
 
-##### `[dynamax]`
-
-This is a role given to any Pokémon that is consistently a good dynamax option. A team is guaranteed to have at least one Pokémon with this role.
-
-###### `[dynamaxformat]`
-
-This is a role given to Pokémon that do not function well in a non-dynamax format (i.e. Series 10).
-
-##### `[nonmax]`
-
-This is a role given to Pokémon that only perform well in non-dynamax formats (i.e. Series 10).
-
 ##### `[offense]`
 
-This is a role given to any Pokémon whose primary function is dealing damage. While a team is meant to have a minimum of two offensive Pokémon, only one is determined by this tag (the other being determined by having the [dynamax tag](#dynamax))
+This is a role given to any Pokémon whose primary function is dealing damage. A team is guaranteed to have at least 2 offensive Pokemon.
 
 ###### `[offense, trickroom]`
 
